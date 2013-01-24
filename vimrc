@@ -427,6 +427,9 @@ vmap <C-Down> :move '>+1<CR>gv
 " Section: Plugin-dependent settings {{{1
 "---------------------------------------------------------------------------"
 
+" Pathogen
+execute pathogen#infect()
+
 " Conversion HTML (:help 2html.vim)
 let g:html_use_css = 1
 let g:html_use_encoding = "utf8"
