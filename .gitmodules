@@ -1,3 +1,36 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "bundle/surround"]
+	path = bundle/surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle/NERD_commenter"]
+	path = bundle/NERD_commenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/bufexplorer"]
+	path = bundle/bufexplorer
+	url = https://github.com/vim-scripts/bufexplorer.zip.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "bundle/taglist"]
+	path = bundle/taglist
+	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "bundle/YankRing"]
+	path = bundle/YankRing
+	url = https://github.com/vim-scripts/YankRing.vim.git
+[submodule "bundle/timestamp"]
+	path = bundle/timestamp
+	url = https://github.com/vim-scripts/timestamp.vim.git
+[submodule "bundle/speeddating"]
+	path = bundle/speeddating
+	url = https://github.com/tpope/vim-speeddating.git
+[submodule "bundle/ShowMarks"]
+	path = bundle/ShowMarks
+	url = https://github.com/vim-scripts/ShowMarks.git
+[submodule "bundle/SearchComplete"]
+	path = bundle/SearchComplete
+	url = https://github.com/vim-scripts/SearchComplete.git
+[submodule "bundle/closetag"]
+	path = bundle/closetag
+	url = https://github.com/vim-scripts/closetag.vim.git

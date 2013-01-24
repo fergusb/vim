@@ -3,6 +3,10 @@
 ## Installation
 
 ## Add Pathogen
-ln -s ~/Projects/config/vim-pathogen/autoload/pathogen.vim .
+cp ~/Projects/config/vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/
+
+## Add plugins
+cd ~/.vim/
+git submodule add https://github.com/fergusb/vim-foo.git bundle/foo
 
 " vim:ft=mkd
