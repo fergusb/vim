@@ -8,18 +8,22 @@
 	path = bundle/NERD_commenter
 	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/bufexplorer"]
+  ignore = dirty
 	path = bundle/bufexplorer
 	url = https://github.com/vim-scripts/bufexplorer.zip.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git
 [submodule "bundle/taglist"]
+  ignore = dirty
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "bundle/YankRing"]
+  ignore = dirty
 	path = bundle/YankRing
 	url = https://github.com/vim-scripts/YankRing.vim.git
 [submodule "bundle/timestamp"]
+  ignore = dirty
 	path = bundle/timestamp
 	url = https://github.com/vim-scripts/timestamp.vim.git
 [submodule "bundle/speeddating"]
