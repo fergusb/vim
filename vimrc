@@ -460,6 +460,46 @@ map <silent><leader>b :BufExplorer<CR>
 "set grepprg to bash vimgrep function
 set grepprg=vimgrep
 
+" convert vimoutliner to markdown
+function! VO2MD()
+  let lines = []
+  let was_body = 0
+  for line in getline(1,'$')
+    if line =~ '^\t*[^:\t]'
+      let indent_level = len(matchstr(line, '^\t*'))
+      if was_body " <= remove this line to have body lines separated
+        call add(lines, '')
+      endif " <= remove this line to have body lines separated
+      call add(lines, substitute(line, '^\(\t*\)\([^:\t].*\)', '\=repeat("#", indent_level + 1)." ".submatch(2)', ''))
+      call add(lines, '')
+      let was_body = 0
+    else
+      call add(lines, substitute(line, '^\t*: ', '', ''))
+      let was_body = 1
+    endif
+  endfor
+  silent %d _
+  call setline(1, lines)
+endfunction
+
+" convert markdown to vimoutliner
+function! MD2VO()
+  let lines = []
+  for line in getline(1,'$')
+    if line =~ '^\s*$'
+      continue
+    endif
+    if line =~ '^#\+'
+      let indent_level = len(matchstr(line, '^#\+')) - 1
+      call add(lines, substitute(line, '^#\(#*\) ', repeat("\<Tab>", indent_level), ''))
+    else
+      call add(lines, substitute(line, '^', repeat("\<Tab>", indent_level) . ': ', ''))
+    endif
+  endfor
+  silent %d _
+  call setline(1, lines)
+endfunction
+
 " Section: Unsorted {{{1
 "---------------------------------------------------------------------------"
 
