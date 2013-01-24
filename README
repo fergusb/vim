@@ -1,11 +1,8 @@
 # Fergus' vim setup
 
 ## Installation
-
-### Add Pathogen
-cd ~/.vim/
-mkdir autoload
-cp ~/Projects/config/vim-pathogen/autoload/pathogen.vim autoload/
+cd ~/
+ln -s .vim/vimrc ~/.vimrc
 
 ### Add plugins
 cd ~/.vim/
