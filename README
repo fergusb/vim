@@ -1,0 +1,8 @@
+# Fergus' vim setup
+
+## Installation
+
+## Add Pathogen
+ln -s ~/Projects/config/vim-pathogen/autoload/pathogen.vim .
+
+" vim:ft=mkd

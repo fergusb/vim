@@ -1,0 +1,1 @@
+/Users/fergus/Projects/config/vim-pathogen/autoload/pathogen.vim

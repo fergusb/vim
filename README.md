@@ -1,1 +1,0 @@
-# Fergus' vim setup
