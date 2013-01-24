@@ -1,6 +1,6 @@
 " Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
-" Version: 1.9.9
-" Modified: 2013-01-20
+" Version: 1.9.91
+" Last Modified: 2013-01-24 08:31:36 EST
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
 set nocompatible            " Use Vim settings (must be first)
@@ -203,7 +203,7 @@ if has("autocmd")
   autocmd BufEnter * :syntax sync fromstart
 
 " use templates
-  autocmd BufNewFile * silent! 0r $VIMHOME/templates/%:e.tpl
+  "autocmd BufNewFile * silent! 0r $VIMHOME/templates/%:e.tpl
   "autocmd BufNewFile *.html 0r $VIMHOME/templates/html.tpl
 
   " Default spelling dict
@@ -296,7 +296,7 @@ map <silent><C-F8> <Esc>:%!xmllint --format -<CR><CR>
 vmap <silent><C-F8> <Esc>:'<, '>!xmllint --format -<CR><CR>
 
 " F9 Toggle NERDTree
-noremap <silent><F9> :NERDTreeToggle<CR>
+"noremap <silent><F9> :NERDTreeToggle<CR>
 
 " Bash-like
 cnoremap <C-a> <Home>
@@ -314,9 +314,6 @@ nmap <leader>f :find<CR>
 
 " Fast sourcing of current file
 nmap <leader>so :source %<CR>
-
-" Jump to last modification spot - way convenient
-"map <leader> \`.
 
 " backspace in Visual mode deletes selection
 vnoremap <BS> d
@@ -402,7 +399,9 @@ endif
 " Section: Date & time {{{1
 "---------------------------------------------------------------------------"
 
-let g:timestamp_rep = '%Y-%m-%d'  " Format date thusly: YYYY-MM-DD
+"let g:timestamp_rep = '%Y-%m-%d'  " Format date thusly: YYYY-MM-DD
+let timestamp_rep = '%Y-%m-%d %I:%M:%S %Z'  " Format date thusly: YYYY-MM-DD h:m:s Z
+let timestamp_regexp = '\v\C%(<Last %([cC]hanged?|[Mm]odified):\s+)@<=.*$'
 
 "iab <silent> ddate <C-R>=strftime("%d %B %Y")<CR>
 "iab <silent> ttime <C-R>=strftime("%I:%M:%S %p %Z")<CR>
