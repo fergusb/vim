@@ -20,6 +20,7 @@ set matchpairs+=<:>         " Bounce between matches
 set noerrorbells            " Turn off error warnings
 set nostartofline           " Keep the cursor in the current column with page commands
 set novisualbell
+set nu                      " Show line numbers
 set ruler                   " Always show current position
 set secure                  " Disable security risk features
 set shell=bash              " Set shell to bash
@@ -86,7 +87,6 @@ if has("gui_running")
   set guioptions-=T " Turn off useless toolbar (toggle with F2)
   set guioptions-=r " Turn off right scrollbar (toggle with CTRL+F2)
   set cursorline
-  set nu
   set nuw=4
   set switchbuf=usetab
   set showtabline=1
@@ -121,6 +121,7 @@ endif
 else
   color tango
   set background=dark
+  set nuw=2
 endif " end gui_running
 
 " Nice window title
@@ -430,6 +431,12 @@ vmap <C-Down> :move '>+1<CR>gv
 " Pathogen
 execute pathogen#infect()
 
+" ShowMarks
+let g:showmarks_enable=0
+
+" ToggleWord
+let g:toggle_words_dict = {'python': [['if', 'elif', 'else']]}
+
 " Conversion HTML (:help 2html.vim)
 let g:html_use_css = 1
 let g:html_use_encoding = "utf8"
@@ -445,12 +452,14 @@ vnoremap <M-/>/ :call NERDComment(1, "toggle")<cr>
 "let g:acp_enableAtStartup = 0
 
 " Toggle words/vars/vals
-"map <leader>t :ToggleWord<CR>
-"map <C-S-t> :ToggleWord<CR>
-"imap <C-S-t> <ESC>:ToggleWord<CR>a
+map <leader>t :ToggleWord<CR>
+map <C-S-t> :ToggleWord<CR>
+imap <C-S-t> <ESC>:ToggleWord<CR>a
 
 " Yank ring
 "map <silent><leader>y :YRShow<CR>
+nnoremap <silent><leader>y :YRShow<CR>
+":nnoremap <silent> <F11> :YRShow<CR>
 
 " BufExplorer
 map <silent><leader>b :BufExplorer<CR>
@@ -504,7 +513,7 @@ endfunction
 "---------------------------------------------------------------------------"
 
 " Remove pesky DOS/Windows ^M
-noremap <leader>mo mmHmt:%s/<C-V><CR>//ge<cr>'tzt'm
+noremap <leader>m0 mmHmt:%s/<C-V><CR>//ge<cr>'tzt'm
 
 inoremap <S-Tab> <C-D> " Standard back indentation
 " map Shift Insert to [set paste][paste][set nopaste]
