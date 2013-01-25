@@ -1,6 +1,6 @@
 " Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
 " Version: 1.9.91
-" Last Modified: 2013-01-25 08:52:34 CET
+" Last Modified: 2013-01-25 07:18:56 EST
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
 set nocompatible            " Use Vim settings (must be first)
@@ -229,6 +229,12 @@ if has("autocmd")
     autocmd FileType css let css_fold=1
     autocmd FileType css set foldenable foldmethod=indent
     autocmd FileType css set expandtab smartindent tabstop=2 shiftwidth=2
+  augroup END
+
+  augroup mail
+    "autocmd FileType mail set spell spelllang=en_gb,de
+    autocmd FileType mail set expandtab nonu nosi noai wrap
+    autocmd FileType mail set textwidth=72 tabstop=2 shiftwidth=2 fo+=aw2tq
   augroup END
 
   augroup txt
