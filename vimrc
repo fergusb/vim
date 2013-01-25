@@ -1,6 +1,6 @@
 " Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
 " Version: 1.9.91
-" Last Modified: 2013-01-25 09:48:58 EST
+" Last Modified: 2013-01-25 11:33:24 EST
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
 set nocompatible            " Use Vim settings (must be first)
@@ -246,6 +246,7 @@ if has("autocmd")
   " Mardown syntax 
   "autocmd BufRead *.mkd set nonu ai formatoptions=tcroqn2 comments=n:>
   autocmd FileType mkd set nonu ai fo+=aw2tq comments=n:>
+  autocmd FileType otl set nonu ai fo+=aw2tq comments=n:>
 
   " in human-language files, automatically format everything at 78 chars:
   autocmd FileType mail,human set fo+=t tabstop=4 textwidth=78

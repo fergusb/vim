@@ -42,3 +42,9 @@
 [submodule "bundle/vimoutliner"]
 	path = bundle/vimoutliner
 	url = git://github.com/vimoutliner/vimoutliner.git
+[submodule "bundle/color-distinguished"]
+	path = bundle/color-distinguished
+	url = git://github.com/Lokaltog/vim-distinguished.git
+[submodule "bundle/color-hemisu"]
+	path = bundle/color-hemisu
+	url = git://github.com/noahfrederick/Hemisu.git
