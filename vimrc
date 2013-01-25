@@ -1,6 +1,6 @@
 " Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
 " Version: 1.9.91
-" Last Modified: 2013-01-25 07:18:56 EST
+" Last Modified: 2013-01-25 09:48:58 EST
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
 set nocompatible            " Use Vim settings (must be first)
