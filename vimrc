@@ -1,6 +1,6 @@
 " Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
 " Version: 1.9.95
-" Last Modified: 2013-01-25 05:14:32 EST
+" Last Modified: 2013-01-25 06:04:05 EST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -63,10 +63,10 @@ set smartcase
 " Section: Syntax {{{1
 "---------------------------------------------------------------------------"
 
-syntax enable " Show syntax highlighting and select a colorscheme
-color fbedit
-set t_Co=256
+syntax enable " syntax highlighting
 set synmaxcol=2048 " switch off for wide documents
+set t_Co=256 " force 256color
+color fbedit
 
 filetype plugin on
 filetype indent on
