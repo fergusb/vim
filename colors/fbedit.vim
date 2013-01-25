@@ -1,7 +1,7 @@
-" Vim color file: fbedit
+" vim color file: fbedit
 " Maintainer: Fergus Bremner
-" Last Modified: 2013-01-25 08:59:27 CET
 " Email: <fergus.bremner@gmail.com>
+" Last Modified: 2013-01-25 04:39:35 EST
 " A clean color scheme based: gui light, console dark
 
 " Colors are as follows:
@@ -19,7 +19,8 @@
 " Colorscheme initialization "{{{
 " ---------------------------------------------------------------------
 if &t_Co != 256 && ! has("gui_running")
-  echomsg "Switch to a GUI-based vim or a 256-color terminal"
+  echomsg "Please switch to a GUI-based vim or a 256-color terminal"
+	set background=dark
 elseif (has("gui_running"))
 	set background=light
 else
@@ -43,7 +44,7 @@ hi NonText		      gui=none   guifg=#555555   guibg=white   	ctermfg=darkgray
 
 hi Boolean          gui=none   guifg=#990066   								ctermfg=red 			cterm=none
 hi Character        gui=bold   guifg=red      							 	ctermfg=yellow    cterm=none
-hi Comment          gui=none   guifg=#555555   								ctermfg=238       cterm=none
+hi Comment          gui=none   guifg=#555555   								ctermfg=241       cterm=none
 hi Constant         gui=none   guifg=black     								ctermfg=darkYellow
 hi Define           gui=none   guifg=#990066   								ctermfg=blue      cterm=none
 hi Float            gui=none   guifg=red       								ctermfg=208       cterm=none
@@ -62,7 +63,7 @@ hi Title            gui=none   guifg=Maroon    								ctermfg=white   	cterm=bo
 hi Todo             gui=none   guifg=black     guibg=yellow   ctermfg=darkred   ctermbg=228
 hi Type             gui=none   guifg=#990066   								ctermfg=gray 			cterm=bold
                                
-hi LineNr           gui=none   guifg=#999999   guibg=#E8E8E8 	ctermfg=236  			ctermbg=233 			cterm=none
+hi LineNr           gui=none   guifg=#999999   guibg=#E8E8E8 	ctermfg=238  			ctermbg=234 			cterm=none
 hi StatusLine       gui=none   guifg=white     guibg=#555555 	ctermfg=black 		ctermbg=green 		cterm=bold
 hi StatusLineNC     gui=none   guifg=white     guibg=#555555 	ctermfg=lightgray ctermbg=22
 hi VertSplit        gui=none   guifg=white     guibg=#333333
@@ -79,7 +80,7 @@ hi MatchParen       gui=none   guibg=gray
 
 hi ModeMsg          gui=none
 hi MoreMsg          gui=reverse
-hi Question         gui=none   guifg=red        guibg=none
+hi Question         gui=none   guifg=red      guibg=none
 hi WarningMsg       gui=none	 guifg=red
 
 hi DiffAdd       		gui=none   ctermfg=gray   ctermbg=blue     cterm=none
