@@ -1,6 +1,6 @@
 " Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
 " Version: 1.9.91
-" Last Modified: 2013-01-25 11:33:24 EST
+" Last Modified: 2013-01-25 07:57:13 CET
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
 set nocompatible            " Use Vim settings (must be first)
@@ -63,6 +63,8 @@ set smartcase
 "---------------------------------------------------------------------------"
 
 syntax enable " Show syntax highlighting and select a colorscheme
+color fbedit
+set t_Co=256
 set synmaxcol=2048 " switch off for wide documents
 
 filetype plugin on
@@ -72,7 +74,6 @@ filetype indent on
 "---------------------------------------------------------------------------"
 
 if has("gui_running")
-  color fbedit
   if has("gui_gtk2") " GTK/Linux font
     set guifont=Screen\ 9
     set columns=79
@@ -119,8 +120,6 @@ endif
 "  }}}
 
 else
-  color tango
-  set background=dark
   set nuw=2
 endif " end gui_running
 

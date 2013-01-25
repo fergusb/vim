@@ -1,9 +1,9 @@
 " Vim color file: fbedit
 " Maintainer: Fergus Bremner
-" Last Change: 2012-01-04
+" Last Modified: 2013-01-25 07:55:53 CET
 " Email: <fergus.bremner@gmail.com>
+" A clean color scheme based: gui light, console dark
 
-" A clean, light color scheme based on BBEdit defaults
 " Colors are as follows:
 " Black   #202020 
 " Blue    #000099
@@ -18,97 +18,90 @@
 
 " Colorscheme initialization "{{{
 " ---------------------------------------------------------------------
-set background=light
 hi clear
 if exists("syntax_on")
   syntax reset
 endif
+
+if (has("gui_running"))
+	set background=light
+else
+	set background=dark
+endif
+
 let colors_name="fbedit"
 
 "}}}
 
-if (has("gui_running"))
-    let s:vmode       = "gui"
-    let s:black       = "#202020"
-    let s:yellow      = "#ffffcc"
-    let s:grey      = "#cb4b16"
-    let s:red         = "#dc322f"
-    let s:maroon     = "#d33682"
-    let s:pink      = "#6c71c4"
-    let s:blue        = "#268bd2"
-    let s:rust        = "#2aa198"
-    let s:green       = "#007777"
-    let s:white       = "#FFFFFF"
-endif
-" Terminal colours (dark)
+hi Cursor 		      gui=none   guifg=white     guibg=#555555 	ctermfg=11 
 
-" Gvim colours (light)
-hi Cursor 		      gui=none       guifg=white       guibg=#555555
+hi Normal 		      gui=none   guifg=black     guibg=white   	ctermfg=250   		ctermbg=black cterm=none
+hi NonText		      gui=none   guifg=#555555   guibg=white   	ctermfg=darkgray
 
-hi Normal 		      gui=none       guifg=black       guibg=white
-hi NonText		      gui=none       guifg=#555555     guibg=white
+hi Boolean          gui=none   guifg=#990066   								ctermfg=red 			cterm=none
+hi Character        gui=bold   guifg=red      							 	ctermfg=yellow    cterm=none
+hi Comment          gui=none   guifg=#555555   								ctermfg=238       cterm=none
+hi Constant         gui=none   guifg=black     								ctermfg=darkYellow
+hi Define           gui=none   guifg=#990066   								ctermfg=blue      cterm=none
+hi Float            gui=none   guifg=red       								ctermfg=208       cterm=none
+hi Function         gui=none   guifg=#000099   								ctermfg=darkblue  cterm=none
+hi Identifier       gui=none   guifg=black     								ctermfg=blue
+hi Include          gui=none   guifg=#000099   guibg=bg   		ctermfg=darkblue  cterm=none
+hi Macro            gui=none   guifg=#FF3399   guibg=bg   		ctermfg=red   		cterm=none
+hi Number           gui=none   guifg=black                		ctermfg=magenta
+hi PreProc          gui=none   guifg=#990066   								ctermfg=blue
+hi Special          gui=none   guifg=black     								ctermfg=gray   		cterm=none
+hi Statement        gui=none   guifg=#000099   								ctermfg=gray
+hi StorageClass     gui=none   guifg=#000099   								ctermfg=gray
+hi String           gui=none   guifg=#FF3399   								ctermfg=yellow
+hi Structure        gui=none   guifg=#990066   								ctermfg=red
+hi Title            gui=none   guifg=Maroon    								ctermfg=white   	cterm=bold
+hi Todo             gui=none   guifg=black     guibg=yellow   ctermfg=darkred   ctermbg=228
+hi Type             gui=none   guifg=#990066   								ctermfg=gray 			cterm=bold
+                               
+hi LineNr           gui=none   guifg=#999999   guibg=#E8E8E8 	ctermfg=236  			ctermbg=233 			cterm=none
+hi StatusLine       gui=none   guifg=white     guibg=#555555 	ctermfg=black 		ctermbg=green 		cterm=bold
+hi StatusLineNC     gui=none   guifg=white     guibg=#555555 	ctermfg=lightgray ctermbg=22
+hi VertSplit        gui=none   guifg=white     guibg=#333333
+                               
+hi Directory        gui=none   guifg=darkblue
+hi Error            gui=none   guifg=white      guibg=red  		ctermfg=white 		ctermbg=darkred
+hi Folded           gui=none   guifg=#202020    guibg=#B2B2B2 ctermfg=black 		ctermbg=darkgray
+hi Search           gui=none   guibg=yellow 								 	ctermfg=grey 			ctermbg=blue			cterm=none
+hi IncSearch    		gui=none   guibg=yellow                   ctermfg=black 		ctermbg=228 			cterm=none
+hi Visual           gui=none   guibg=#b8d5ff    guifg=black  	ctermbg=black 		ctermfg=228 			cterm=reverse
 
-hi Boolean          gui=none       guifg=#990066
-hi Character        gui=bold       guifg=red
-hi Comment          gui=none       guifg=#555555
-hi Constant         gui=none       guifg=black
-hi Define           gui=none       guifg=#990066     guibg=bg
-hi Float            gui=none       guifg=red
-hi Function         gui=none       guifg=#000099
-hi Identifier       gui=none       guifg=black
-hi Include          gui=none       guifg=#000099     guibg=bg
-hi Macro            gui=none       guifg=#FF3399     guibg=bg
-hi Number           gui=none       guifg=black
-hi PreProc          gui=none       guifg=#990066
-hi Special          gui=none       guifg=black
-hi Statement        gui=none       guifg=#000099
-hi StorageClass     gui=none       guifg=#000099     guibg=bg
-hi String           gui=none       guifg=#FF3399
-hi Structure        gui=none       guifg=#990066     guibg=bg
-hi Title            gui=none       guifg=Maroon
-hi Todo             gui=none       guifg=black       guibg=yellow
-hi Type             gui=none       guifg=#990066
-
-hi LineNr           gui=none       guifg=#999999     guibg=#E8E8E8
-hi StatusLine       gui=none       guifg=white       guibg=#555555
-hi StatusLineNC     gui=none       guifg=white       guibg=#555555
-hi VertSplit        gui=none       guifg=white       guibg=#333333
-
-hi Directory        gui=none       guifg=darkblue
-hi Error            gui=none       guifg=white       guibg=red
-hi Folded           gui=none       guifg=#202020     guibg=#B2B2B2
-hi Search           gui=none       guibg=yellow
-hi Visual           gui=none       guibg=#b8d5ff     guifg=black
-
-hi WildMenu         gui=none       guibg=gray        guifg=black
-hi MatchParen       gui=none       guibg=gray
+hi WildMenu         gui=none   guibg=gray    		guifg=black
+hi MatchParen       gui=none   guibg=gray
 
 hi ModeMsg          gui=none
 hi MoreMsg          gui=reverse
-hi Question         gui=none       guifg=Red         guibg=NONE
-hi WarningMsg       gui=none       guifg=Red
+hi Question         gui=none   guifg=Red        guibg=NONE
+hi WarningMsg       gui=none	 guifg=Red
 
-hi DiffDelete       gui=none
-hi DiffText         gui=none
+hi DiffAdd       		gui=none   ctermfg=gray ctermbg=blue cterm=none
+hi DiffChange       gui=none   ctermfg=gray ctermbg=darkgray cterm=none
+hi DiffDelete       gui=none   ctermfg=gray ctermbg=none cterm=none
+hi DiffText         gui=none   ctermfg=gray ctermbg=yellow cterm=none
 
 " current line
-hi CurrentLine      gui=none       guibg=#FFFFBB
-hi CursorLine       gui=none       guibg=#FFFFBB
-hi CursorColumn     gui=none       guibg=#FFEEDD
+hi CurrentLine      gui=none   guibg=#FFFFBB
+hi CursorLine       gui=none   guibg=#FFFFBB
+hi CursorColumn     gui=none   guibg=#FFEEDD
 
 " spell check
-hi BadWord          gui=bold       guifg=#000099     guibg=#FFDDDD
-hi DoubleWord       gui=bold       guifg=#000099     guibg=#FFEECC
+hi BadWord          gui=bold   guifg=#000099   guibg=#FFDDDD
+hi DoubleWord       gui=bold   guifg=#000099   guibg=#FFEECC
 
 if v:version >= 700
-	hi Pmenu          gui=none       guifg=#4d4d4d     guibg=#dbdbdb     cterm=bold     ctermbg=DarkGreen ctermfg=Gray
-	hi PMenuSel       gui=none       guifg=#FFFFFF     guibg=#7499bf     cterm=bold     ctermbg=Yellow    ctermfg=Gray
-	hi PmenuSbar      gui=none       guifg=fg          guibg=#41609e     cterm=bold     ctermbg=DarkGreen 	
-	hi PmenuThumb     gui=none       guifg=bg          guibg=#bdcae3     cterm=bold     ctermbg=Yellow
-	hi SpellBad       gui=undercurl  guisp=Red                           ctermbg=Red
-  hi SpellRare      gui=undercurl  guisp=Orange                        ctermbg=Red
-  hi SpellLocal     gui=undercurl  guisp=Orange                        ctermbg=Red
-  hi SpellCap       gui=undercurl  guisp=Yellow                        ctermbg=Yellow
+	hi Pmenu          gui=none       guifg=#4d4d4d     guibg=#dbdbdb     cterm=bold     ctermbg=darkgreen ctermfg=Gray
+	hi PMenuSel       gui=none       guifg=#FFFFFF     guibg=#7499bf     cterm=bold     ctermbg=yellow    ctermfg=Gray
+	hi PmenuSbar      gui=none       guifg=fg          guibg=#41609e     cterm=bold     ctermbg=darkgreen 	
+	hi PmenuThumb     gui=none       guifg=bg          guibg=#bdcae3     cterm=bold     ctermbg=yellow
+	hi SpellBad       gui=undercurl  guisp=red                           ctermbg=red
+  hi SpellRare      gui=undercurl  guisp=orange                        ctermbg=red
+  hi SpellLocal     gui=undercurl  guisp=orange                        ctermbg=red
+  hi SpellCap       gui=undercurl  guisp=yellow                        ctermbg=yellow
 endif
 
 " css
