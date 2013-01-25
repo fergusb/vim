@@ -1,6 +1,6 @@
 " Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
 " Version: 1.9.91
-" Last Modified: 2013-01-24 08:31:36 EST
+" Last Modified: 2013-01-25 08:52:34 CET
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
 set nocompatible            " Use Vim settings (must be first)
@@ -427,7 +427,7 @@ vmap <C-Down> :move '>+1<CR>gv
 " Section: Plugin-dependent settings {{{1
 "---------------------------------------------------------------------------"
 
-" Pathogen
+" Pathogen - make sure this comes first
 execute pathogen#infect()
 
 " ShowMarks
@@ -443,9 +443,9 @@ let g:use_xhtml = 1
 
 " NERD_Commenter menu
 let g:NERDMenuMode = 3
-inoremap <M-/> <ESC>:call NERDComment(0, "toggle")<cr>a
-nnoremap <M-/>/ :call NERDComment(0, "toggle")<cr>
-vnoremap <M-/>/ :call NERDComment(1, "toggle")<cr>
+"inoremap <M-/> <ESC>:call NERDComment(0, "toggle")<cr>a
+"nnoremap <M-/>/ :call NERDComment(0, "toggle")<cr>
+"vnoremap <M-/>/ :call NERDComment(1, "toggle")<cr>
 
 " Disable autocomplpop plugin at startup
 "let g:acp_enableAtStartup = 0
