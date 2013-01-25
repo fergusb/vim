@@ -1,6 +1,6 @@
 " Vim color file: fbedit
 " Maintainer: Fergus Bremner
-" Last Modified: 2013-01-25 07:55:53 CET
+" Last Modified: 2013-01-25 08:59:27 CET
 " Email: <fergus.bremner@gmail.com>
 " A clean color scheme based: gui light, console dark
 
@@ -18,22 +18,25 @@
 
 " Colorscheme initialization "{{{
 " ---------------------------------------------------------------------
-hi clear
-if exists("syntax_on")
-  syntax reset
-endif
-
-if (has("gui_running"))
+if &t_Co != 256 && ! has("gui_running")
+  echomsg "Switch to a GUI-based vim or a 256-color terminal"
+elseif (has("gui_running"))
 	set background=light
 else
 	set background=dark
+endif
+
+hi clear
+
+if exists("syntax_on")
+  syntax reset
 endif
 
 let colors_name="fbedit"
 
 "}}}
 
-hi Cursor 		      gui=none   guifg=white     guibg=#555555 	ctermfg=11 
+hi Cursor 		      gui=none   guifg=white     guibg=#555555 	ctermbg=11 
 
 hi Normal 		      gui=none   guifg=black     guibg=white   	ctermfg=250   		ctermbg=black cterm=none
 hi NonText		      gui=none   guifg=#555555   guibg=white   	ctermfg=darkgray
@@ -76,28 +79,28 @@ hi MatchParen       gui=none   guibg=gray
 
 hi ModeMsg          gui=none
 hi MoreMsg          gui=reverse
-hi Question         gui=none   guifg=Red        guibg=NONE
-hi WarningMsg       gui=none	 guifg=Red
+hi Question         gui=none   guifg=red        guibg=none
+hi WarningMsg       gui=none	 guifg=red
 
-hi DiffAdd       		gui=none   ctermfg=gray ctermbg=blue cterm=none
-hi DiffChange       gui=none   ctermfg=gray ctermbg=darkgray cterm=none
-hi DiffDelete       gui=none   ctermfg=gray ctermbg=none cterm=none
-hi DiffText         gui=none   ctermfg=gray ctermbg=yellow cterm=none
+hi DiffAdd       		gui=none   ctermfg=gray   ctermbg=blue     cterm=none
+hi DiffChange       gui=none   ctermfg=gray   ctermbg=darkgray cterm=none
+hi DiffDelete       gui=none   ctermfg=gray   ctermbg=none     cterm=none
+hi DiffText         gui=none   ctermfg=gray   ctermbg=yellow   cterm=none
 
 " current line
-hi CurrentLine      gui=none   guibg=#FFFFBB
-hi CursorLine       gui=none   guibg=#FFFFBB
-hi CursorColumn     gui=none   guibg=#FFEEDD
+hi CurrentLine      gui=none   guibg=#FFFFBB   ctermfg=yellow   ctermbg=red   cterm=none
+hi CursorLine       gui=none   guibg=#FFFFBB   ctermfg=yellow   ctermbg=red   cterm=none
+hi CursorColumn     gui=none   guibg=#FFEEDD   ctermbg=yellow   cterm=none
 
 " spell check
 hi BadWord          gui=bold   guifg=#000099   guibg=#FFDDDD
 hi DoubleWord       gui=bold   guifg=#000099   guibg=#FFEECC
 
 if v:version >= 700
-	hi Pmenu          gui=none       guifg=#4d4d4d     guibg=#dbdbdb     cterm=bold     ctermbg=darkgreen ctermfg=Gray
-	hi PMenuSel       gui=none       guifg=#FFFFFF     guibg=#7499bf     cterm=bold     ctermbg=yellow    ctermfg=Gray
-	hi PmenuSbar      gui=none       guifg=fg          guibg=#41609e     cterm=bold     ctermbg=darkgreen 	
-	hi PmenuThumb     gui=none       guifg=bg          guibg=#bdcae3     cterm=bold     ctermbg=yellow
+	hi Pmenu          gui=none       guifg=#4d4d4d     guibg=#dbdbdb     cterm=bold    ctermbg=darkgreen ctermfg=gray
+	hi PMenuSel       gui=none       guifg=#FFFFFF     guibg=#7499bf     cterm=bold    ctermbg=yellow    ctermfg=gray
+	hi PmenuSbar      gui=none       guifg=fg          guibg=#41609e     cterm=bold    ctermbg=darkgreen 	
+	hi PmenuThumb     gui=none       guifg=bg          guibg=#bdcae3     cterm=bold    ctermbg=yellow
 	hi SpellBad       gui=undercurl  guisp=red                           ctermbg=red
   hi SpellRare      gui=undercurl  guisp=orange                        ctermbg=red
   hi SpellLocal     gui=undercurl  guisp=orange                        ctermbg=red
