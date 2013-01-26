@@ -1,6 +1,6 @@
 " Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
 " Version: 1.9.95
-" Last Modified: 2013-01-26 11:23:36 EST
+" Last Modified: 2013-01-26 09:20:25 CET
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -66,6 +66,7 @@ set smartcase
 syntax enable " syntax highlighting
 set synmaxcol=2048 " switch off for wide documents
 set t_Co=256 " force 256color
+set modelines
 color fbedit
 
 filetype plugin on
