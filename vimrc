@@ -1,6 +1,6 @@
 " Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
 " Version: 1.9.95
-" Last Modified: 2013-01-26 09:27:23 CET
+" Last Modified: 2013-01-26 10:49:41 CET
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -408,8 +408,8 @@ endif
 "---------------------------------------------------------------------------"
 
 "let g:timestamp_rep = '%Y-%m-%d'  " Format date thusly: YYYY-MM-DD
-let timestamp_rep = '%Y-%m-%d %I:%M:%S %Z'  " Format date thusly: YYYY-MM-DD h:m:s Z
-let timestamp_regexp = '\v\C%(<Last %([cC]hanged?|[Mm]odified):\s+)@<=.*$'
+let g:timestamp_rep = '%Y-%m-%d %I:%M:%S %Z'  " Format date thusly: YYYY-MM-DD h:m:s Z
+let g:timestamp_regexp = '\v\C%(<Last %([cC]hanged?|[Mm]odified):\s+)@<=.*$'
 
 "iab <silent> ddate <C-R>=strftime("%d %B %Y")<CR>
 "iab <silent> ttime <C-R>=strftime("%I:%M:%S %p %Z")<CR>
