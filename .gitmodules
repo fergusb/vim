@@ -52,3 +52,7 @@
 	path = bundle/vimux
 	url = git://github.com/benmills/vimux.git
   ignore = dirty
+[submodule "bundle/ToggleWord"]
+	path = bundle/ToggleWord
+	url = git://github.com/vim-scripts/toggle_words.vim.git
+  ignore = dirty

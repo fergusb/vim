@@ -1,6 +1,6 @@
 " Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
 " Version: 1.9.95
-" Last Modified: 2013-01-26 10:50:48 EST
+" Last Modified: 2013-01-26 11:23:36 EST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -437,11 +437,8 @@ vmap <C-Down> :move '>+1<CR>gv
 " Pathogen - make sure this comes first
 execute pathogen#infect()
 
-" ShowMarks
-let g:showmarks_enable=0
-
-" ToggleWord
-let g:toggle_words_dict = {'python': [['if', 'elif', 'else']]}
+" BufExplorer
+map <silent><leader>b :BufExplorer<CR>
 
 " Conversion HTML (:help 2html.vim)
 let g:html_use_css = 1
@@ -457,7 +454,21 @@ let g:NERDMenuMode = 3
 " Disable autocomplpop plugin at startup
 "let g:acp_enableAtStartup = 0
 
-" Toggle words/vars/vals
+" ShowMarks
+let g:showmarks_enable=0
+
+" taglist
+nnoremap <leader>T :Tlist<CR>
+nnoremap <leader>To :TlistOpen<CR>
+nnoremap <leader>Tc :TlistClose<CR>
+nnoremap <leader>Tu :TlistUpdate<CR>
+nnoremap <leader>Ts :TlistSessionSave tlist<CR>
+nnoremap <leader>Tl :TlistSessionLoad tlist<CR>
+
+" ToggleWords/vars/vals
+let g:toggle_words_dict = {'python': [['if', 'elif', 'else']]}
+
+" ToggleWord
 map <leader>t :ToggleWord<CR>
 map <C-S-t> :ToggleWord<CR>
 imap <C-S-t> <ESC>:ToggleWord<CR>a
@@ -466,9 +477,6 @@ imap <C-S-t> <ESC>:ToggleWord<CR>a
 "map <silent><leader>y :YRShow<CR>
 nnoremap <silent><leader>y :YRShow<CR>
 ":nnoremap <silent> <F11> :YRShow<CR>
-
-" BufExplorer
-map <silent><leader>b :BufExplorer<CR>
 
 " vimux
 " prompt for a command to run map
