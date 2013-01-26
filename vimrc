@@ -1,6 +1,6 @@
 " Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
 " Version: 1.9.95
-" Last Modified: 2013-01-26 09:20:25 CET
+" Last Modified: 2013-01-26 09:27:23 CET
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -478,13 +478,6 @@ imap <C-S-t> <ESC>:ToggleWord<CR>a
 "map <silent><leader>y :YRShow<CR>
 nnoremap <silent><leader>y :YRShow<CR>
 ":nnoremap <silent> <F11> :YRShow<CR>
-
-" vimux
-" prompt for a command to run map
-nnoremap  <leader>vp :VimuxPromptCommand<CR>
-" inspect runner pane map
-nnoremap <leader>vi :VimuxInspectRunner<CR>
-
 
 " Section: Experimental {{{1
 "---------------------------------------------------------------------------"
