@@ -48,3 +48,7 @@
 [submodule "bundle/color-hemisu"]
 	path = bundle/color-hemisu
 	url = git://github.com/noahfrederick/Hemisu.git
+[submodule "bundle/vimux"]
+	path = bundle/vimux
+	url = git://github.com/benmills/vimux.git
+  ignore = dirty

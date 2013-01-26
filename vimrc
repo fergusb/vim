@@ -1,6 +1,6 @@
 " Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
 " Version: 1.9.95
-" Last Modified: 2013-01-25 06:04:05 EST
+" Last Modified: 2013-01-26 10:50:48 EST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -469,6 +469,13 @@ nnoremap <silent><leader>y :YRShow<CR>
 
 " BufExplorer
 map <silent><leader>b :BufExplorer<CR>
+
+" vimux
+" prompt for a command to run map
+nnoremap  <leader>vp :VimuxPromptCommand<CR>
+" inspect runner pane map
+nnoremap <leader>vi :VimuxInspectRunner<CR>
+
 
 " Section: Experimental {{{1
 "---------------------------------------------------------------------------"
