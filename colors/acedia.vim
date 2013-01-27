@@ -1,7 +1,7 @@
 " vim color file: acedia
 " Maintainer: Fergus Bremner
 " Email: <fergus.bremner@gmail.com>
-" Last Modified: 2013-01-27 03:22:06 EST
+" Last Modified: 2013-01-27 04:04:51 EST
 " A clean color scheme based: gui light, console dark
 
 " Colors are as follows:
@@ -42,10 +42,10 @@ hi Cursor 		      gui=none   guifg=white     guibg=#555555 	ctermbg=11
 hi Normal 		      gui=none   guifg=black     guibg=white   	ctermfg=250   		ctermbg=black cterm=none
 hi NonText		      gui=none   guifg=#555555   guibg=white   	ctermfg=darkgray
 
-hi Boolean          gui=none   guifg=#990066   								ctermfg=red 			cterm=none
+hi Boolean          gui=none   guifg=#990066   								ctermfg=magenta 	cterm=none
 hi Character        gui=bold   guifg=red      							 	ctermfg=yellow    cterm=none
 hi Comment          gui=none   guifg=#555555   								ctermfg=241       cterm=none
-hi Constant         gui=none   guifg=black     								ctermfg=darkYellow
+hi Constant         gui=none   guifg=black     								ctermfg=darkyellow
 hi Define           gui=none   guifg=#990066   								ctermfg=blue      cterm=none
 hi Float            gui=none   guifg=red       								ctermfg=208       cterm=none
 hi Function         gui=none   guifg=#000099   								ctermfg=darkblue  cterm=none
@@ -59,9 +59,9 @@ hi Statement        gui=none   guifg=#000099   								ctermfg=gray
 hi StorageClass     gui=none   guifg=#000099   								ctermfg=gray
 hi String           gui=none   guifg=#FF3399   								ctermfg=yellow
 hi Structure        gui=none   guifg=#990066   								ctermfg=red
-hi Title            gui=none   guifg=Maroon    								ctermfg=white   	cterm=bold
+hi Title            gui=none   guifg=Maroon    								ctermfg=white   	cterm=none
 hi Todo             gui=none   guifg=black     guibg=yellow   ctermfg=darkred   ctermbg=228
-hi Type             gui=none   guifg=#990066   								ctermfg=gray 			cterm=bold
+hi Type             gui=none   guifg=#990066   								ctermfg=gray 			cterm=none
                                
 hi LineNr           gui=none   guifg=#999999   guibg=#E8E8E8 	ctermfg=239  			ctermbg=235 			cterm=none
 hi StatusLine       gui=none   guifg=white     guibg=#555555 	ctermfg=black 		ctermbg=white 		cterm=reverse
