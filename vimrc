@@ -1,6 +1,6 @@
 " Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
 " Version: 1.9.95
-" Last Modified: 2013-01-26 10:49:41 CET
+" Last Modified: 2013-01-27 02:46:18 EST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -66,8 +66,9 @@ set smartcase
 syntax enable " syntax highlighting
 set synmaxcol=2048 " switch off for wide documents
 set t_Co=256 " force 256color
-set modelines
-color fbedit
+set modeline
+set modelines=5
+color acedia
 
 filetype plugin on
 filetype indent on

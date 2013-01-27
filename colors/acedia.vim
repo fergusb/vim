@@ -1,7 +1,7 @@
-" vim color file: fbedit
+" vim color file: acedia
 " Maintainer: Fergus Bremner
 " Email: <fergus.bremner@gmail.com>
-" Last Modified: 2013-01-25 04:39:35 EST
+" Last Modified: 2013-01-27 03:22:06 EST
 " A clean color scheme based: gui light, console dark
 
 " Colors are as follows:
@@ -33,7 +33,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name="fbedit"
+let colors_name="acedia"
 
 "}}}
 
@@ -63,10 +63,10 @@ hi Title            gui=none   guifg=Maroon    								ctermfg=white   	cterm=bo
 hi Todo             gui=none   guifg=black     guibg=yellow   ctermfg=darkred   ctermbg=228
 hi Type             gui=none   guifg=#990066   								ctermfg=gray 			cterm=bold
                                
-hi LineNr           gui=none   guifg=#999999   guibg=#E8E8E8 	ctermfg=238  			ctermbg=234 			cterm=none
-hi StatusLine       gui=none   guifg=white     guibg=#555555 	ctermfg=black 		ctermbg=green 		cterm=bold
-hi StatusLineNC     gui=none   guifg=white     guibg=#555555 	ctermfg=lightgray ctermbg=22
-hi VertSplit        gui=none   guifg=white     guibg=#333333
+hi LineNr           gui=none   guifg=#999999   guibg=#E8E8E8 	ctermfg=239  			ctermbg=235 			cterm=none
+hi StatusLine       gui=none   guifg=white     guibg=#555555 	ctermfg=black 		ctermbg=white 		cterm=reverse
+hi StatusLineNC     gui=none   guifg=white     guibg=#555555 	ctermfg=black     ctermbg=darkgray
+hi VertSplit        gui=none   guifg=white     guibg=#333333  ctermfg=black     ctermbg=darkgray  cterm=reverse
                                
 hi Directory        gui=none   guifg=darkblue
 hi Error            gui=none   guifg=white      guibg=red  		ctermfg=white 		ctermbg=darkred
