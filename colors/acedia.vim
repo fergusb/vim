@@ -55,7 +55,7 @@ hi Identifier       gui=none   guifg=#000099                   ctermfg=blue
 hi Function         gui=none   guifg=#000099                   ctermfg=darkblue    cterm=none
 
 hi Statement        gui=none   guifg=#000099                   ctermfg=blue
-hi Conditional      gui=none   guifg=#000099                  ctermfg=white    cterm=none
+hi Conditional      gui=none   guifg=#000099                  ctermfg=darkblue    cterm=none
 hi Repeat           gui=none   guifg=#990066                   ctermfg=darkblue    cterm=none
 hi Label            gui=none   guifg=#990066                   ctermfg=darkblue    cterm=none
 hi Operator         gui=none   guifg=black                     ctermfg=white    cterm=none
@@ -68,8 +68,8 @@ hi Include          gui=none   guifg=#000099   guibg=bg        ctermfg=darkblue 
 hi Macro            gui=none   guifg=#FF3399   guibg=bg       ctermfg=magenta    cterm=none
 hi PreCondit        gui=none   guifg=#990066                  ctermfg=darkmagenta
 
-hi Type             gui=none   guifg=#990066                   ctermfg=darkmagenta   cterm=none
-hi StorageClass     gui=none   guifg=#000099                   ctermfg=darkblue
+hi Type             gui=none   guifg=#990066                   ctermfg=white   cterm=none
+hi StorageClass     gui=none   guifg=#000099                   ctermfg=darkyellow
 hi Structure        gui=none   guifg=#990066                   ctermfg=darkblue
 hi Typedef          gui=none   guifg=#990066                   ctermfg=red
 
