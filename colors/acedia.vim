@@ -105,10 +105,10 @@ hi WarningMsg       gui=none   guifg=red
 hi BadWord          gui=bold   guifg=#000099   guibg=#FFDDDD
 hi DoubleWord       gui=bold   guifg=#000099   guibg=#FFEECC
 
-hi DiffAdd          gui=none    ctermfg=gray   ctermbg=blue     cterm=none
-hi DiffChange       gui=none    ctermfg=gray   ctermbg=darkgray cterm=none
-hi DiffDelete       gui=none    ctermfg=gray   ctermbg=none     cterm=none
-hi DiffText         gui=none    ctermfg=gray   ctermbg=yellow   cterm=none
+hi DiffAdd          gui=none    ctermfg=black   ctermbg=blue     cterm=none
+hi DiffChange       gui=none    ctermfg=black   ctermbg=magenta cterm=none
+hi DiffDelete       gui=none    ctermfg=black   ctermbg=none     cterm=none
+hi DiffText         gui=none    ctermfg=black   ctermbg=yellow   cterm=none
 "}}}
 " UI - chrome {{{
 hi CurrentLine      gui=none   guibg=#FFFFBB   ctermfg=yellow   ctermbg=red   cterm=none
