@@ -44,7 +44,7 @@ hi NonText          gui=none   guifg=#555555   guibg=white     ctermfg=darkgray
 
 hi Comment          gui=none   guifg=#555555                   ctermfg=240   cterm=none
 
-hi Constant         gui=none   guifg=black                     ctermfg=white
+hi Constant         gui=none   guifg=#007777                     ctermfg=white
 hi String           gui=none   guifg=#FF3399                   ctermfg=magenta   cterm=none
 hi Character        gui=bold   guifg=red                       ctermfg=yellow   cterm=none
 hi Number           gui=none   guifg=black                     ctermfg=magenta
@@ -69,7 +69,7 @@ hi Macro            gui=none   guifg=#FF3399   guibg=bg       ctermfg=magenta   
 hi PreCondit        gui=none   guifg=#990066                  ctermfg=darkmagenta
 
 hi Type             gui=none   guifg=#990066                   ctermfg=white   cterm=none
-hi StorageClass     gui=none   guifg=#000099                   ctermfg=darkyellow
+hi StorageClass     gui=none   guifg=#000099                   ctermfg=darkblue
 hi Structure        gui=none   guifg=#990066                   ctermfg=darkblue
 hi Typedef          gui=none   guifg=#990066                   ctermfg=red
 
@@ -86,7 +86,7 @@ hi Todo             gui=none   guifg=black     guibg=yellow    ctermfg=black   c
 
 "}}}
 " UI - utils {{{
-hi Title            gui=none   guifg=maroon                    ctermfg=none   cterm=none
+hi Title            gui=none   guifg=maroon                    ctermfg=red   cterm=none
 hi Directory        gui=none   guifg=darkblue                  ctermbg=darkblue
 hi Folded           gui=none   guifg=#202020    guibg=#B2B2B2  ctermfg=black     ctermbg=darkgray
 hi FoldColumn       gui=none   guifg=#202020    guibg=#B2B2B2  ctermfg=red     ctermbg=darkgray
@@ -99,7 +99,7 @@ hi MatchParen       gui=none   guibg=gray
 
 hi ModeMsg          gui=none
 hi MoreMsg          gui=reverse
-hi Question         gui=none   guifg=red      guibg=none
+hi Question         gui=none   guifg=red      guibg=yellow
 hi WarningMsg       gui=none   guifg=red
 
 hi BadWord          gui=bold   guifg=#000099   guibg=#FFDDDD
@@ -132,11 +132,19 @@ if v:version >= 700
 endif
 "}}}
 " SYNTAX - css {{{
-hi cssTagName       gui=none       guifg=black   ctermfg=white
-hi cssBraces        gui=none       guifg=black   ctermfg=white
-hi cssImportant     gui=none       guifg=#000099 ctermfg=yellow
+hi cssAttr          gui=none       guifg=#990066   ctermfg=gray
+hi cssBraces        gui=none       guifg=black     ctermfg=white
+hi cssClassName     gui=none       guifg=#000099   ctermfg=cyan
+hi cssColor         gui=none       guifg=#AA0000   ctermfg=gray
+hi cssIdentifier    gui=none       guifg=black     ctermfg=white
+hi cssImportant     gui=none       guifg=#000099   ctermfg=yellow
 hi cssMedia         gui=none       guifg=#000099
-hi cssClassName     gui=none       guifg=#000099   ctermfg=blue
+hi cssNumber        gui=none       guifg=black     ctermfg=red
+hi cssProp          gui=none       guifg=#990066   ctermfg=gray
+hi cssPrefix        gui=none       guifg=black     ctermfg=white
+hi cssPseudo        gui=none       guifg=#990066   ctermfg=magenta
+hi cssTagName       gui=none       guifg=black     ctermfg=white
+hi cssUnits         gui=none       guifg=red       ctermfg=red
 "}}}
 " SYNTAX - html {{{
 hi htmlBoldUnderline  gui=underline
