@@ -23,7 +23,7 @@ set novisualbell
 set nu                      " Show line numbers
 set ruler                   " Always show current position
 set secure                  " Disable security risk features
-set shell=bash              " Set shell to bash
+set shell=zsh               " Set shell to zsh
 set shortmess=a             " Short error messages
 set so=7                    " Set 7 lines to the curors - when moving vertically
 set t_vb=                   " Disable error beeps
@@ -281,7 +281,7 @@ let g:mapleader = ","
 
 "-- F-keys --"
 
-if has("gui_running")
+if has("gui_gtk2") " GTK/Linux options
   " F2 toggle toolbar
   map <silent><F2> :if &guioptions =~# 'T' \| set guioptions-=T \| else \| set guioptions+=T \| endif<CR>
   " CTRL+F2 to toggle the right-hand scroll bar
@@ -363,8 +363,7 @@ nnoremap j gj
 nnoremap k gk
 
 " toggle search highlight, show status
-nnoremap <leader>h :set nohls! \| set nohls?<CR>
-
+nnoremap <leader>hl :set nohls! \| set nohls?<CR>
 
 " Section: Brackets and auto-pairs {{{1
 "---------------------------------------------------------------------------"
