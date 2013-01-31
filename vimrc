@@ -1,6 +1,6 @@
 " Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
 " Version: 1.9.95
-" Last Modified: 2013-01-31 04:18:29 EST
+" Last Modified: 2013-01-31 02:02:04 CET
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -219,8 +219,8 @@ if has("autocmd")
   augroup filetype
     autocmd BufRead,BufNewFile *.jade set filetype=jade
     autocmd BufRead,BufNewFile *.less set filetype=less
-    autocmd BufRead,BufNewFile *.md set filetype=mkd
-    autocmd BufRead,BufNewFile *.mkd set filetype=mkd
+    autocmd BufRead,BufNewFile *.md set filetype=markdown
+    autocmd BufRead,BufNewFile *.mkd set filetype=markdown
     autocmd BufRead,BufNewFile *.scala set filetype=scala
     autocmd BufRead,BufNewFile *.scss set filetype=css
     autocmd BufRead,BufNewFile *.txt set filetype=txt
@@ -247,7 +247,7 @@ if has("autocmd")
 
   " Mardown syntax 
   "autocmd BufRead *.mkd set nonu ai formatoptions=tcroqn2 comments=n:>
-  autocmd FileType mkd set nonu ai fo+=aw2tq comments=n:>
+  autocmd FileType markdown,mkd,md set nonu ai fo+=aw2tq comments=n:>
 
   " in human-language files, automatically format everything at 78 chars:
   autocmd FileType vo_base,human set  nonu fo+=aw2tq tabstop=4 textwidth=78
