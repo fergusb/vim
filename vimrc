@@ -433,8 +433,9 @@ vmap <C-Down> :move '>+1<CR>gv
 " Section: Plugin-dependent settings {{{1
 "---------------------------------------------------------------------------"
 
-" Pathogen - make sure this comes first
-execute pathogen#infect()
+" Pathogen - make sure this comes before other plugins
+call pathogen#infect()
+call pathogen#helptags()
 
 " BufExplorer
 map <silent><leader>b :BufExplorer<CR>

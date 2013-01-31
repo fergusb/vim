@@ -65,3 +65,6 @@
 [submodule "bundle/syntax-scala"]
 	path = bundle/syntax-scala
 	url = git://github.com/derekwyatt/vim-scala.git
+[submodule "bundle/syntax-tmux"]
+	path = bundle/syntax-tmux
+	url = git://github.com/tsaleh/vim-tmux.git
