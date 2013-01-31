@@ -1,6 +1,6 @@
 " Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
 " Version: 1.9.95
-" Last Modified: 2013-01-27 02:46:18 EST
+" Last Modified: 2013-01-31 04:18:29 EST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -236,7 +236,7 @@ if has("autocmd")
   augroup mail
     "autocmd FileType mail set spell spelllang=en_gb,de
     autocmd FileType mail set expandtab nonu nosi noai wrap
-    autocmd FileType mail set textwidth=72 tabstop=2 shiftwidth=2 fo+=aw2tq
+    autocmd FileType mail set textwidth=78 tabstop=2 shiftwidth=2 fo+=aw2tq
   augroup END
 
   augroup txt
@@ -248,10 +248,9 @@ if has("autocmd")
   " Mardown syntax 
   "autocmd BufRead *.mkd set nonu ai formatoptions=tcroqn2 comments=n:>
   autocmd FileType mkd set nonu ai fo+=aw2tq comments=n:>
-  autocmd FileType otl set nonu ai fo+=aw2tq comments=n:>
 
   " in human-language files, automatically format everything at 78 chars:
-  autocmd FileType mail,human set fo+=t tabstop=4 textwidth=78
+  autocmd FileType vo_base,human set  nonu fo+=aw2tq tabstop=4 textwidth=78
 
   " for C-like programming, have automatic indentation:
   autocmd FileType c,cpp,slang set cindent
