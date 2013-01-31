@@ -234,8 +234,8 @@ if has("autocmd")
 
   augroup mail
     "autocmd FileType mail set spell spelllang=en_gb,de
-    autocmd FileType mail set expandtab nonu nosi noai wrap
-    autocmd FileType mail set textwidth=78 tabstop=2 shiftwidth=2 fo+=aw2tq
+    autocmd FileType mail set expandtab nonu nosi 
+    autocmd FileType mail set tw=78 tabstop=2 sw=2 fo+=aw2tq
   augroup END
 
   augroup txt
