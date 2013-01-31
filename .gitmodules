@@ -62,3 +62,6 @@
 [submodule "bundle/syntax-markdown"]
 	path = bundle/syntax-markdown
 	url = git://github.com/tpope/vim-markdown.git
+[submodule "bundle/syntax-scala"]
+	path = bundle/syntax-scala
+	url = git://github.com/derekwyatt/vim-scala.git
