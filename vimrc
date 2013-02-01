@@ -310,7 +310,7 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-k> <C-U>
 
-" Fast saves
+" fast saves
 nmap <silent><C-s> :update<CR>
 vmap <silent><C-s> <Esc><c-s>
 imap <silent><C-s> <Esc><c-s>a
@@ -319,7 +319,7 @@ imap <silent><C-s> <Esc><c-s>a
 "nmap <leader>f :e ~/buffer<CR>
 nmap <leader>f :find<CR>
 
-" Fast sourcing of current file
+" fast sourcing of current file
 nmap <leader>so :source %<CR>
 
 " backspace in Visual mode deletes selection
@@ -354,7 +354,7 @@ vnoremap Q gq<CR>
 "vnoremap <leader>w <ESC>:call TagSelection()<CR>
 
 " Toggle wrap and display status
-"nnoremap <leader>w :set wrap! \| set wrap?<CR>
+nnoremap <leader>W :set wrap! \| set wrap?<CR>
 "nnoremap <C-S-w> :set wrap! \| set wrap?<CR>
 "inoremap <C-S-w> <C-O>:set wrap! \| set wrap?<CR>
 
@@ -538,6 +538,9 @@ set equalprg=par\ -w78
 
 "a new window is put below the current one
 set splitbelow
+
+"visual to brace match
+noremap % v%
 
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
 "au CursorHoldI * stopinsert
