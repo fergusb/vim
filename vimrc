@@ -1,5 +1,6 @@
-" Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
-" Version: 1.9.95
+" vim config file ~/.vimrc
+" Fergus Bremner <fergus.bremner@gmail.com>
+" Last Modified: 2013-02-02 05:18:33 EST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -20,16 +21,20 @@ set matchpairs+=<:>         " Bounce between matches
 set noerrorbells            " Turn off error warnings
 set nostartofline           " Keep the cursor in the current column with page commands
 set novisualbell
-set nu                      " Show line numbers
+set number                  " Show line numbers
 set ruler                   " Always show current position
 set secure                  " Disable security risk features
-set shell=bash              " Set shell to bash
+set shell=zsh               " Set shell to zsh
 set shortmess=a             " Short error messages
 set so=7                    " Set 7 lines to the curors - when moving vertically
 set t_vb=                   " Disable error beeps
 set viminfo=%,'20,<50,h     " Restore cursor position between sessions
 set whichwrap=<,>,h,l,[,]   " keys wrap to previous/next line
 set wildmenu                " Enable menu at bottom of vim/gvim window
+set splitbelow              " New pane put below the current one
+set equalprg=par\ -w78      " use par for =
+"set formatprg=par\ -w78     " also use par for gq
+
 
 " Section: Swap and backup {{{1
 "---------------------------------------------------------------------------"
@@ -62,9 +67,9 @@ set smartcase
 " Section: Syntax {{{1
 "---------------------------------------------------------------------------"
 
-syntax enable " syntax highlighting
-set synmaxcol=2048 " switch off for wide documents
-set t_Co=256 " force 256color
+syntax enable                " syntax highlighting
+set synmaxcol=1024           " switch off for wide documents
+set t_Co=256                 " force 256color
 set modeline
 set modelines=5
 color acedia
@@ -122,7 +127,7 @@ endif
 "  }}}
 
 else
-  set nuw=2
+  set nuw=3
 endif " end gui_running
 
 " Nice window title
@@ -139,10 +144,9 @@ endif
 
 set expandtab
 set smarttab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set backspace=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set nowrap
 "set formatoptions=tcrqn2
 ""set wrapmargin=4
@@ -529,15 +533,9 @@ endfunction
 " Remove pesky DOS/Windows ^M
 noremap <leader>m0 mmHmt:%s/<C-V><CR>//ge<cr>'tzt'm
 
-inoremap <S-Tab> <C-D> " Standard back indentation
+"inoremap <S-Tab> <C-D> " Standard back indentation
 " map Shift Insert to [set paste][paste][set nopaste]
-map <S-Insert> <ESC>:set paste<CR>"*p:set nopaste<CR>a
-
-set equalprg=par\ -w78
-"set formatprg=par\ -w78
-
-"a new window is put below the current one
-set splitbelow
+"map <S-Insert> <ESC>:set paste<CR>"*p:set nopaste<CR>a
 
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
 "au CursorHoldI * stopinsert
