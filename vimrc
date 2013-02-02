@@ -23,7 +23,7 @@ set novisualbell
 set nu                      " Show line numbers
 set ruler                   " Always show current position
 set secure                  " Disable security risk features
-set shell=zsh               " Set shell to zsh
+set shell=bash              " Set shell to bash
 set shortmess=a             " Short error messages
 set so=7                    " Set 7 lines to the curors - when moving vertically
 set t_vb=                   " Disable error beeps
@@ -240,7 +240,7 @@ if has("autocmd")
 
   augroup txt
     "autocmd FileType txt set spell spelllang=en_gb,de
-    autocmd FileType txt set expandtab nosi noai tabstop=2 shiftwidth=2
+    autocmd FileType txt set expandtab nosi noai tabstop=2 sw=2
     autocmd FileType txt set tw=78 fo+=aw2tq
   augroup END
 
@@ -281,7 +281,7 @@ let g:mapleader = ","
 
 "-- F-keys --"
 
-if has("gui_gtk2") " GTK/Linux options
+if has("gui_running")
   " F2 toggle toolbar
   map <silent><F2> :if &guioptions =~# 'T' \| set guioptions-=T \| else \| set guioptions+=T \| endif<CR>
   " CTRL+F2 to toggle the right-hand scroll bar
@@ -310,7 +310,7 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-k> <C-U>
 
-" fast saves
+" Fast saves
 nmap <silent><C-s> :update<CR>
 vmap <silent><C-s> <Esc><c-s>
 imap <silent><C-s> <Esc><c-s>a
@@ -319,7 +319,7 @@ imap <silent><C-s> <Esc><c-s>a
 "nmap <leader>f :e ~/buffer<CR>
 nmap <leader>f :find<CR>
 
-" fast sourcing of current file
+" Fast sourcing of current file
 nmap <leader>so :source %<CR>
 
 " backspace in Visual mode deletes selection
@@ -354,7 +354,7 @@ vnoremap Q gq<CR>
 "vnoremap <leader>w <ESC>:call TagSelection()<CR>
 
 " Toggle wrap and display status
-nnoremap <leader>W :set wrap! \| set wrap?<CR>
+"nnoremap <leader>w :set wrap! \| set wrap?<CR>
 "nnoremap <C-S-w> :set wrap! \| set wrap?<CR>
 "inoremap <C-S-w> <C-O>:set wrap! \| set wrap?<CR>
 
@@ -363,7 +363,8 @@ nnoremap j gj
 nnoremap k gk
 
 " toggle search highlight, show status
-nnoremap <leader>hl :set nohls! \| set nohls?<CR>
+nnoremap <leader>h :set nohls! \| set nohls?<CR>
+
 
 " Section: Brackets and auto-pairs {{{1
 "---------------------------------------------------------------------------"
@@ -433,9 +434,8 @@ vmap <C-Down> :move '>+1<CR>gv
 " Section: Plugin-dependent settings {{{1
 "---------------------------------------------------------------------------"
 
-" Pathogen - make sure this comes before other plugins
-call pathogen#infect()
-call pathogen#helptags()
+" Pathogen - make sure this comes first
+execute pathogen#infect()
 
 " BufExplorer
 map <silent><leader>b :BufExplorer<CR>
@@ -538,9 +538,6 @@ set equalprg=par\ -w78
 
 "a new window is put below the current one
 set splitbelow
-
-"visual to brace match
-noremap % v%
 
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
 "au CursorHoldI * stopinsert
