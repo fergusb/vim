@@ -17,22 +17,22 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
-  ignore = dirty
+    ignore = dirty
 [submodule "bundle/YankRing"]
 	path = bundle/YankRing
 	url = https://github.com/vim-scripts/YankRing.vim.git
-  ignore = dirty
+    ignore = dirty
 [submodule "bundle/timestamp"]
 	path = bundle/timestamp
 	url = https://github.com/vim-scripts/timestamp.vim.git
-  ignore = dirty
+    ignore = dirty
 [submodule "bundle/speeddating"]
 	path = bundle/speeddating
 	url = https://github.com/tpope/vim-speeddating.git
 [submodule "bundle/ShowMarks"]
 	path = bundle/ShowMarks
 	url = https://github.com/vim-scripts/ShowMarks.git
-  ignore = dirty
+    ignore = dirty
 [submodule "bundle/SearchComplete"]
 	path = bundle/SearchComplete
 	url = https://github.com/vim-scripts/SearchComplete.git
@@ -48,10 +48,7 @@
 [submodule "bundle/color-hemisu"]
 	path = bundle/color-hemisu
 	url = git://github.com/noahfrederick/Hemisu.git
-[submodule "bundle/vimux"]
-	path = bundle/vimux
-	url = git://github.com/benmills/vimux.git
-  ignore = dirty
+    ignore = dirty
 [submodule "bundle/ToggleWord"]
 	path = bundle/ToggleWord
 	url = git://github.com/vim-scripts/toggle_words.vim.git
@@ -59,9 +56,6 @@
 [submodule "bundle/syntax-css"]
 	path = bundle/syntax-css
 	url = git://github.com/hail2u/vim-css-syntax.git
-[submodule "bundle/syntax-markdown"]
-	path = bundle/syntax-markdown
-	url = git://github.com/tpope/vim-markdown.git
 [submodule "bundle/syntax-scala"]
 	path = bundle/syntax-scala
 	url = git://github.com/derekwyatt/vim-scala.git
