@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-02-03 09:50:27 CET
+" Last Modified: 2013-02-03 09:59:34 CET
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -459,6 +459,9 @@ let g:NERDMenuMode = 3
 " ShowMarks
 let g:showmarks_enable = 0
 let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+" EasyMotion
+let g:EasyMotion_leader_key = "<leader>"
 
 " taglist
 nnoremap <leader>T :Tlist<CR>

@@ -68,3 +68,9 @@
 [submodule "bundle/syntax-tmux"]
 	path = bundle/syntax-tmux
 	url = git://github.com/tsaleh/vim-tmux.git
+[submodule "bundle/easymotion"]
+	path = bundle/easymotion
+	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/ack"]
+	path = bundle/ack
+	url = git://github.com/mileszs/ack.vim.git
