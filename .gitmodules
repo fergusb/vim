@@ -52,7 +52,7 @@
 [submodule "bundle/ToggleWord"]
 	path = bundle/ToggleWord
 	url = git://github.com/vim-scripts/toggle_words.vim.git
-  ignore = dirty
+    ignore = dirty
 [submodule "bundle/syntax-css"]
 	path = bundle/syntax-css
 	url = git://github.com/hail2u/vim-css-syntax.git
