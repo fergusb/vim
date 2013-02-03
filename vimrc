@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-02-03 09:59:34 CET
+" Last Modified: 2013-02-03 11:02:45 CET
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -219,10 +219,7 @@ if has("autocmd")
 
   augroup filetype
     autocmd BufRead,BufNewFile *.jade set filetype=jade
-    autocmd BufRead,BufNewFile *.less set filetype=less
-    autocmd BufRead,BufNewFile *.md set filetype=markdown
-    autocmd BufRead,BufNewFile *.mkd set filetype=markdown
-    autocmd BufRead,BufNewFile *.scala set filetype=scala
+    autocmd BufRead,BufNewFile *.less set filetype=css
     autocmd BufRead,BufNewFile *.scss set filetype=css
     autocmd BufRead,BufNewFile *.txt set filetype=txt
     autocmd BufRead,BufNewFile *.webui set filetype=jsp
