@@ -8,7 +8,6 @@ set nocompatible            " Use Vim settings (must be first)
 set autochdir               " Auto-change cwd to current file
 set autoread                " Auto read a file when it's changed from without
 set autowrite               " Auto write file when switching to another file or window
-set backspace=2             " allow backspace to erase previously entered characters, autoindent, and newlines
 set writebackup             " Atomic saves
 set enc=utf-8               " Default encoding to UTF-8
 set ffs=unix,mac            " Favorite filetypes
@@ -24,7 +23,7 @@ set nu                      " Show line numbers
 set ruler                   " Always show current position
 set secure                  " Disable security risk features
 set shell=zsh               " Set shell to zsh
-set shortmess=a             " Short error messages
+set shortmess+=filmnrxoOtT  " abbr of messages (avoids 'hit enter'))"
 set so=7                    " Set 7 lines to the curors - when moving vertically
 set t_vb=                   " Disable error beeps
 set viminfo=%,'20,<50,h     " Restore cursor position between sessions
@@ -137,19 +136,21 @@ endif
 " Section: Formatting {{{1
 "---------------------------------------------------------------------------"
 
+set autoindent
 set expandtab
 set smarttab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set backspace=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set backspace=4
 set nowrap
 "set formatoptions=tcrqn2
-""set wrapmargin=4
+"set wrapmargin=4
 "set lbr
-"set autoindent " Indentation
 "set smartindent
-"set cindent
+
+set equalprg=par\ -w78
+"set formatprg=par\ -w78
 
 " Section: Status-line {{{1
 "---------------------------------------------------------------------------"
@@ -455,7 +456,8 @@ let g:NERDMenuMode = 3
 "let g:acp_enableAtStartup = 0
 
 " ShowMarks
-let g:showmarks_enable=0
+let g:showmarks_enable = 0
+let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 " taglist
 nnoremap <leader>T :Tlist<CR>
@@ -526,15 +528,24 @@ endfunction
 " Section: Unsorted {{{1
 "---------------------------------------------------------------------------"
 
+" Code folding options
+nmap <leader>f0 :set foldlevel=0<CR>
+nmap <leader>f1 :set foldlevel=1<CR>
+nmap <leader>f2 :set foldlevel=2<CR>
+nmap <leader>f3 :set foldlevel=3<CR>
+nmap <leader>f4 :set foldlevel=4<CR>
+nmap <leader>f5 :set foldlevel=5<CR>
+nmap <leader>f6 :set foldlevel=6<CR>
+nmap <leader>f7 :set foldlevel=7<CR>
+nmap <leader>f8 :set foldlevel=8<CR>
+nmap <leader>f9 :set foldlevel=9<CR>
+
 " Remove pesky DOS/Windows ^M
 noremap <leader>m0 mmHmt:%s/<C-V><CR>//ge<cr>'tzt'm
 
 inoremap <S-Tab> <C-D> " Standard back indentation
 " map Shift Insert to [set paste][paste][set nopaste]
 map <S-Insert> <ESC>:set paste<CR>"*p:set nopaste<CR>a
-
-set equalprg=par\ -w78
-"set formatprg=par\ -w78
 
 "a new window is put below the current one
 set splitbelow
