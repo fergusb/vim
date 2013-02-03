@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-02-03 12:39:21 CET
+" Last Modified: 2013-02-03 09:50:27 CET
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -477,9 +477,9 @@ map <C-S-t> :ToggleWord<CR>
 imap <C-S-t> <ESC>:ToggleWord<CR>a
 
 " Yank ring
-"map <silent><leader>y :YRShow<CR>
 nnoremap <silent><leader>y :YRShow<CR>
-":nnoremap <silent> <F11> :YRShow<CR>
+let g:yankring_history_dir = "$HOME/.vim/"
+let g:yankring_max_history = 100
 
 " Section: Experimental {{{1
 "---------------------------------------------------------------------------"
