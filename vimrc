@@ -1,5 +1,6 @@
-" Fergus Bremner's <fergus.bremner@gmail.com> .vimrc
-" Version: 1.9.95
+" vim config file ~/.vimrc
+" Fergus Bremner <fergus.bremner@gmail.com>
+" Last Modified: 2013-02-03 12:39:21 CET
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -19,7 +20,7 @@ set matchpairs+=<:>         " Bounce between matches
 set noerrorbells            " Turn off error warnings
 set nostartofline           " Keep the cursor in the current column with page commands
 set novisualbell
-set nu                      " Show line numbers
+set number                  " Show line numbers
 set ruler                   " Always show current position
 set secure                  " Disable security risk features
 set shell=zsh               " Set shell to zsh
@@ -27,8 +28,9 @@ set shortmess+=filmnrxoOtT  " abbr of messages (avoids 'hit enter'))"
 set so=7                    " Set 7 lines to the curors - when moving vertically
 set t_vb=                   " Disable error beeps
 set viminfo=%,'20,<50,h     " Restore cursor position between sessions
-set whichwrap=<,>,h,l,[,]   " keys wrap to previous/next line
+set whichwrap=b,s,h,l,<,>,[,] " keys wrap to previous/next line
 set wildmenu                " Enable menu at bottom of vim/gvim window
+set splitbelow              " New pane put below the current one
 
 " Section: Swap and backup {{{1
 "---------------------------------------------------------------------------"
@@ -61,9 +63,9 @@ set smartcase
 " Section: Syntax {{{1
 "---------------------------------------------------------------------------"
 
-syntax enable " syntax highlighting
-set synmaxcol=2048 " switch off for wide documents
-set t_Co=256 " force 256color
+syntax enable                " syntax highlighting
+set synmaxcol=1024           " switch off for wide documents
+set t_Co=256                 " force 256color
 set modeline
 set modelines=5
 color acedia
@@ -121,7 +123,7 @@ endif
 "  }}}
 
 else
-  set nuw=2
+  set nuw=3
 endif " end gui_running
 
 " Nice window title
@@ -142,15 +144,14 @@ set smarttab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set backspace=4
+"set backspace=4
 set nowrap
 "set formatoptions=tcrqn2
 "set wrapmargin=4
 "set lbr
 "set smartindent
-
-set equalprg=par\ -w78
-"set formatprg=par\ -w78
+set equalprg=par\ -w78      " use par for =
+"set formatprg=par\ -w78     " also use par for gq
 
 " Section: Status-line {{{1
 "---------------------------------------------------------------------------"
@@ -241,7 +242,7 @@ if has("autocmd")
 
   augroup txt
     "autocmd FileType txt set spell spelllang=en_gb,de
-    autocmd FileType txt set expandtab nosi noai tabstop=2 shiftwidth=2
+    autocmd FileType txt set expandtab nosi noai tabstop=2 sw=2
     autocmd FileType txt set tw=78 fo+=aw2tq
   augroup END
 
@@ -282,7 +283,7 @@ let g:mapleader = ","
 
 "-- F-keys --"
 
-if has("gui_gtk2") " GTK/Linux options
+if has("gui_running")
   " F2 toggle toolbar
   map <silent><F2> :if &guioptions =~# 'T' \| set guioptions-=T \| else \| set guioptions+=T \| endif<CR>
   " CTRL+F2 to toggle the right-hand scroll bar
@@ -311,7 +312,7 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-k> <C-U>
 
-" fast saves
+" Fast saves
 nmap <silent><C-s> :update<CR>
 vmap <silent><C-s> <Esc><c-s>
 imap <silent><C-s> <Esc><c-s>a
@@ -320,7 +321,7 @@ imap <silent><C-s> <Esc><c-s>a
 "nmap <leader>f :e ~/buffer<CR>
 nmap <leader>f :find<CR>
 
-" fast sourcing of current file
+" Fast sourcing of current file
 nmap <leader>so :source %<CR>
 
 " backspace in Visual mode deletes selection
@@ -355,7 +356,7 @@ vnoremap Q gq<CR>
 "vnoremap <leader>w <ESC>:call TagSelection()<CR>
 
 " Toggle wrap and display status
-nnoremap <leader>W :set wrap! \| set wrap?<CR>
+"nnoremap <leader>w :set wrap! \| set wrap?<CR>
 "nnoremap <C-S-w> :set wrap! \| set wrap?<CR>
 "inoremap <C-S-w> <C-O>:set wrap! \| set wrap?<CR>
 
@@ -364,7 +365,8 @@ nnoremap j gj
 nnoremap k gk
 
 " toggle search highlight, show status
-nnoremap <leader>hl :set nohls! \| set nohls?<CR>
+nnoremap <leader>h :set nohls! \| set nohls?<CR>
+
 
 " Section: Brackets and auto-pairs {{{1
 "---------------------------------------------------------------------------"
@@ -434,9 +436,8 @@ vmap <C-Down> :move '>+1<CR>gv
 " Section: Plugin-dependent settings {{{1
 "---------------------------------------------------------------------------"
 
-" Pathogen - make sure this comes before other plugins
-call pathogen#infect()
-call pathogen#helptags()
+" Pathogen - make sure this comes first
+execute pathogen#infect()
 
 " BufExplorer
 map <silent><leader>b :BufExplorer<CR>
@@ -543,7 +544,7 @@ nmap <leader>f9 :set foldlevel=9<CR>
 " Remove pesky DOS/Windows ^M
 noremap <leader>m0 mmHmt:%s/<C-V><CR>//ge<cr>'tzt'm
 
-inoremap <S-Tab> <C-D> " Standard back indentation
+"inoremap <S-Tab> <C-D> " Standard back indentation
 " map Shift Insert to [set paste][paste][set nopaste]
 map <S-Insert> <ESC>:set paste<CR>"*p:set nopaste<CR>a
 
@@ -552,6 +553,7 @@ set splitbelow
 
 "visual to brace match
 noremap % v%
+"map <S-Insert> <ESC>:set paste<CR>"*p:set nopaste<CR>a
 
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
 "au CursorHoldI * stopinsert
