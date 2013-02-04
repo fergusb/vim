@@ -10,7 +10,7 @@
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = https://github.com/vim-scripts/bufexplorer.zip.git
-  ignore = dirty
+    ignore = dirty
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git
@@ -74,3 +74,4 @@
 [submodule "bundle/AutoComplPop"]
 	path = bundle/AutoComplPop
 	url = git://github.com/vim-scripts/AutoComplPop.git
+    ignore = dirty
