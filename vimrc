@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-02-04 03:36:11 CET
+" Last Modified: 2013-02-04 04:40:33 CET
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -433,6 +433,7 @@ vmap <C-Down> :move '>+1<CR>gv
 
 " Pathogen - make sure this comes first
 execute pathogen#infect()
+execute pathogen#helptags()
 
 " BufExplorer
 map <silent><leader>b :BufExplorer<CR>
@@ -449,7 +450,7 @@ let g:NERDMenuMode = 3
 "vnoremap <M-/>/ :call NERDComment(1, "toggle")<cr>
 
 " Disable autocomplpop plugin at startup
-"let g:acp_enableAtStartup = 0
+let g:acp_enableAtStartup = 0
 
 " ShowMarks
 let g:showmarks_enable = 0

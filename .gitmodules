@@ -71,3 +71,6 @@
 [submodule "bundle/markdown"]
 	path = bundle/markdown
 	url = git://github.com/plasticboy/vim-markdown.git
+[submodule "bundle/AutoComplPop"]
+	path = bundle/AutoComplPop
+	url = git://github.com/vim-scripts/AutoComplPop.git
