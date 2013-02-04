@@ -125,10 +125,10 @@ if v:version >= 700
   hi PMenuSel       gui=none       guifg=#FFFFFF     guibg=#7499bf     ctermbg=yellow    ctermfg=gray
   hi PmenuSbar      gui=none       guifg=fg          guibg=#41609e     ctermbg=darkgreen   
   hi PmenuThumb     gui=none       guifg=bg          guibg=#bdcae3     ctermbg=yellow
-  hi SpellBad       gui=undercurl  guisp=red                           ctermbg=red
-  hi SpellRare      gui=undercurl  guisp=orange                        ctermbg=red
-  hi SpellLocal     gui=undercurl  guisp=orange                        ctermbg=red
-  hi SpellCap       gui=undercurl  guisp=yellow                        ctermbg=yellow
+  hi SpellBad       gui=undercurl  guisp=red                           
+  hi SpellRare      gui=undercurl  guisp=orange                        
+  hi SpellLocal     gui=undercurl  guisp=orange                        
+  hi SpellCap       gui=undercurl  guisp=yellow                        
 endif
 "}}}
 " SYNTAX - css {{{

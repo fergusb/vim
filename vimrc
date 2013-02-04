@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-02-04 04:40:33 CET
+" Last Modified: 2013-02-04 05:40:45 EST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -91,7 +91,6 @@ if has("gui_running")
   set guioptions-=T " Turn off useless toolbar (toggle with F2)
   set guioptions-=r " Turn off right scrollbar (toggle with CTRL+F2)
   set cursorline
-  set nuw=4
   set switchbuf=usetab
   set showtabline=1
   "set guicursor=a:blinkon0
@@ -187,10 +186,19 @@ set wmnu                            " show list of matches when tabbing a comman
 
 " Section: Autocompletion {{{1
 "---------------------------------------------------------------------------"
-" initialize dicts
-"set complete=k
-"set complete-=k complete+=k
-set complete=.,w,b,u,k,]
+" initialize omnicompletion
+if has("autocmd")
+  autocmd FileType c set omnifunc=ccomplete#Complete
+  autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+  autocmd FileType python set omnifunc=pythoncomplete#Complete
+  autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+endif
+
+" how should we fuck off?
+set complete=.,k,w,b,u,t,]
 "set complete=.,k,w,b,u,t,i,]
 
 set completeopt=longest
@@ -208,9 +216,10 @@ if has("autocmd")
 " use templates
   autocmd BufNewFile * silent! 0r ~/.vim/skel/%:e.tpl
 
-  " Dictionaries
-  "autocmd FileType mail,human,mkd,txt set dict+=/usr/share/dict/words
-    "autocmd FileType css set dict+=~/.vim/dict/css.dict
+  " Dictionaries and speling
+  autocmd FileType mail,human,mkd,txt,vo_base set dict+=/usr/share/dict/words
+  autocmd FileType mail,human,mkd,txt,vo_base set spelllang=en_gb
+  "autocmd FileType css set dict+=~/.vim/dict/css.dict
 
   " Dynamically set filetype-specific dictionary
   autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
@@ -219,7 +228,6 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.jade set filetype=jade
     autocmd BufRead,BufNewFile *.less set filetype=css
     autocmd BufRead,BufNewFile *.scss set filetype=css
-    autocmd BufRead,BufNewFile *.txt set filetype=txt
     autocmd BufRead,BufNewFile *.webui set filetype=jsp
   augroup END
 
@@ -230,7 +238,7 @@ if has("autocmd")
   augroup END
 
   augroup mail
-    "autocmd FileType mail set spell spelllang=en_gb,de
+    autocmd FileType mail set spell spelllang=en_gb,de
     autocmd FileType mail set expandtab nonu nosi 
     autocmd FileType mail set tw=78 tabstop=2 sw=2 fo+=aw2tq
   augroup END
@@ -478,11 +486,11 @@ imap <C-S-t> <ESC>:ToggleWord<CR>a
 " Yank ring
 nnoremap <silent><leader>y :YRShow<CR>
 let g:yankring_history_dir = "$HOME/.vim/"
-let g:yankring_max_history = 100
+let g:yankring_max_history = 200
 
 " Section: Experimental {{{1
 "---------------------------------------------------------------------------"
-"set grepprg to bash vimgrep function
+"set grepprg to vimgrep function
 set grepprg=vimgrep
 
 " convert vimoutliner to markdown
