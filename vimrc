@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-02-03 11:02:45 CET
+" Last Modified: 2013-02-04 03:36:11 CET
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -206,16 +206,14 @@ if has("autocmd")
   autocmd BufEnter * :syntax sync fromstart
 
 " use templates
-  "autocmd BufNewFile * silent! 0r $VIMHOME/templates/%:e.tpl
-  "autocmd BufNewFile *.html 0r $VIMHOME/templates/html.tpl
+  autocmd BufNewFile * silent! 0r ~/.vim/skel/%:e.tpl
 
-  " Default spelling dict
-  "autocmd FileType mail,human,mkd,txt set dictionary=/usr/share/dict/words
-  "autocmd BufRead *.css set dictionary=~/.vim/dict/css.dict
-  "autocmd BufRead *.php set dictionary=~/.vim/dict/php.dict
-  "autocmd FileType *.css exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
+  " Dictionaries
+  "autocmd FileType mail,human,mkd,txt set dict+=/usr/share/dict/words
+    "autocmd FileType css set dict+=~/.vim/dict/css.dict
+
   " Dynamically set filetype-specific dictionary
-  "autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
+  autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
 
   augroup filetype
     autocmd BufRead,BufNewFile *.jade set filetype=jade
@@ -575,4 +573,4 @@ noremap % v%
 imap <S-Tab> <C-o><<
 
 " }}}
-" vim:ft=vim:fdm=marker
+" vim:ft=vim:fdm=marker:sw=2
