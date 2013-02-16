@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-02-04 05:40:45 EST
+" Last Modified: 2013-02-16 09:21:33 CET
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -140,9 +140,9 @@ endif
 set autoindent
 set expandtab
 set smarttab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 "set backspace=4
 set nowrap
 "set formatoptions=tcrqn2
