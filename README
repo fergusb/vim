@@ -5,15 +5,15 @@ cd [or] cd ~/
 git clone git://github.com/fergusb/vim.git .vim
 ln -s .vim/vimrc ~/.vimrc
 
-### Add plugins
-cd ~/.vim/
-mkdir bundle
-git submodule add https://github.com/fergusb/vim-foo.git bundle/foo
-
 ### Init plugins
 cd ~/.vim/
 git submodule init
 git submodule update
+
+### Add plugins
+cd ~/.vim/
+mkdir bundle
+git submodule add https://github.com/fergusb/vim-foo.git bundle/foo
 
 ### Update plugins
 git submodule foreach git pull origin master
