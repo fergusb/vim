@@ -17,6 +17,6 @@ git submodule add https://github.com/fergusb/vim-foo.git bundle/foo
 
 ### Update plugins
 git submodule foreach git pull origin master
-
+git submodule update
 
 " vim:ft=mkd
