@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-13 03:00:20 CEST
+" Last Modified: 2013-07-13 04:06:40 CEST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -219,16 +219,16 @@ if has("autocmd")
   autocmd BufNewFile * silent! 0r ~/.vim/skel/%:e.tpl
 
   " Dictionaries and speling
-  autocmd FileType mail,human,mkd,txt,vo_base set dict+=/usr/share/dict/words
-  autocmd FileType mail,human,mkd,txt,vo_base set spell spelllang=en_gb
+  autocmd FileType mail,human,markdown,txt,vo_base set dict+=/usr/share/dict/words
+  autocmd FileType mail,human,markdown,txt,vo_base set spell spelllang=en_gb
 
   " Dynamically set filetype-specific dictionary
   autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
 
   augroup filetype
     autocmd BufRead,BufNewFile *.jade set filetype=jade
-    autocmd BufRead,BufNewFile *.less set filetype=css
-    autocmd BufRead,BufNewFile *.scss set filetype=css
+    autocmd BufRead,BufNewFile *.less,*.scss set filetype=css
+    autocmd BufRead,BufNewFile *.markdown,*.mdown,*.mkdn,*.mkd,*.md set filetype markdown
     autocmd BufRead,BufNewFile *.webui set filetype=jsp
   augroup END
 
@@ -236,23 +236,22 @@ if has("autocmd")
     autocmd FileType css let css_fold=1
     autocmd FileType css set foldenable foldmethod=indent
     autocmd FileType css set expandtab smartindent tabstop=2 shiftwidth=2
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
   augroup END
 
   augroup mail
-    autocmd FileType mail set spell spelllang=en_gb
     autocmd FileType mail set expandtab nonu nosi 
     autocmd FileType mail set tw=78 tabstop=2 sw=2 fo+=aw2tq
   augroup END
 
   augroup txt
-    autocmd FileType txt set spell spelllang=en_gb
     autocmd FileType txt set expandtab nosi noai
     autocmd FileType txt set tw=78 tabstop=2 sw=2 fo+=aw2tq
   augroup END
 
   " Mardown syntax 
-  "autocmd BufRead *.mkd set nonu ai formatoptions=tcroqn2 comments=n:>
-  autocmd FileType markdown,mkd,md set nonu ai tw=78 fo+=aw2tq comments=n:>
+  "autocmd BufRead *.markdown set nonu ai formatoptions=tcroqn2 comments=n:>
+  autocmd FileType markdown set nonu ai tw=78 fo+=aw2tq comments=n:>
 
   " in human-language files, automatically format everything at 78 chars:
   autocmd FileType vo_base,human set nonu fo+=aw2tq ts=4 tw=78
@@ -402,8 +401,8 @@ if has("autocmd")
   autocmd FileType css inoremap (" ("")<ESC>:let leavechar=')'<CR>i<left>
 
   " Markdown
-  autocmd FileType mkd vnoremap i <ESC>`>a*<ESC>`<i*<ESC>
-  autocmd FileType mkd vnoremap b <ESC>`>a**<ESC>`<i**<ESC>
+  autocmd FileType markdown vnoremap i <ESC>`>a*<ESC>`<i*<ESC>
+  autocmd FileType markdown vnoremap b <ESC>`>a**<ESC>`<i**<ESC>
 
   " XML
   autocmd FileType html,xhtml,xml inoremap <buffer><silent> <C-S-B> <ESC>bdwi<<ESC>pa></<ESC>pa><ESC>bba
