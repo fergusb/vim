@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-13 04:06:40 CEST
+" Last Modified: 2013-07-13 04:12:22 CEST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -219,8 +219,8 @@ if has("autocmd")
   autocmd BufNewFile * silent! 0r ~/.vim/skel/%:e.tpl
 
   " Dictionaries and speling
-  autocmd FileType mail,human,markdown,txt,vo_base set dict+=/usr/share/dict/words
-  autocmd FileType mail,human,markdown,txt,vo_base set spell spelllang=en_gb
+  autocmd FileType mail,human,mkd,txt,vo_base set dict+=/usr/share/dict/words
+  autocmd FileType mail,human,mkd,txt,vo_base set spell spelllang=en_gb
 
   " Dynamically set filetype-specific dictionary
   autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
@@ -228,7 +228,7 @@ if has("autocmd")
   augroup filetype
     autocmd BufRead,BufNewFile *.jade set filetype=jade
     autocmd BufRead,BufNewFile *.less,*.scss set filetype=css
-    autocmd BufRead,BufNewFile *.markdown,*.mdown,*.mkdn,*.mkd,*.md set filetype markdown
+    autocmd BufRead,BufNewFile *.markdown,*.mdown,*.mkdn,*.md set filetype mkd
     autocmd BufRead,BufNewFile *.webui set filetype=jsp
   augroup END
 
@@ -250,8 +250,8 @@ if has("autocmd")
   augroup END
 
   " Mardown syntax 
-  "autocmd BufRead *.markdown set nonu ai formatoptions=tcroqn2 comments=n:>
-  autocmd FileType markdown set nonu ai tw=78 fo+=aw2tq comments=n:>
+  "autocmd BufRead *.mkd set nonu ai formatoptions=tcroqn2 comments=n:>
+  autocmd FileType mkd set nonu ai tw=78 fo+=aw2tq comments=n:>
 
   " in human-language files, automatically format everything at 78 chars:
   autocmd FileType vo_base,human set nonu fo+=aw2tq ts=4 tw=78
@@ -300,7 +300,7 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <F6> <C-W>w
 nnoremap <S-F6> <C-W>W
 
-" F8 markdown preview
+" F8 mkd preview
 noremap <silent><F8> :w!<CR>:!MultiMarkdown.pl % \| tidy -config $HOME/.tidy.conf \| SmartyPants.pl > $HOME/Desktop/%.html && firefox $HOME/Desktop/%.html<CR><CR>
 
 " CTRL+F8 to reformat file as XML
@@ -401,8 +401,8 @@ if has("autocmd")
   autocmd FileType css inoremap (" ("")<ESC>:let leavechar=')'<CR>i<left>
 
   " Markdown
-  autocmd FileType markdown vnoremap i <ESC>`>a*<ESC>`<i*<ESC>
-  autocmd FileType markdown vnoremap b <ESC>`>a**<ESC>`<i**<ESC>
+  autocmd FileType mkd vnoremap i <ESC>`>a*<ESC>`<i*<ESC>
+  autocmd FileType mkd vnoremap b <ESC>`>a**<ESC>`<i**<ESC>
 
   " XML
   autocmd FileType html,xhtml,xml inoremap <buffer><silent> <C-S-B> <ESC>bdwi<<ESC>pa></<ESC>pa><ESC>bba
@@ -493,7 +493,7 @@ let g:yankring_max_history = 200
 "set grepprg to vimgrep function
 set grepprg=vimgrep
 
-" convert vimoutliner to markdown
+" convert vimoutliner to mkd
 function! VO2MD()
   let lines = []
   let was_body = 0
@@ -515,7 +515,7 @@ function! VO2MD()
   call setline(1, lines)
 endfunction
 
-" convert markdown to vimoutliner
+" convert mkd to vimoutliner
 function! MD2VO()
   let lines = []
   for line in getline(1,'$')
