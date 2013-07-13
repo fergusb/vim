@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-13 02:45:44 CEST
+" Last Modified: 2013-07-13 02:52:53 CEST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -220,7 +220,7 @@ if has("autocmd")
 
   " Dictionaries and speling
   autocmd FileType mail,human,mkd,txt,vo_base set dict+=/usr/share/dict/words
-  autocmd FileType mail,human,mkd,txt,vo_base set spelllang=en_gb,de
+  autocmd FileType mail,human,mkd,txt,vo_base set spell spelllang=en_gb
 
   " Dynamically set filetype-specific dictionary
   autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
@@ -239,15 +239,13 @@ if has("autocmd")
   augroup END
 
   augroup mail
-    autocmd FileType mail set spell spelllang=en_gb,de
     autocmd FileType mail set expandtab nonu nosi 
     autocmd FileType mail set tw=78 tabstop=2 sw=2 fo+=aw2tq
   augroup END
 
   augroup txt
-    autocmd FileType txt set spell spelllang=en_gb,de
-    autocmd FileType txt set expandtab nosi noai tabstop=2 sw=2
-    autocmd FileType txt set tw=78 fo+=aw2tq
+    autocmd FileType txt set expandtab nosi noai 
+    autocmd FileType txt set tw=78 tabstop=2 sw=2 fo+=aw2tq
   augroup END
 
   " Mardown syntax 
