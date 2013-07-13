@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-13 07:26:29 EDT
+" Last Modified: 2013-07-13 01:33:43 CEST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -77,9 +77,10 @@ filetype indent on
 "---------------------------------------------------------------------------"
 
 if has("gui_running")
-"  set guioptions+=b
-  set guioptions-=T " Turn off useless toolbar (toggle with F2)
-  set guioptions-=r " Turn off right scrollbar (toggle with CTRL+F2)
+  set guioptions-=T " Hide useless toolbar (toggle with F2)
+  set guioptions-=r " Hide right scrollbar (toggle with CTRL+F2)
+  set guioptions-=l " Hide left scrollbar
+  set guioptions-=b " Hide bottom scrollbar
   set cursorline
   set switchbuf=usetab
   set showtabline=1
