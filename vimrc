@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-13 06:53:16 EDT
+" Last Modified: 2013-07-13 08:21:51 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -45,6 +45,7 @@ set undodir=~/.vim/undo//
 set viewdir=~/.vim/view//
 " Create directories if they don't exist
 silent execute '!mkdir -p $HOME/.vim/bak'
+silent execute '!mkdir -p $HOME/.vim/spell'
 silent execute '!mkdir -p $HOME/.vim/tmp'
 silent execute '!mkdir -p $HOME/.vim/undo'
 silent execute '!mkdir -p $HOME/.vim/view'
