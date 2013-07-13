@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-02-16 09:21:33 CET
+" Last Modified: 2013-07-12 06:59:26 CEST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -218,7 +218,7 @@ if has("autocmd")
 
   " Dictionaries and speling
   autocmd FileType mail,human,mkd,txt,vo_base set dict+=/usr/share/dict/words
-  autocmd FileType mail,human,mkd,txt,vo_base set spelllang=en_gb
+  autocmd FileType mail,human,mkd,txt,vo_base set spelllang=en_gb,de
   "autocmd FileType css set dict+=~/.vim/dict/css.dict
 
   " Dynamically set filetype-specific dictionary
@@ -238,7 +238,7 @@ if has("autocmd")
   augroup END
 
   augroup mail
-    autocmd FileType mail set spell spelllang=en_gb,de
+    autocmd FileType mail set spelllang=en_gb,de
     autocmd FileType mail set expandtab nonu nosi 
     autocmd FileType mail set tw=78 tabstop=2 sw=2 fo+=aw2tq
   augroup END
