@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-13 04:33:34 CEST
+" Last Modified: 2013-07-13 04:40:03 CEST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -236,7 +236,6 @@ if has("autocmd")
     autocmd FileType css let css_fold=1
     autocmd FileType css set foldenable foldmethod=indent
     autocmd FileType css set expandtab smartindent tabstop=2 shiftwidth=2
-    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
   augroup END
 
   augroup mail
