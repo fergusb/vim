@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-13 02:52:53 CEST
+" Last Modified: 2013-07-13 03:00:20 CEST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -239,12 +239,14 @@ if has("autocmd")
   augroup END
 
   augroup mail
+    autocmd FileType mail set spell spelllang=en_gb
     autocmd FileType mail set expandtab nonu nosi 
     autocmd FileType mail set tw=78 tabstop=2 sw=2 fo+=aw2tq
   augroup END
 
   augroup txt
-    autocmd FileType txt set expandtab nosi noai 
+    autocmd FileType txt set spell spelllang=en_gb
+    autocmd FileType txt set expandtab nosi noai
     autocmd FileType txt set tw=78 tabstop=2 sw=2 fo+=aw2tq
   augroup END
 
