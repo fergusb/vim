@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-13 04:12:22 CEST
+" Last Modified: 2013-07-13 04:22:12 CEST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -220,7 +220,7 @@ if has("autocmd")
 
   " Dictionaries and speling
   autocmd FileType mail,human,mkd,txt,vo_base set dict+=/usr/share/dict/words
-  autocmd FileType mail,human,mkd,txt,vo_base set spell spelllang=en_gb
+  autocmd FileType mail,human,mkd,txt,vo_base set spelllang=en_gb
 
   " Dynamically set filetype-specific dictionary
   autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
@@ -249,9 +249,10 @@ if has("autocmd")
     autocmd FileType txt set tw=78 tabstop=2 sw=2 fo+=aw2tq
   augroup END
 
-  " Mardown syntax 
-  "autocmd BufRead *.mkd set nonu ai formatoptions=tcroqn2 comments=n:>
-  autocmd FileType mkd set nonu ai tw=78 fo+=aw2tq comments=n:>
+  augroup mkd
+    autocmd FileType mkd set nofoldenable
+    autocmd FileType mkd set nonu ai tw=78 fo+=aw2tq comments=n:>
+  augroup END
 
   " in human-language files, automatically format everything at 78 chars:
   autocmd FileType vo_base,human set nonu fo+=aw2tq ts=4 tw=78
