@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-13 01:33:43 CEST
+" Last Modified: 2013-07-13 01:35:59 CEST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -77,6 +77,7 @@ filetype indent on
 "---------------------------------------------------------------------------"
 
 if has("gui_running")
+  set background=light
   set guioptions-=T " Hide useless toolbar (toggle with F2)
   set guioptions-=r " Hide right scrollbar (toggle with CTRL+F2)
   set guioptions-=l " Hide left scrollbar
