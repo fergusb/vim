@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-13 06:53:16 EDT
+" Last Modified: 2013-07-13 07:26:29 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -77,16 +77,6 @@ filetype indent on
 "---------------------------------------------------------------------------"
 
 if has("gui_running")
-  if has("gui_gtk2") " GTK/Linux font
-    set guifont=Screen\ 9
-    set columns=79
-    set lines=55
-  else
-    set guifont=Monaco:h10  " Mac font
-    set noantialias
-    set columns=90
-    set lines=55
-  endif
 "  set guioptions+=b
   set guioptions-=T " Turn off useless toolbar (toggle with F2)
   set guioptions-=r " Turn off right scrollbar (toggle with CTRL+F2)
@@ -97,33 +87,32 @@ if has("gui_running")
   set guicursor=n-v-c:blinkon0
   set scrolljump=5
   set scrolloff=5
+  set nuw=3
   if has("mouse")
     set mouse=a               " Enable mouse at all times
     set mousehide             " Hide mouse when typing
-    "set mousemodel=popup_setpos
     set mousemodel=extend
+    "set mousemodel=popup_setpos
+    :amenu PopUp.Close.\ Window :confirm close<CR>
+    :amenu PopUp.Close.\ Other :confirm only<CR>
   endif
+endif "end gui_running
 
-" Section: Printing {{{2
-
-if has("gui_gtk2") " GTK/Linux font
-  set printfont=Bitstream\ Vera\ Sans\ Mono\ 10
-else
-  set printfont=monospace:h9
-endif
-
-" }}}
-
-" Section: Menus {{{2
-
-" Popup mouse menu
-  :amenu PopUp.Close.\ Window :confirm close<CR>
-  :amenu PopUp.Close.\ Other :confirm only<CR>
-"  }}}
-
-else
-  set nuw=3
-endif " end gui_running
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Linux\n"
+    set guifont=Screen\ 9
+    set printfont=Bitstream\ Vera\ Sans\ Mono\ 10
+    set columns=79
+    set lines=55
+  elseif s:uname == "Darwin\n"
+    set guifont=Monaco:h10  " Mac font
+    set printfont=monospace:h9
+    set noantialias
+    set columns=90
+    set lines=55
+  endif
+endif " end unix
 
 " Nice window title
 if has('title') && (has('gui_running') || &title)
