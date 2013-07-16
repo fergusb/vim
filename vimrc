@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-13 04:40:03 CEST
+" Last Modified: 2013-07-17 12:10:15 CEST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -307,25 +307,10 @@ noremap <silent><F8> :w!<CR>:!MultiMarkdown.pl % \| tidy -config $HOME/.tidy.con
 map <silent><C-F8> <Esc>:%!xmllint --format -<CR><CR>
 vmap <silent><C-F8> <Esc>:'<, '>!xmllint --format -<CR><CR>
 
-" F9 Toggle NERDTree
-"noremap <silent><F9> :NERDTreeToggle<CR>
-
 " Bash-like
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
-cnoremap <C-k> <C-U>
-
-" Fast saves
-nmap <silent><C-s> :update<CR>
-vmap <silent><C-s> <Esc><c-s>
-imap <silent><C-s> <Esc><c-s>a
-
-" Fast find
-"nmap <leader>f :e ~/buffer<CR>
-nmap <leader>f :find<CR>
-
-" Fast sourcing of current file
-nmap <leader>so :source %<CR>
+"cnoremap <C-a> <Home>
+"cnoremap <C-e> <End>
+"cnoremap <C-k> <C-U>
 
 " backspace in Visual mode deletes selection
 vnoremap <BS> d
@@ -342,34 +327,13 @@ imap <C-BS> <C-W>
 " make CTRL+] behave like CTRL+[ while in insert mode
 imap <silent><C-]> <C-[>
 
-" use <Ctrl>+N/<Ctrl>+P to cycle through files:
-"nnoremap <C-N> :next<CR>
-"nnoremap <C-P> :prev<CR>
-" [<Ctrl>+N by default is like j, and <Ctrl>+P like k.]
-
 " Reformat the current paragraph (or selected text if there is any)
 nnoremap Q gqap<CR>
 vnoremap Q gq<CR>
 
-" Turn last word into a tag
-"inoremap <leader>, <ESC>diwa<<ESC>pa></<ESC>pa><ESC>bba
-
-" Wrap selection a tag - prompt for tag name
-"nmap <leader>w viw<leader>w
-"vnoremap <leader>w <ESC>:call TagSelection()<CR>
-
-" Toggle wrap and display status
-"nnoremap <leader>w :set wrap! \| set wrap?<CR>
-"nnoremap <C-S-w> :set wrap! \| set wrap?<CR>
-"inoremap <C-S-w> <C-O>:set wrap! \| set wrap?<CR>
-
 " Lazy moving
 nnoremap j gj
 nnoremap k gk
-
-" toggle search highlight, show status
-nnoremap <leader>h :set nohls! \| set nohls?<CR>
-
 
 " Section: Brackets and auto-pairs {{{1
 "---------------------------------------------------------------------------"
@@ -451,11 +415,14 @@ let g:html_use_css = 1
 let g:html_use_encoding = "utf8"
 let g:use_xhtml = 1
 
-" NERD_Commenter menu
+" NERD_commenter menu
 let g:NERDMenuMode = 3
 "inoremap <M-/> <ESC>:call NERDComment(0, "toggle")<cr>a
 "nnoremap <M-/>/ :call NERDComment(0, "toggle")<cr>
 "vnoremap <M-/>/ :call NERDComment(1, "toggle")<cr>
+
+" Toggle NERD_tree
+map <C-n> :NERDTreeToggle<CR>
 
 " Disable autocomplpop plugin at startup
 let g:acp_enableAtStartup = 0
@@ -465,28 +432,28 @@ let g:showmarks_enable = 0
 let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 " EasyMotion
-let g:EasyMotion_leader_key = "<leader>"
+let g:EasyMotion_leader_key = "<leader><leader>"
 
-" taglist
-nnoremap <leader>T :Tlist<CR>
-nnoremap <leader>To :TlistOpen<CR>
-nnoremap <leader>Tc :TlistClose<CR>
-nnoremap <leader>Tu :TlistUpdate<CR>
-nnoremap <leader>Ts :TlistSessionSave tlist<CR>
-nnoremap <leader>Tl :TlistSessionLoad tlist<CR>
+" Taglist
+nnoremap <leader>t :Tlist<CR>
+nnoremap <leader>to :TlistOpen<CR>
+nnoremap <leader>tc :TlistClose<CR>
+nnoremap <leader>tu :TlistUpdate<CR>
+nnoremap <leader>ts :TlistSessionSave tlist<CR>
+nnoremap <leader>tl :TlistSessionLoad tlist<CR>
 
 " ToggleWords/vars/vals
 let g:toggle_words_dict = {'python': [['if', 'elif', 'else']]}
 
 " ToggleWord
-map <leader>t :ToggleWord<CR>
-map <C-S-t> :ToggleWord<CR>
-imap <C-S-t> <ESC>:ToggleWord<CR>a
+map <leader>x :ToggleWord<CR>
 
-" Yank ring
+" Yankring
 nnoremap <silent><leader>y :YRShow<CR>
 let g:yankring_history_dir = "$HOME/.vim/"
 let g:yankring_max_history = 200
+let g:yankring_replace_n_pkey = "<M-p>"
+let g:yankring_replace_n_nkey = "<M-n>"
 
 " Section: Experimental {{{1
 "---------------------------------------------------------------------------"
@@ -577,6 +544,9 @@ noremap % v%
 
 " Time out on keycodes, but never time out on mappings
 "set notimeout ttimeout ttimeoutlen=200
+
+" Turn last word into a tag
+"inoremap <leader>, <ESC>diwa<<ESC>pa></<ESC>pa><ESC>bba
 
 " unindent
 imap <S-Tab> <C-o><<
