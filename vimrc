@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-17 12:10:15 CEST
+" Last Modified: 2013-07-17 11:34:39 CEST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -38,17 +38,18 @@ set splitbelow              " New pane put below the current one
 set backup
 set undofile
 set undolevels=1000  " maximum number of changes that can be undone
-set undoreload=10000  " maximum number lines to save for undo on a buffer reload
+set undoreload=1000  " maximum number lines to save for undo on a buffer reload
 set backupdir=~/.vim/bak//,.,/tmp//  " backup with full file path
 set directory=~/.vim/tmp//,.,/tmp//  " swp files to /tmp if neccesary
 set undodir=~/.vim/undo//
 set viewdir=~/.vim/view//
+
 " Create directories if they don't exist
-silent execute '!mkdir -p $HOME/.vim/bak'
-silent execute '!mkdir -p $HOME/.vim/spell'
-silent execute '!mkdir -p $HOME/.vim/tmp'
-silent execute '!mkdir -p $HOME/.vim/undo'
-silent execute '!mkdir -p $HOME/.vim/view'
+silent execute '!mkdir -p $HOME/.vim/bak > /dev/null 2>&1'
+silent execute '!mkdir -p $HOME/.vim/spell > /dev/null 2>&1'
+silent execute '!mkdir -p $HOME/.vim/tmp > /dev/null 2>&1'
+silent execute '!mkdir -p $HOME/.vim/undo > /dev/null 2>&1'
+silent execute '!mkdir -p $HOME/.vim/view > /dev/null 2>&1'
 
 " Section: Search {{{1
 "---------------------------------------------------------------------------"
