@@ -10,29 +10,29 @@
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = https://github.com/vim-scripts/bufexplorer.zip.git
-    ignore = dirty
+  ignore = dirty
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
-    ignore = dirty
+  ignore = dirty
 [submodule "bundle/YankRing"]
 	path = bundle/YankRing
 	url = https://github.com/vim-scripts/YankRing.vim.git
-    ignore = dirty
+  ignore = dirty
 [submodule "bundle/timestamp"]
 	path = bundle/timestamp
 	url = https://github.com/vim-scripts/timestamp.vim.git
-    ignore = dirty
+  ignore = dirty
 [submodule "bundle/speeddating"]
 	path = bundle/speeddating
 	url = https://github.com/tpope/vim-speeddating.git
 [submodule "bundle/ShowMarks"]
 	path = bundle/ShowMarks
 	url = https://github.com/vim-scripts/ShowMarks.git
-    ignore = dirty
+  ignore = dirty
 [submodule "bundle/SearchComplete"]
 	path = bundle/SearchComplete
 	url = https://github.com/vim-scripts/SearchComplete.git
@@ -42,17 +42,11 @@
 [submodule "bundle/vimoutliner"]
 	path = bundle/vimoutliner
 	url = git://github.com/vimoutliner/vimoutliner.git
-[submodule "bundle/color-distinguished"]
-	path = bundle/color-distinguished
-	url = git://github.com/Lokaltog/vim-distinguished.git
-[submodule "bundle/color-hemisu"]
-	path = bundle/color-hemisu
-	url = git://github.com/noahfrederick/Hemisu.git
-    ignore = dirty
+  ignore = dirty
 [submodule "bundle/ToggleWord"]
 	path = bundle/ToggleWord
 	url = git://github.com/vim-scripts/toggle_words.vim.git
-    ignore = dirty
+  ignore = dirty
 [submodule "bundle/syntax-css"]
 	path = bundle/syntax-css
 	url = git://github.com/hail2u/vim-css-syntax.git
