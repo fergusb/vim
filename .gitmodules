@@ -69,9 +69,6 @@
 	path = bundle/AutoComplPop
 	url = git://github.com/vim-scripts/AutoComplPop.git
     ignore = dirty
-[submodule "bundle/toggle_words"]
-	path = bundle/toggle_words
-	url = https://github.com/vim-scripts/toggle_words.vim.git
 [submodule "bundle/NERD_tree"]
 	path = bundle/NERD_tree
 	url = https://github.com/scrooloose/nerdtree.git
