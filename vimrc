@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-17 11:52:36 CEST
+" Last Modified: 2013-07-17 12:03:49 CEST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -328,8 +328,8 @@ imap <C-BS> <C-W>
 imap <silent><C-]> <C-[>
 
 " Reformat the current paragraph (or selected text if there is any)
-nnoremap Q gqap<CR>
-vnoremap Q gq<CR>
+nnoremap <leader>q gqap<CR>
+vnoremap <leader>q gq<CR>
 
 " Lazy moving
 nnoremap j gj
