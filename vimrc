@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-17 11:34:39 CEST
+" Last Modified: 2013-07-17 11:52:36 CEST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -285,6 +285,9 @@ endif " has("autocmd")
 let mapleader = ","
 let g:mapleader = ","
 
+" disable Ex Mode 
+nnoremap Q <Nop>
+
 "-- F-keys --"
 
 if has("gui_running")
@@ -296,10 +299,6 @@ endif
 
 " F5 list buffers and enter number to switch
 nnoremap <F5> :buffers<CR>:buffer<Space>
-
-" F6 to cycle through split windows (and <Shift>+<F6> to cycle backwards)
-nnoremap <F6> <C-W>w
-nnoremap <S-F6> <C-W>W
 
 " F8 mkd preview
 noremap <silent><F8> :w!<CR>:!MultiMarkdown.pl % \| tidy -config $HOME/.tidy.conf \| SmartyPants.pl > $HOME/Desktop/%.html && firefox $HOME/Desktop/%.html<CR><CR>
@@ -453,8 +452,8 @@ map <leader>x :ToggleWord<CR>
 nnoremap <silent><leader>y :YRShow<CR>
 let g:yankring_history_dir = "$HOME/.vim/"
 let g:yankring_max_history = 200
-let g:yankring_replace_n_pkey = "<M-p>"
-let g:yankring_replace_n_nkey = "<M-n>"
+let g:yankring_replace_n_pkey = "<Nop>"
+let g:yankring_replace_n_nkey = "<Nop>"
 
 " Section: Experimental {{{1
 "---------------------------------------------------------------------------"
