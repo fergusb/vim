@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-20 05:47:56 CEST
+" Last Modified: 2013-07-25 11:38:26 CEST
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -151,8 +151,8 @@ set nowrap
 "set wrapmargin=4
 "set lbr
 "set smartindent
-set equalprg=par\ -w78      " use par for =
-"set formatprg=par\ -w78     " also use par for gq
+set equalprg=par\ -w78            " use par for =
+"set formatprg=par\ -w78          " also use par for gq
 
 " Section: Status-line {{{1
 "---------------------------------------------------------------------------"
@@ -162,11 +162,13 @@ set laststatus=2
 set statusline=
 set statusline+=%<[%n]\            " buffer number
 set statusline+=%Y\ 
-"set statusline+=[%{&encoding},     " encoding
-"set statusline+=%{&fileformat}]    " file format
+"set statusline+=[%{&encoding},    " encoding
+"set statusline+=%{&fileformat}]   " file format
 set statusline+=\ %F%m%r%h\        " filename and path
 set statusline+=%w                 " flags
-set statusline+=%{fugitive#statusline()} " git
+if &ft != 'mail'
+  set statusline+=%{fugitive#statusline()} " git
+endif
 set statusline+=%=                 " right align
 set statusline+=%P\ 
 set statusline+=Ln:%l/%L\ 
@@ -240,7 +242,9 @@ if has("autocmd")
 
   augroup mail
     autocmd FileType mail set expandtab nonu nosi 
-    autocmd FileType mail set tw=78 tabstop=2 sw=2 fo+=aw2tq
+    autocmd FileType mail set tw=78 tabstop=2 fo+=aw2tq
+    "autocmd BufRead ~/.mutt/tmp* execute 'normal gg/\n\n\n^M2j'
+    "autocmd FileType mail set tw=78 tabstop=2 sw=2 fo+=aw2tq
   augroup END
 
   augroup txt
