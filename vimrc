@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-07-25 11:38:26 CEST
+" Last Modified: 2013-08-31 05:12:00 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -139,7 +139,7 @@ endif
 " Section: Formatting {{{1
 "---------------------------------------------------------------------------"
 
-set autoindent
+"set autoindent
 set expandtab
 set smarttab
 set tabstop=2
@@ -237,24 +237,22 @@ if has("autocmd")
   augroup css
     autocmd FileType css let css_fold=1
     autocmd FileType css set foldenable foldmethod=indent
-    autocmd FileType css set expandtab smartindent tabstop=2 shiftwidth=2
+    autocmd FileType css set expandtab smartindent ts=2 sw=2
   augroup END
 
   augroup mail
     autocmd FileType mail set expandtab nonu nosi 
-    autocmd FileType mail set tw=78 tabstop=2 fo+=aw2tq
-    "autocmd BufRead ~/.mutt/tmp* execute 'normal gg/\n\n\n^M2j'
-    "autocmd FileType mail set tw=78 tabstop=2 sw=2 fo+=aw2tq
+    autocmd FileType mail set tw=78 ts=2 fo+=aw2tq
   augroup END
 
   augroup txt
     autocmd FileType txt set expandtab nosi noai
-    autocmd FileType txt set tw=78 tabstop=2 sw=2 fo+=aw2tq
+    autocmd FileType txt set tw=78 ts=2 sw=2 fo+=aw2tq
   augroup END
 
   augroup mkd
     autocmd FileType mkd set nofoldenable
-    autocmd FileType mkd set nonu ai tw=78 fo+=aw2tq comments=n:>
+    "autocmd FileType mkd set nonu ai tw=78 fo+=aw2tq comments=n:>
   augroup END
 
   " in human-language files, automatically format everything at 78 chars:
@@ -268,11 +266,14 @@ if has("autocmd")
   " insert the comment leader characters:
   autocmd FileType c set fo+=ro
 
-  " for Perl, PHP, Python, have things in braces indent themselves:
-  autocmd FileType perl,php,python set smartindent
+  " Perl, Python indentation
+  autocmd FileType perl,python set expandtab smartindent ts=4 sw=4
+
+  " PHP indentation
+  autocmd FileType php set expandtab smartindent ts=2 sw=2
 
   " JSP and JSTL files
-  autocmd FileType jsp set expandtab smartindent tabstop=2 shiftwidth=2
+  autocmd FileType jsp set expandtab smartindent ts=2 sw=2
 
   " for HTML, generally format text, but if a long line has been created leave it
   " alone when editing
