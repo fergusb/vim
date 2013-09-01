@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-08-31 05:12:00 EDT
+" Last Modified: 2013-09-01 05:10:01 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -13,7 +13,7 @@ set writebackup             " Atomic saves
 set enc=utf-8               " Default encoding to UTF-8
 set ffs=unix,mac            " Favorite filetypes
 set fileformat=unix         " Set fileformat to Unix
-set history=8000            " VIM history
+set history=5000            " VIM history
 "set joinspaces              " Insert two spaces after a period
 set lazyredraw              " Do not redraw, when running macros
 set matchpairs+=<:>         " Bounce between matches
@@ -236,27 +236,27 @@ if has("autocmd")
 
   augroup css
     autocmd FileType css let css_fold=1
-    autocmd FileType css set foldenable foldmethod=indent
-    autocmd FileType css set expandtab smartindent ts=2 sw=2
+    autocmd FileType css set fen foldmethod=indent
+    autocmd FileType css set ai si et ts=2 sts=2 sw=2
   augroup END
 
   augroup mail
-    autocmd FileType mail set expandtab nonu nosi 
-    autocmd FileType mail set tw=78 ts=2 fo+=aw2tq
+    autocmd FileType mail set nonu noai nosi 
+    autocmd FileType mail set et tw=79 ts=2 sts=2 fo+=aw2tq
   augroup END
 
   augroup txt
-    autocmd FileType txt set expandtab nosi noai
-    autocmd FileType txt set tw=78 ts=2 sw=2 fo+=aw2tq
+    autocmd FileType txt set noai nosi
+    autocmd FileType txt set et tw=78 ts=2 sts=2 sw=2 fo+=aw2tq
   augroup END
 
   augroup mkd
-    autocmd FileType mkd set nofoldenable
-    "autocmd FileType mkd set nonu ai tw=78 fo+=aw2tq comments=n:>
+    autocmd FileType mkd set nonu nosi nofen
+    "autocmd FileType mkd set ai tw=78 fo+=aw2tq comments=n:>
   augroup END
 
   " in human-language files, automatically format everything at 78 chars:
-  autocmd FileType vo_base,human set nonu fo+=aw2tq ts=4 tw=78
+  autocmd FileType vo_base,human set nonu et ts=4 tw=79 fo+=aw2tq
 
   " for C-like programming, have automatic indentation:
   autocmd FileType c,cpp,slang set cindent
@@ -267,21 +267,21 @@ if has("autocmd")
   autocmd FileType c set fo+=ro
 
   " Perl, Python indentation
-  autocmd FileType perl,python set expandtab smartindent ts=4 sw=4
+  autocmd FileType perl,python set ai et ts=4 sts=4 sw=4
 
   " PHP indentation
-  autocmd FileType php set expandtab smartindent ts=2 sw=2
+  autocmd FileType php set ai et ts=2 sts=2 sw=2
 
   " JSP and JSTL files
-  autocmd FileType jsp set expandtab smartindent ts=2 sw=2
+  autocmd FileType jsp set ai et ts=2 sts=2 sw=2
 
   " for HTML, generally format text, but if a long line has been created leave it
   " alone when editing
-  autocmd FileType html,xhtml,xml,xsl set fo+=tl expandtab nofoldenable foldmethod=indent
+  autocmd FileType html,xhtml,xml,xsl set et nofen foldmethod=indent fo+=tl
   autocmd FileType {xml,xslt} setlocal iskeyword=@,-,\:,48-57,_,128-167,224-235
 else
-  set autoindent    " always set autoindenting on
-endif " has("autocmd")
+  set ai et sw=2 sts=2 " always autoindent, always expand tab
+endif " end has("autocmd")
 
 " Section: Keymapping {{{1
 "---------------------------------------------------------------------------"

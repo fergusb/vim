@@ -82,3 +82,6 @@
 	path = bundle/vim-virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv.git
   ignore = dirty
+[submodule "bundle/pony"]
+	path = bundle/pony
+	url = https://github.com/jmcomets/vim-pony.git
