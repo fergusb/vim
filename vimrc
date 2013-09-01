@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 05:34:42 EDT
+" Last Modified: 2013-09-01 06:19:31 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -226,6 +226,7 @@ if has("autocmd")
   " dictionaries and speling
   autocmd FileType mail,human,mkd,txt,vo_base set dict+=/usr/share/dict/words
   autocmd FileType mail,human,mkd,txt,vo_base set spelllang=en_gb
+  autocmd FileType mail,human,mkd,txt,vo_base let g:acp_enableAtStartup = 0
 
   " dynamically set filetype-specific dictionary
   autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
@@ -432,8 +433,11 @@ let g:NERDMenuMode = 3
 " Toggle NERD_tree
 map <C-n> :NERDTreeToggle<CR>
 
+" jedi-vim autocompletion
+let g:jedi#completions_command = "<C-J>"
+
 " Disable autocomplpop plugin at startup
-let g:acp_enableAtStartup = 0
+"let g:acp_enableAtStartup = 0
 
 " ShowMarks
 let g:showmarks_enable = 0
