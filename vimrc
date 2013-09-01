@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 06:05:23 EDT
+" Last Modified: 2013-09-01 06:29:05 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
