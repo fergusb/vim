@@ -1,7 +1,7 @@
 " vim color file: acedia.vim
 " From: Fergus Bremner
 " Email: <fergus.bremner@gmail.com>
-" A lazy color scheme: gui light, console dark
+" A slothful colour scheme: gui light, console dark
 
 " GUIDE {{{
 " GUI colours as follows:
@@ -121,7 +121,7 @@ hi VertSplit        gui=none   guifg=white     guibg=#333333    ctermfg=black   
 "}}}
 " UI - vim 7+ {{{
 if v:version >= 700
-  hi Pmenu          gui=none       guifg=#4D4D4D   guibg=#DBDBDB   ctermbg=235  ctermfg=grey
+  hi Pmenu          gui=none       guifg=#4D4D4D   guibg=#E8E8E8   ctermbg=235  ctermfg=grey
   hi PMenuSel       gui=none       guifg=#FFFFFF   guibg=#7499BF   ctermbg=240  ctermfg=white
   hi PmenuSbar      gui=none       guifg=fg        guibg=#41609E   ctermbg=240   
   hi PmenuThumb     gui=none       guifg=bg        guibg=#BDCAE3   ctermbg=blue

@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 08:28:13 EDT
+" Last Modified: 2013-09-01 10:49:57 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -22,6 +22,7 @@ set nostartofline           " Keep the cursor in the current column with page co
 set novisualbell
 set number                  " Show line numbers
 set ruler                   " Always show current position
+set rulerformat=%25(%=%l,%c%<%V\/\ %L\ %P%)
 set secure                  " Disable security risk features
 set shell=zsh               " Set shell to zsh
 set shortmess+=filmnrxoOtT  " abbr of messages (avoids 'hit enter'))"
@@ -193,13 +194,14 @@ if has("autocmd")
   autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType php set omnifunc=phpcomplete#CompletePHP
   autocmd FileType python set omnifunc=pythoncomplete#Complete
+  autocmd FileType sql setlocal omnifunc=sqlcomplete#Complete
   autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 endif
 
 " completion style
 set wildmenu
-set wildmode=list:full,list:longest
-set wildignore=*.o,*.r,*.so,*.sl,*.tar,*.tgz,*.bak
+set wildmode=list:longest
+set wildignore=*.o,*.r,*.so,*.sl,*.tar,*.tgz,*.bak,.DS_Store,*.pyc
 set complete=.,k,w,b,u,t,]
 "set complete=.,k,w,b,u,t,i,]
 set completeopt=longest,menu
@@ -223,7 +225,7 @@ if has("autocmd")
   autocmd FileType mail,human,mkd,txt,vo_base let g:acp_enableAtStartup = 0
 
   " dynamically set filetype-specific dictionary
-  autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
+  "autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
 
   augroup filetype
     autocmd BufRead,BufNewFile *.jade set filetype=jade
@@ -431,14 +433,15 @@ map <C-n> :NERDTreeToggle<CR>
 let g:jedi#completions_command = "<C-J>"
 
 " Disable autocomplpop plugin at startup
-let g:acp_enableAtStartup = 0
+let g:acp_enableAtStartup = 1
 
 " ShowMarks
 "let g:showmarks_enable = 0
 let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 " SuperTab
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+"let g:SuperTabDefaultCompletionType = "context"
 
 " EasyMotion
 let g:EasyMotion_leader_key = "<leader><leader>"
