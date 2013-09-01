@@ -22,4 +22,10 @@ git submodule add https://github.com/fergusb/vim-foo.git bundle/foo
 git submodule foreach git pull origin master
 git submodule update
 
+### YouCompleteMe
+To complete the YCM installation
+  cd ~/.vim/bundle/YouCompleteMe
+  ./install.sh --clang-completer
+Full: http://valloric.github.io/YouCompleteMe/
+
 " vim:ft=mkd
