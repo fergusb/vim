@@ -55,7 +55,7 @@ hi Identifier       gui=none   guifg=#000099                   ctermfg=blue
 hi Function         gui=none   guifg=#000099                   ctermfg=darkblue  cterm=none
 
 hi Statement        gui=none   guifg=#000099                   ctermfg=blue
-hi Conditional      gui=none   guifg=#000099                  ctermfg=darkblue   cterm=none
+hi Conditional      gui=none   guifg=#000099                   ctermfg=darkblue   cterm=none
 hi Repeat           gui=none   guifg=#990066                   ctermfg=darkblue  cterm=none
 hi Label            gui=none   guifg=#990066                   ctermfg=darkblue  cterm=none
 hi Operator         gui=none   guifg=black                     ctermfg=white     cterm=none
@@ -65,8 +65,8 @@ hi Exception        gui=none   guifg=#555555                   ctermfg=242      
 hi PreProc          gui=none   guifg=#990066                   ctermfg=darkblue
 hi Include          gui=none   guifg=#000099   guibg=bg        ctermfg=darkblue   cterm=none
 "hi Define           gui=none   guifg=#990066                   ctermfg=red    cterm=none
-hi Macro            gui=none   guifg=#FF3399   guibg=bg       ctermfg=magenta     cterm=none
-hi PreCondit        gui=none   guifg=#990066                  ctermfg=darkmagenta
+hi Macro            gui=none   guifg=#FF3399   guibg=bg        ctermfg=magenta     cterm=none
+hi PreCondit        gui=none   guifg=#990066                   ctermfg=darkmagenta
 
 hi Type             gui=none   guifg=#990066                   ctermfg=white      cterm=none
 hi StorageClass     gui=none   guifg=#000099                   ctermfg=darkblue
@@ -75,12 +75,12 @@ hi Typedef          gui=none   guifg=#990066                   ctermfg=red
 
 hi Special          gui=none   guifg=black                     ctermfg=white   cterm=none
 hi SpecialChar      gui=none   guifg=black                     ctermfg=none   cterm=none
-hi Tag                       ctermfg=red ctermbg=bg                    
+hi Tag                                                         ctermfg=red    ctermbg=bg                    
 "hi Delimiter          gui=none   guifg=black                   ctermfg=red   cterm=none
 hi SpecialComment   gui=none   guifg=#555555                   ctermfg=red   cterm=none
 hi Debug            gui=none   guifg=#555555                   ctermfg=red   cterm=none
 
-hi Error            gui=none   guifg=white      guibg=red      ctermfg=white     ctermbg=darkred
+hi Error            gui=none   guifg=white     guibg=red       ctermfg=white     ctermbg=darkred
 
 hi Todo             gui=none   guifg=black     guibg=yellow    ctermfg=black   ctermbg=228
 
@@ -121,10 +121,10 @@ hi VertSplit        gui=none   guifg=white     guibg=#333333    ctermfg=black   
 "}}}
 " UI - vim 7+ {{{
 if v:version >= 700
-  hi Pmenu          gui=none       guifg=#4d4d4d     guibg=#dbdbdb     ctermbg=darkgreen ctermfg=gray
-  hi PMenuSel       gui=none       guifg=#FFFFFF     guibg=#7499bf     ctermbg=yellow    ctermfg=gray
-  hi PmenuSbar      gui=none       guifg=fg          guibg=#41609e     ctermbg=darkgreen   
-  hi PmenuThumb     gui=none       guifg=bg          guibg=#bdcae3     ctermbg=yellow
+  hi Pmenu          gui=none       guifg=#4D4D4D   guibg=#DBDBDB   ctermbg=235  ctermfg=grey
+  hi PMenuSel       gui=none       guifg=#FFFFFF   guibg=#7499BF   ctermbg=240  ctermfg=white
+  hi PmenuSbar      gui=none       guifg=fg        guibg=#41609E   ctermbg=240   
+  hi PmenuThumb     gui=none       guifg=bg        guibg=#BDCAE3   ctermbg=blue
   hi SpellBad       gui=undercurl  guisp=red                           
   hi SpellRare      gui=undercurl  guisp=orange                        
   hi SpellLocal     gui=undercurl  guisp=orange                        
