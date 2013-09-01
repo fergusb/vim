@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 05:10:01 EDT
+" Last Modified: 2013-09-01 05:34:42 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -217,14 +217,17 @@ set infercase
 if has("autocmd")
   autocmd BufEnter * :syntax sync fromstart
 
-" use templates
+  " use templates
   autocmd BufNewFile * silent! 0r ~/.vim/skel/%:e.tpl
 
-  " Dictionaries and speling
+  " strip trailing white space 
+  autocmd FileType c,cpp,css,java,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+  " dictionaries and speling
   autocmd FileType mail,human,mkd,txt,vo_base set dict+=/usr/share/dict/words
   autocmd FileType mail,human,mkd,txt,vo_base set spelllang=en_gb
 
-  " Dynamically set filetype-specific dictionary
+  " dynamically set filetype-specific dictionary
   autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
 
   augroup filetype
@@ -266,11 +269,12 @@ if has("autocmd")
   " insert the comment leader characters:
   autocmd FileType c set fo+=ro
 
-  " Perl, Python indentation
-  autocmd FileType perl,python set ai et ts=4 sts=4 sw=4
+  " Python indentation
+  autocmd FileType python set ai et ts=4 sts=4 sw=4
+  autocmd FileType python set si cinwords=if,elif,else,for,while,try,except,finally,def,class
 
-  " PHP indentation
-  autocmd FileType php set ai et ts=2 sts=2 sw=2
+  " Perl, PHP indentation
+  autocmd FileType perl,php set ai et ts=2 sts=2 sw=2
 
   " JSP and JSTL files
   autocmd FileType jsp set ai et ts=2 sts=2 sw=2
@@ -278,7 +282,7 @@ if has("autocmd")
   " for HTML, generally format text, but if a long line has been created leave it
   " alone when editing
   autocmd FileType html,xhtml,xml,xsl set et nofen foldmethod=indent fo+=tl
-  autocmd FileType {xml,xslt} setlocal iskeyword=@,-,\:,48-57,_,128-167,224-235
+  autocmd FileType xml,xslt setlocal iskeyword=@,-,\:,48-57,_,128-167,224-235
 else
   set ai et sw=2 sts=2 " always autoindent, always expand tab
 endif " end has("autocmd")
