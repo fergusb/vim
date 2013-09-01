@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 02:03:15 EDT
+" Last Modified: 2013-09-01 02:37:06 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -415,13 +415,13 @@ map <leader>a :Ack<space>
 " BufExplorer
 map <silent><leader>b :BufExplorer<CR>
 
+" html5 omnicomplete
+let g:html5_aria_attributes_complete = 0
+"let g:html5_microdata_attributes_complete = 0
+let g:html5_rdfa_attributes_complete = 0
+
 " htmldjango
 let g:htmldjangocomplete_html_flavour = "html5"
-
-" Conversion HTML (:help 2html.vim)
-let g:html_use_css = 1
-let g:html_use_encoding = "utf8"
-let g:use_xhtml = 1
 
 " NERD_commenter menu
 let g:NERDMenuMode = 3
