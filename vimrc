@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 07:16:49 EDT
+" Last Modified: 2013-09-01 08:10:30 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -29,7 +29,6 @@ set so=7                    " Set 7 lines to the curors - when moving vertically
 set t_vb=                   " Disable error beeps
 set viminfo=%,'20,<50,h     " Restore cursor position between sessions
 set whichwrap=b,s,h,l,<,>,[,] " keys wrap to previous/next line
-set wildmenu                " Enable menu at bottom of vim/gvim window
 set splitbelow              " New pane put below the current one
 
 " Section: Swap and backup {{{1
@@ -183,10 +182,6 @@ set showcmd
 
 set cmdheight=1
 set su=.h,~,.o,.info,.swp,.obj      " low priority filetypes 
-set wildchar=<TAB>                  " tab for command-line expansion
-set wildignore=*.o,*.r,*.so,*.sl,*.tar,*.tgz,*.bak " ignore these
-set wildmode=list:longest,list:full
-set wmnu                            " show list of matches when tabbing a command
 
 " Section: Autocompletion {{{1
 "---------------------------------------------------------------------------"
@@ -201,14 +196,13 @@ if has("autocmd")
   autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 endif
 
-" how should we fuck off?
+" completion style
+set wildmenu
+set wildmode=list:full,list:longest
+set wildignore=*.o,*.r,*.so,*.sl,*.tar,*.tgz,*.bak
 set complete=.,k,w,b,u,t,]
 "set complete=.,k,w,b,u,t,i,]
-
-set completeopt=longest
-"set completeopt=longest,menuone
-
-" adjust case of a keyword completion match
+set completeopt=longest,menu
 set infercase
 
 " Section: Formats and filetypes {{{1
