@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 06:36:29 EDT
+" Last Modified: 2013-09-01 06:55:28 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -437,7 +437,7 @@ map <C-n> :NERDTreeToggle<CR>
 let g:jedi#completions_command = "<C-J>"
 
 " Disable autocomplpop plugin at startup
-let g:acp_enableAtStartup = 0
+"let g:acp_enableAtStartup = 0
 
 " ShowMarks
 let g:showmarks_enable = 0
