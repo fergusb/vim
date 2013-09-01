@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 08:10:30 EDT
+" Last Modified: 2013-09-01 08:28:13 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -434,8 +434,11 @@ let g:jedi#completions_command = "<C-J>"
 let g:acp_enableAtStartup = 0
 
 " ShowMarks
-let g:showmarks_enable = 0
+"let g:showmarks_enable = 0
 let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+" SuperTab
+let g:SuperTabDefaultCompletionType = "context"
 
 " EasyMotion
 let g:EasyMotion_leader_key = "<leader><leader>"
