@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 10:49:57 EDT
+" Last Modified: 2013-09-01 12:41:40 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -14,7 +14,6 @@ set enc=utf-8               " Default encoding to UTF-8
 set ffs=unix,mac            " Favorite filetypes
 set fileformat=unix         " Set fileformat to Unix
 set history=5000            " VIM history
-"set joinspaces              " Insert two spaces after a period
 set lazyredraw              " Do not redraw, when running macros
 set matchpairs+=<:>         " Bounce between matches
 set noerrorbells            " Turn off error warnings
@@ -22,7 +21,6 @@ set nostartofline           " Keep the cursor in the current column with page co
 set novisualbell
 set number                  " Show line numbers
 set ruler                   " Always show current position
-set rulerformat=%25(%=%l,%c%<%V\/\ %L\ %P%)
 set secure                  " Disable security risk features
 set shell=zsh               " Set shell to zsh
 set shortmess+=filmnrxoOtT  " abbr of messages (avoids 'hit enter'))"
@@ -37,12 +35,12 @@ set splitbelow              " New pane put below the current one
 
 set backup
 set undofile
-set undolevels=1000  " maximum number of changes that can be undone
-set undoreload=1000  " maximum number lines to save for undo on a buffer reload
-set backupdir=~/.vim/bak//,.,/tmp//  " backup with full file path
-set directory=~/.vim/tmp//,.,/tmp//  " swp files to /tmp if neccesary
-set undodir=~/.vim/undo//
-set viewdir=~/.vim/view//
+set undolevels=100  " maximum number of changes that can be undone
+set undoreload=100  " maximum number lines to save for undo on a buffer reload
+set backupdir=$HOME/.vim/bak//,.,/tmp//  " backup with full file path
+set directory=$HOME/.vim/tmp//,.,/tmp//  " swp files to /tmp if neccesary
+set undodir=$HOME/.vim/undo//
+set viewdir=$HOME/.vim/view//
 
 " Create directories if they don't exist
 silent execute '!mkdir -p $HOME/.vim/bak > /dev/null 2>&1'
@@ -116,13 +114,6 @@ endif
 
 " }}}
 
-" Section: Menus {{{2
-
-" Popup mouse menu
-  :amenu PopUp.Close.\ Window :confirm close<CR>
-  :amenu PopUp.Close.\ Other :confirm only<CR>
-"  }}}
-
 else
   set nuw=3
 endif " end gui_running
@@ -142,17 +133,16 @@ endif
 "set autoindent
 set expandtab
 set smarttab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-"set backspace=4
+"set tabstop=2
+"set softtabstop=2
+"set shiftwidth=2
 set nowrap
 "set formatoptions=tcrqn2
 "set wrapmargin=4
 "set lbr
 "set smartindent
-set equalprg=par\ -w78            " use par for =
-"set formatprg=par\ -w78          " also use par for gq
+set equalprg=par\ -w79            " use par for =
+"set formatprg=par\ -w79          " also use par for gq
 
 " Section: Status-line {{{1
 "---------------------------------------------------------------------------"
@@ -194,7 +184,7 @@ if has("autocmd")
   autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType php set omnifunc=phpcomplete#CompletePHP
   autocmd FileType python set omnifunc=pythoncomplete#Complete
-  autocmd FileType sql setlocal omnifunc=sqlcomplete#Complete
+  autocmd FileType sql set omnifunc=sqlcomplete#Complete
   autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 endif
 
@@ -219,10 +209,9 @@ if has("autocmd")
   " strip trailing white space 
   autocmd FileType c,cpp,css,java,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
 
-  " dictionaries and speling
+  " human dicts and speling
   autocmd FileType mail,human,mkd,txt,vo_base set dict+=/usr/share/dict/words
   autocmd FileType mail,human,mkd,txt,vo_base set spelllang=en_gb
-  autocmd FileType mail,human,mkd,txt,vo_base let g:acp_enableAtStartup = 0
 
   " dynamically set filetype-specific dictionary
   "autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
@@ -237,26 +226,27 @@ if has("autocmd")
   augroup css
     autocmd FileType css let css_fold=1
     autocmd FileType css set fen foldmethod=indent
-    autocmd FileType css set ai si et ts=2 sts=2 sw=2
+    autocmd FileType css set ai si ts=2 sts=2 sw=2
   augroup END
 
-  augroup mail
+  augroup mutt
     autocmd FileType mail set nonu noai nosi 
-    autocmd FileType mail set et tw=79 ts=2 sts=2 fo+=aw2tq
+    autocmd FileType mail set tw=79 ts=2 sts=2 fo+=aw2tq
   augroup END
 
   augroup text
-    autocmd FileType txt set noai nosi
-    autocmd FileType txt set et tw=78 ts=2 sts=2 sw=2 fo+=aw2tq
+    autocmd FileType txt set js
+    autocmd FileType txt set nosi
+    autocmd FileType txt set tw=79 ts=2 sts=2 sw=2 fo+=aw2tq
   augroup END
 
   augroup markdown
     autocmd FileType mkd set nonu nosi nofen
-    "autocmd FileType mkd set ai tw=78 fo+=aw2tq comments=n:>
+    "autocmd FileType mkd set ai tw=79 fo+=aw2tq comments=n:>
   augroup END
 
-  " in human-language files, automatically format everything at 78 chars:
-  autocmd FileType vo_base,human set nonu et ts=4 tw=79 fo+=aw2tq
+  " in human-language files, automatically format everything at 79 chars:
+  autocmd FileType vo_base,human set nonu ts=4 tw=79 fo+=aw2tq
 
   " for C-like programming, have automatic indentation:
   autocmd FileType c,cpp,slang set cindent
@@ -267,21 +257,20 @@ if has("autocmd")
   autocmd FileType c set fo+=ro
 
   " Python indentation
-  autocmd FileType python set ai et ts=4 sts=4 sw=4
+  autocmd FileType python set ai ts=4 sts=4 sw=4
   autocmd FileType python set si cinwords=if,elif,else,for,while,try,except,finally,def,class
 
   " Perl, PHP indentation
-  autocmd FileType perl,php set ai et ts=2 sts=2 sw=2
+  autocmd FileType perl,php set ai ts=2 sts=2 sw=2
 
-  " JSP and JSTL files
-  autocmd FileType jsp set ai et ts=2 sts=2 sw=2
+  " JSP and JSTL indentation
+  autocmd FileType jsp set ai ts=2 sts=2 sw=2
 
-  " for HTML, generally format text, but if a long line has been created leave it
-  " alone when editing
-  autocmd FileType html,xhtml,xml,xsl set et nofen foldmethod=indent fo+=tl
+  " format html but leave long lines alone
+  autocmd FileType html,xhtml,xml,xsl set nofen foldmethod=indent fo+=tl
   autocmd FileType xml,xslt setlocal iskeyword=@,-,\:,48-57,_,128-167,224-235
 else
-  set ai et sw=2 sts=2 " always autoindent, always expand tab
+  set ai ts=2 sts=2 sw=2 " defaults for everything else
 endif " end has("autocmd")
 
 " Section: Keymapping {{{1
@@ -292,6 +281,9 @@ let g:mapleader = ","
 
 " disable Ex Mode 
 nnoremap Q <Nop>
+
+" edit this file
+nnoremap <leader>ev :tabe $HOME/.vimrc<cr>
 
 "-- F-keys --"
 
@@ -441,7 +433,6 @@ let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 " SuperTab
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-"let g:SuperTabDefaultCompletionType = "context"
 
 " EasyMotion
 let g:EasyMotion_leader_key = "<leader><leader>"
@@ -462,8 +453,7 @@ map <leader>x :ToggleWord<CR>
 
 " Yankring
 nnoremap <silent><leader>y :YRShow<CR>
-let g:yankring_history_dir = "$HOME/.vim/"
-let g:yankring_max_history = 200
+let g:yankring_history_dir = "$HOME/.vim/tmp"
 let g:yankring_replace_n_pkey = "<Nop>"
 let g:yankring_replace_n_nkey = "<Nop>"
 
@@ -564,4 +554,5 @@ noremap % v%
 imap <S-Tab> <C-o><<
 
 " }}}
-" vim:ft=vim:fdm=marker:sw=2
+
+" vim:ft=vim:fdm=marker
