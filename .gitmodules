@@ -47,15 +47,6 @@
 	path = bundle/ToggleWord
 	url = git://github.com/vim-scripts/toggle_words.vim.git
   ignore = dirty
-[submodule "bundle/syntax-css"]
-	path = bundle/syntax-css
-	url = git://github.com/hail2u/vim-css-syntax.git
-[submodule "bundle/syntax-scala"]
-	path = bundle/syntax-scala
-	url = git://github.com/derekwyatt/vim-scala.git
-[submodule "bundle/syntax-tmux"]
-	path = bundle/syntax-tmux
-	url = git://github.com/tsaleh/vim-tmux.git
 [submodule "bundle/easymotion"]
 	path = bundle/easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
