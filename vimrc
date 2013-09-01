@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 12:41:40 EDT
+" Last Modified: 2013-09-01 02:03:15 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -127,23 +127,6 @@ if has('title') && (has('gui_running') || &title)
   "set titlestring+=\ -\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')} " cwd
 endif
 
-" Section: Formatting {{{1
-"---------------------------------------------------------------------------"
-
-"set autoindent
-set expandtab
-set smarttab
-"set tabstop=2
-"set softtabstop=2
-"set shiftwidth=2
-set nowrap
-"set formatoptions=tcrqn2
-"set wrapmargin=4
-"set lbr
-"set smartindent
-set equalprg=par\ -w79            " use par for =
-"set formatprg=par\ -w79          " also use par for gq
-
 " Section: Status-line {{{1
 "---------------------------------------------------------------------------"
 
@@ -173,6 +156,23 @@ set showcmd
 
 set cmdheight=1
 set su=.h,~,.o,.info,.swp,.obj      " low priority filetypes 
+
+" Section: Formatting {{{1
+"---------------------------------------------------------------------------"
+
+"set autoindent
+"set smartindent
+set expandtab
+set smarttab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set nowrap
+"set formatoptions=tcrqn2
+"set wrapmargin=4
+"set lbr
+set equalprg=par\ -w79            " use par for =
+"set formatprg=par\ -w79          " also use par for gq
 
 " Section: Autocompletion {{{1
 "---------------------------------------------------------------------------"
@@ -226,18 +226,23 @@ if has("autocmd")
   augroup css
     autocmd FileType css let css_fold=1
     autocmd FileType css set fen foldmethod=indent
-    autocmd FileType css set ai si ts=2 sts=2 sw=2
+    autocmd FileType css set ai si 
+  augroup END
+
+  augroup django
+    autocmd FileType htmldjango inoremap {% {% %}<left><left><left>
+    autocmd FileType htmldjango inoremap {{ {{ }}<left><left><left>
   augroup END
 
   augroup mutt
     autocmd FileType mail set nonu noai nosi 
-    autocmd FileType mail set tw=79 ts=2 sts=2 fo+=aw2tq
+    autocmd FileType mail set tw=79
   augroup END
 
   augroup text
     autocmd FileType txt set js
     autocmd FileType txt set nosi
-    autocmd FileType txt set tw=79 ts=2 sts=2 sw=2 fo+=aw2tq
+    autocmd FileType txt set tw=79 fo+=aw2tq
   augroup END
 
   augroup markdown
@@ -246,7 +251,7 @@ if has("autocmd")
   augroup END
 
   " in human-language files, automatically format everything at 79 chars:
-  autocmd FileType vo_base,human set nonu ts=4 tw=79 fo+=aw2tq
+  autocmd FileType vo_base,human set nonu ts=4 sts=4 sw=4 tw=79 fo+=aw2tq
 
   " for C-like programming, have automatic indentation:
   autocmd FileType c,cpp,slang set cindent
@@ -261,10 +266,10 @@ if has("autocmd")
   autocmd FileType python set si cinwords=if,elif,else,for,while,try,except,finally,def,class
 
   " Perl, PHP indentation
-  autocmd FileType perl,php set ai ts=2 sts=2 sw=2
+  autocmd FileType perl,php set ai
 
   " JSP and JSTL indentation
-  autocmd FileType jsp set ai ts=2 sts=2 sw=2
+  autocmd FileType jsp set ai
 
   " format html but leave long lines alone
   autocmd FileType html,xhtml,xml,xsl set nofen foldmethod=indent fo+=tl
@@ -357,7 +362,7 @@ inoremap {}    {}
 imap <C-j> <ESC>:exec "normal f" . leavechar<CR>a
 
 if has("autocmd")
-  " CSS
+  " css
   autocmd FileType css inoremap :<space> : ;<left>
   autocmd FileType css inoremap (" ("")<ESC>:let leavechar=')'<CR>i<left>
 
@@ -404,8 +409,14 @@ vmap <C-Down> :move '>+1<CR>gv
 execute pathogen#infect()
 execute pathogen#helptags()
 
+" Ack
+map <leader>a :Ack<space>
+
 " BufExplorer
 map <silent><leader>b :BufExplorer<CR>
+
+" htmldjango
+let g:htmldjangocomplete_html_flavour = "html5"
 
 " Conversion HTML (:help 2html.vim)
 let g:html_use_css = 1

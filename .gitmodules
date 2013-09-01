@@ -76,3 +76,12 @@
 [submodule "bundle/css"]
 	path = bundle/css
 	url = https://github.com/JulesWang/css.vim.git
+[submodule "bundle/htmldjango_omnicomplete"]
+	path = bundle/htmldjango_omnicomplete
+	url = https://github.com/mjbrownie/vim-htmldjango_omnicomplete.git
+[submodule "bundle/html5"]
+	path = bundle/html5
+	url = https://github.com/othree/html5.vim.git
+[submodule "bundle/ack"]
+	path = bundle/ack
+	url = https://github.com/mileszs/ack.vim.git
