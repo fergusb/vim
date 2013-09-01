@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 06:55:28 EDT
+" Last Modified: 2013-09-01 07:01:02 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -249,12 +249,12 @@ if has("autocmd")
     autocmd FileType mail set et tw=79 ts=2 sts=2 fo+=aw2tq
   augroup END
 
-  augroup txt
+  augroup text
     autocmd FileType txt set noai nosi
     autocmd FileType txt set et tw=78 ts=2 sts=2 sw=2 fo+=aw2tq
   augroup END
 
-  augroup mkd
+  augroup markdown
     autocmd FileType mkd set nonu nosi nofen
     "autocmd FileType mkd set ai tw=78 fo+=aw2tq comments=n:>
   augroup END

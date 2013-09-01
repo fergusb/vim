@@ -22,8 +22,11 @@ git submodule add https://github.com/fergusb/vim-foo.git bundle/foo
 git submodule foreach git pull origin master
 git submodule update
 
+### Jedi
+pip install jedi
+
 ### YouCompleteMe
-To complete the YCM installation
+To complete a YCM installation
   cd ~/.vim/bundle/YouCompleteMe
   ./install.sh --clang-completer
 Full: http://valloric.github.io/YouCompleteMe/
