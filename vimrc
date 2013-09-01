@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 02:37:06 EDT
+" Last Modified: 2013-09-01 06:05:23 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -181,6 +181,7 @@ if has("autocmd")
   autocmd FileType c set omnifunc=ccomplete#Complete
   autocmd FileType css set omnifunc=csscomplete#CompleteCSS
   autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType htmldjango set omnifunc=htmldjangocomplete#CompleteDjango
   autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType php set omnifunc=phpcomplete#CompletePHP
   autocmd FileType python set omnifunc=pythoncomplete#Complete
