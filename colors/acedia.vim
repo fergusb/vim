@@ -1,7 +1,7 @@
 " vim color file: acedia.vim
 " A slothful colour scheme: gui light, console dark
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 08:23:57 EDT
+" Last Modified: 2013-09-01 09:06:56 EDT
 
 " GUIDE {{{
 " GUI colours as follows:
@@ -111,8 +111,8 @@ hi DiffDelete       gui=none    ctermfg=black   ctermbg=none     cterm=none
 hi DiffText         gui=none    ctermfg=black   ctermbg=yellow   cterm=none
 "}}}
 " UI - chrome {{{
-hi CurrentLine      gui=none   guibg=#FFFFBB   ctermfg=yellow   ctermbg=red   cterm=none
-hi CursorLine       gui=none   guibg=#FFFFBB   ctermfg=yellow   ctermbg=red   cterm=none
+hi CurrentLine      gui=none   guibg=#FFFFBB   ctermfg=yellow   ctermbg=none   cterm=none
+hi CursorLine       gui=none   guibg=#FFFCCF   ctermfg=none     ctermbg=234    cterm=none
 hi CursorColumn     gui=none   guibg=#FFEEDD   ctermfg=darkgray cterm=none
 hi LineNr           gui=none   guifg=#999999   guibg=#E8E8E8    ctermfg=240       ctermbg=235       cterm=none
 hi StatusLine       gui=none   guifg=white     guibg=#555555    ctermfg=white     ctermbg=240     cterm=none
@@ -137,7 +137,7 @@ hi cssBraces        gui=none       guifg=black     ctermfg=white
 hi cssClassName     gui=none       guifg=#000099   ctermfg=cyan
 "hi cssColor         gui=none       guifg=#AA0000   ctermfg=gray
 hi cssIdentifier    gui=none       guifg=black     ctermfg=white
-hi cssImportant     gui=none       guifg=red   ctermfg=yellow
+hi cssImportant     gui=none       guifg=red       ctermfg=red
 "hi cssMedia         gui=none       guifg=#000099
 "hi cssNumber        gui=none       guifg=black     ctermfg=red
 "hi cssProp          gui=none       guifg=#990066   ctermfg=gray

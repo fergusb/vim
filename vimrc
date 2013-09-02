@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 08:21:18 EDT
+" Last Modified: 2013-09-01 09:05:26 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -9,6 +9,7 @@ set nocompatible            " Use Vim settings (must be first)
 set autochdir               " Auto-change cwd to current file
 set autoread                " Auto read a file when it's changed from without
 set autowrite               " Auto write file when switching to another file or window
+set cursorline
 set writebackup             " Atomic saves
 set enc=utf-8               " Default encoding to UTF-8
 set fenc=utf-8              " ditto
@@ -88,7 +89,6 @@ if has("gui_running")
   set guioptions-=r " Hide right scrollbar (toggle with CTRL+F2)
   set guioptions-=l " Hide left scrollbar
   set guioptions-=b " Hide bottom scrollbar
-  set cursorline
   set switchbuf=usetab
   set showtabline=1
   "set guicursor=a:blinkon0
@@ -209,7 +209,7 @@ if has("autocmd")
   autocmd BufNewFile * silent! 0r ~/.vim/skel/%:e.tpl
 
   " strip trailing white space 
-  autocmd FileType c,cpp,css,java,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType c,cpp,css,java,php,python,html,html.django autocmd BufWritePre <buffer> :%s/\s\+$//e
 
   " human dicts and speling
   autocmd FileType mail,human,mkd,txt,vo_base set dict+=/usr/share/dict/words
@@ -231,9 +231,17 @@ if has("autocmd")
     autocmd FileType css set ai si 
   augroup END
 
+  " only show cursorline in current window
+  augroup cursorline
+    autocmd!
+    autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    autocmd WinLeave * setlocal nocursorline
+  augroup END
+
   augroup django
-    autocmd FileType htmldjango inoremap {% {% %}<left><left><left>
+    autocmd BufNewFile,BufRead *.html call s:FThtmldjango()
     autocmd FileType htmldjango inoremap {{ {{ }}<left><left><left>
+    autocmd FileType htmldjango inoremap {% {% %}<left><left><left>
   augroup END
 
   augroup mutt
@@ -263,9 +271,9 @@ if has("autocmd")
   " insert the comment leader characters:
   autocmd FileType c set fo+=ro
 
-  " Python indentation
-  autocmd FileType python set ai ts=4 sts=4 sw=4
-  autocmd FileType python set si cinwords=if,elif,else,for,while,try,except,finally,def,class
+  " Python indentation - PEP8 compliant
+  autocmd FileType python,python.django set ai ts=4 sts=4 sw=4
+  autocmd FileType python,python.dyango set si cinwords=if,elif,else,for,while,try,except,finally,def,class
 
   " Perl, PHP indentation
   autocmd FileType perl,php set ai
@@ -565,6 +573,43 @@ noremap % v%
 
 " unindent
 imap <S-Tab> <C-o><<
+
+func! s:FThtmldjango()
+  let n = 1
+  while n < 30 && n < line("$")
+    if getline(n) =~ '.*{%.*'
+      set ft=htmldjango
+      return
+    endif
+    let n = n + 1
+  endwhile
+  set ft=html
+endfunc
+
+" Add the following snippet to your vimrc to escape insert mode immediately
+if ! has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
+
+" Python-mode things
+" Disable pylint
+let g:pymode_lint = 0
+" Disable pylint checking every save
+let g:pymode_lint_write = 0
+" Set key 'R' for run python code
+let g:pymode_run_key = 'R'
+" Rope plugin (disable it)
+let g:pymode_rope = 0
+let g:pymode_rope_autoimport_modules = ["os","shutil","datetime","django"]
+let g:pymode_rope_auto_project = 0
+" Enable python folding but default to unfolded
+let g:pymode_folding = 1
+autocmd FileType python,python.django setlocal foldlevel=99
 
 " }}}
 
