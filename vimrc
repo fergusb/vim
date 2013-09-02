@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 09:33:25 EDT
+" Last Modified: 2013-09-02 04:15:07 EDT
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -10,27 +10,31 @@ set autochdir               " Auto-change cwd to current file
 set autoread                " Auto read a file when it's changed from without
 set autowrite               " Auto write file when switching to another file or window
 set cursorline
-set writebackup             " Atomic saves
 set enc=utf-8               " Default encoding to UTF-8
 set fenc=utf-8              " ditto
 set fileformat=unix         " Set fileformat to UNIX
 set fileformats=unix,mac    " Fave filetypes
-set history=5000            " VIM history
+set history=1000            " VIM history
 set lazyredraw              " Do not redraw, when running macros
 set matchpairs+=<:>         " Bounce between matches
 set noerrorbells            " Turn off error warnings
 set nostartofline           " Keep the cursor in the current column with page commands
 set novisualbell
 set number                  " Show line numbers
+set printfont=monospace:h9
 set ruler                   " Always show current position
+set scrolljump=2
+set scrolloff=3             " show lines on vertcal scroll
 set secure                  " Disable security risk features
 set shell=zsh               " Set shell to zsh
 set shortmess+=filmnrxoOtT  " abbr of messages (avoids 'hit enter'))"
-set so=7                    " Set 7 lines to the curors - when moving vertically
+set showtabline=1
+set splitbelow              " New pane put below the current one
+set switchbuf=usetab
 set t_vb=                   " Disable error beeps
 set viminfo=%,'20,<50,h     " Restore cursor position between sessions
 set whichwrap=b,s,h,l,<,>,[,] " keys wrap to previous/next line
-set splitbelow              " New pane put below the current one
+set writebackup             " Atomic saves
 
 " Section: Swap and backup {{{1
 "---------------------------------------------------------------------------"
@@ -79,42 +83,43 @@ if has("gui_running")
     set guifont=Screen\ 9
     set columns=79
     set lines=55
-  else
+  elseif has('gui_macvim')
     set guifont=Monaco:h10  " Mac font
     set noantialias
     set columns=90
     set lines=55
+    set transp=0 " transparency
+    set fuopt+=maxhorz " full width full screen
+  else
+    set guifont=monospace:h9
+    set columns=79
+    set lines=55
   endif
-  set guioptions-=T " Hide useless toolbar (toggle with F2)
-  set guioptions-=r " Hide right scrollbar (toggle with CTRL+F2)
-  set guioptions-=l " Hide left scrollbar
-  set guioptions-=b " Hide bottom scrollbar
-  set switchbuf=usetab
-  set showtabline=1
+
   "set guicursor=a:blinkon0
   set guicursor=n-v-c:blinkon0
-  set scrolljump=5
-  set scrolloff=5
+
+  " Hide menus and toolbar
+  set guioptions-=m
+  set guioptions-=T
+
+  "Hide scrollbars
+  set guioptions-=L
+  set guioptions-=l
+  set guioptions-=R
+  set guioptions-=r
+  set guioptions-=b
+
+  set guioptions+=a " copy selection to register
+
   if has("mouse")
-    set mouse=a               " Enable mouse at all times
-    set mousehide             " Hide mouse when typing
+    set mousehide   " Hide mouse when typing
     "set mousemodel=popup_setpos
     set mousemodel=extend
   endif
-
-" Section: Printing {{{2
-
-if has("gui_gtk2") " GTK/Linux font
-  set printfont=Bitstream\ Vera\ Sans\ Mono\ 10
-else
-  set printfont=monospace:h9
-endif
-
-" }}}
-
 else
   set nuw=3
-endif " end gui_running
+endif
 
 " Nice window title
 if has('title') && (has('gui_running') || &title)
@@ -133,8 +138,8 @@ set laststatus=2
 set statusline=
 set statusline+=%<[%n]\           " buffer number
 set statusline+=%Y\ 
-set statusline+=[%{&encoding},    " encoding
-set statusline+=%{&fileformat}]   " file format
+"set statusline+=[%{&encoding},    " encoding
+"set statusline+=%{&fileformat}]   " file format
 set statusline+=\ %F%m%r%h\        " filename and path
 set statusline+=%w                 " flags
 if &ft != 'mail'
@@ -182,7 +187,7 @@ if has("autocmd")
   autocmd FileType c set omnifunc=ccomplete#Complete
   autocmd FileType css set omnifunc=csscomplete#CompleteCSS
   autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType htmldjango set omnifunc=htmldjangocomplete#CompleteDjango
+  "autocmd FileType htmldjango set omnifunc=htmldjangocomplete#CompleteDjango
   autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType php set omnifunc=phpcomplete#CompletePHP
   autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -449,7 +454,7 @@ map <C-n> :NERDTreeToggle<CR>
 let g:jedi#completions_command = "<C-J>"
 
 " Disable autocomplpop plugin at startup
-let g:acp_enableAtStartup = 1
+let g:acp_enableAtStartup = 0
 
 " ShowMarks
 let g:showmarks_enable = 0
