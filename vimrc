@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 08:00:39 EDT
+" Last Modified: 2013-09-01 08:21:18 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -11,8 +11,9 @@ set autoread                " Auto read a file when it's changed from without
 set autowrite               " Auto write file when switching to another file or window
 set writebackup             " Atomic saves
 set enc=utf-8               " Default encoding to UTF-8
-set ffs=unix,mac            " Favorite filetypes
-set fileformat=unix         " Set fileformat to Unix
+set fenc=utf-8              " ditto
+set fileformat=unix         " Set fileformat to UNIX
+set fileformats=unix,mac    " Fave filetypes
 set history=5000            " VIM history
 set lazyredraw              " Do not redraw, when running macros
 set matchpairs+=<:>         " Bounce between matches
