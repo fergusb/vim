@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-02 04:15:07 EDT
+" Last Modified: 2013-09-02 11:14:05 EDT
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -276,12 +276,13 @@ if has("autocmd")
   " insert the comment leader characters:
   autocmd FileType c set fo+=ro
 
-  " Python indentation - PEP8 compliant
-  autocmd FileType python,python.django set ai ts=4 sts=4 sw=4
-  autocmd FileType python,python.dyango set si cinwords=if,elif,else,for,while,try,except,finally,def,class
+  " Python PEP8 compliant indentation - (not needed with python-mode plugin)
+  "autocmd FileType python,python.django set ai sr ts=4 sts=4 sw=4
+  "autocmd FileType python,python.django set si cinwords=if,elif,else,for,while,try,except,finally,def,class
+  "autocmd FileType python,python.django set indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except
 
   " Perl, PHP indentation
-  autocmd FileType perl,php set ai
+  autocmd FileType perl,php set ai sr
 
   " JSP and JSTL indentation
   autocmd FileType jsp set ai
