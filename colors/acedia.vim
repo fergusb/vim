@@ -64,8 +64,8 @@ hi Exception        gui=none   guifg=#555555                   ctermfg=242      
 
 hi PreProc          gui=none   guifg=#990066                   ctermfg=darkblue
 hi Include          gui=none   guifg=#000099   guibg=bg        ctermfg=darkblue   cterm=none
-"hi Define           gui=none   guifg=#990066                   ctermfg=red    cterm=none
-hi Macro            gui=none   guifg=#FF3399   guibg=bg        ctermfg=magenta     cterm=none
+hi Define           gui=none   guifg=#990066                   ctermfg=red        cterm=none
+hi Macro            gui=none   guifg=#FF3399   guibg=bg        ctermfg=magenta    cterm=none
 hi PreCondit        gui=none   guifg=#990066                   ctermfg=darkmagenta
 
 hi Type             gui=none   guifg=#990066                   ctermfg=white      cterm=none
@@ -73,12 +73,12 @@ hi StorageClass     gui=none   guifg=#000099                   ctermfg=darkblue
 hi Structure        gui=none   guifg=#990066                   ctermfg=darkblue
 hi Typedef          gui=none   guifg=#990066                   ctermfg=red
 
-hi Special          gui=none   guifg=black                     ctermfg=white   cterm=none
-hi SpecialChar      gui=none   guifg=black                     ctermfg=none   cterm=none
-hi Tag                                                         ctermfg=red    ctermbg=bg                    
-"hi Delimiter          gui=none   guifg=black                   ctermfg=red   cterm=none
-hi SpecialComment   gui=none   guifg=#555555                   ctermfg=red   cterm=none
-hi Debug            gui=none   guifg=#555555                   ctermfg=red   cterm=none
+hi Special          gui=none   guifg=black                     ctermfg=white     cterm=none
+hi SpecialChar      gui=none   guifg=black                     ctermfg=none      cterm=none
+hi Tag                                                         ctermfg=red       ctermbg=bg                    
+hi Delimiter        gui=none   guifg=black                     ctermfg=white     cterm=none
+hi SpecialComment   gui=none   guifg=#555555                   ctermfg=red       cterm=none
+hi Debug            gui=none   guifg=#555555                   ctermfg=red       cterm=none
 
 hi Error            gui=none   guifg=white     guibg=red       ctermfg=white     ctermbg=darkred
 
@@ -87,26 +87,26 @@ hi Todo             gui=none   guifg=black     guibg=yellow    ctermfg=black   c
 "}}}
 " UI - utils {{{
 hi Title            gui=none   guifg=maroon                    ctermfg=red   cterm=none
-hi Directory        gui=none   guifg=darkblue                  ctermbg=darkblue
-hi Folded           gui=none   guifg=#202020    guibg=#B2B2B2  ctermfg=black     ctermbg=darkgray
-hi FoldColumn       gui=none   guifg=#202020    guibg=#B2B2B2  ctermfg=red     ctermbg=darkgray
-hi Search           gui=none   guibg=yellow                    ctermfg=grey      ctermbg=blue      cterm=none
-hi IncSearch        gui=none   guibg=yellow                    ctermfg=black     ctermbg=228       cterm=none
-hi Visual           gui=none   guibg=#b8d5ff    guifg=black    ctermbg=black     ctermfg=228       cterm=reverse
+hi Directory        gui=none   guifg=darkblue                  ctermbg=blue
+hi Folded           gui=none   guifg=#202020    guibg=#B2B2B2  ctermfg=black   ctermbg=gray
+hi FoldColumn       gui=none   guifg=#202020    guibg=#B2B2B2  ctermfg=red     ctermbg=gray
+hi Search           gui=none   guibg=yellow                    ctermfg=black   ctermbg=blue      cterm=none
+hi IncSearch        gui=none   guibg=yellow                    ctermfg=black   ctermbg=228       cterm=none
+hi Visual           gui=none   guibg=#b8d5ff    guifg=black    ctermbg=black   ctermfg=228       cterm=reverse
 
 hi WildMenu         gui=none   guibg=gray       guifg=black
 hi MatchParen       gui=none   guibg=gray
 
 hi ModeMsg          gui=none
 hi MoreMsg          gui=reverse
-hi Question         gui=none   guifg=red      guibg=yellow
+hi Question         gui=none   guifg=red       guibg=yellow
 hi WarningMsg       gui=none   guifg=red
 
 hi BadWord          gui=bold   guifg=#000099   guibg=#FFDDDD
 hi DoubleWord       gui=bold   guifg=#000099   guibg=#FFEECC
 
 hi DiffAdd          gui=none    ctermfg=black   ctermbg=blue     cterm=none
-hi DiffChange       gui=none    ctermfg=black   ctermbg=magenta cterm=none
+hi DiffChange       gui=none    ctermfg=black   ctermbg=magenta  cterm=none
 hi DiffDelete       gui=none    ctermfg=black   ctermbg=none     cterm=none
 hi DiffText         gui=none    ctermfg=black   ctermbg=yellow   cterm=none
 "}}}
@@ -135,14 +135,14 @@ endif
 hi cssAttr          gui=none       guifg=#990066   ctermfg=gray
 hi cssBraces        gui=none       guifg=black     ctermfg=white
 hi cssClassName     gui=none       guifg=#000099   ctermfg=cyan
-hi cssColor         gui=none       guifg=#AA0000   ctermfg=gray
+"hi cssColor         gui=none       guifg=#AA0000   ctermfg=gray
 hi cssIdentifier    gui=none       guifg=black     ctermfg=white
-hi cssImportant     gui=none       guifg=#000099   ctermfg=yellow
-hi cssMedia         gui=none       guifg=#000099
-hi cssNumber        gui=none       guifg=black     ctermfg=red
-hi cssProp          gui=none       guifg=#990066   ctermfg=gray
-hi cssPrefix        gui=none       guifg=black     ctermfg=white
-hi cssPseudo        gui=none       guifg=#990066   ctermfg=magenta
+hi cssImportant     gui=none       guifg=red   ctermfg=yellow
+"hi cssMedia         gui=none       guifg=#000099
+"hi cssNumber        gui=none       guifg=black     ctermfg=red
+"hi cssProp          gui=none       guifg=#990066   ctermfg=gray
+"hi cssPrefix        gui=none       guifg=black     ctermfg=white
+"hi cssPseudo        gui=none       guifg=#990066   ctermfg=magenta
 hi cssTagName       gui=none       guifg=black     ctermfg=white
 hi cssUnits         gui=none       guifg=red       ctermfg=red
 "}}}

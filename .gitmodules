@@ -92,3 +92,6 @@
 	path = bundle/bufexplorer
 	url = https://github.com/aokon/vim-bufexplorer.git
   ignore = dirty
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = https://github.com/sjl/gundo.vim.git

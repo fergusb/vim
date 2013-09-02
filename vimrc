@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 06:29:05 EDT
+" Last Modified: 2013-09-01 08:00:39 EDT
  
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -68,9 +68,6 @@ set t_Co=256                 " force 256color
 set modeline
 set modelines=5
 color acedia
-
-filetype plugin on
-filetype indent on
 
 " Section: GUI {{{1
 "---------------------------------------------------------------------------"
@@ -155,10 +152,13 @@ set showcmd
 "---------------------------------------------------------------------------"
 
 set cmdheight=1
-set su=.h,~,.o,.info,.swp,.obj      " low priority filetypes 
+set su=.h,~,.o,.info,.swp,.obj,.pyc      " low priority filetypes 
 
 " Section: Formatting {{{1
 "---------------------------------------------------------------------------"
+
+filetype plugin on
+filetype indent on
 
 "set autoindent
 "set smartindent
@@ -416,6 +416,9 @@ map <leader>a :Ack<space>
 " BufExplorer
 map <silent><leader>b :BufExplorer<CR>
 
+" gundo
+nnoremap <silent><leader>u :GundoToggle<CR>
+
 " html5 omnicomplete
 let g:html5_aria_attributes_complete = 0
 "let g:html5_microdata_attributes_complete = 0
@@ -440,7 +443,7 @@ let g:jedi#completions_command = "<C-J>"
 let g:acp_enableAtStartup = 1
 
 " ShowMarks
-"let g:showmarks_enable = 0
+let g:showmarks_enable = 0
 let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 " SuperTab
@@ -536,9 +539,6 @@ noremap <leader>m0 mmHmt:%s/<C-V><CR>//ge<cr>'tzt'm
 " map Shift Insert to [set paste][paste][set nopaste]
 map <S-Insert> <ESC>:set paste<CR>"*p:set nopaste<CR>a
 
-"a new window is put below the current one
-set splitbelow
-
 "visual to brace match
 noremap % v%
 "map <S-Insert> <ESC>:set paste<CR>"*p:set nopaste<CR>a
@@ -554,7 +554,7 @@ noremap % v%
 "au BufWinEnter * silent loadview
 
 " Replace the current word with the last-yanked text.
-"map <leader>s diw"2P
+"map <leader>s diw"2
 
 " Time out on keycodes, but never time out on mappings
 "set notimeout ttimeout ttimeoutlen=200
