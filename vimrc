@@ -1,7 +1,7 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 09:05:26 EDT
- 
+" Last Modified: 2013-09-01 09:33:25 EDT
+
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
 set nocompatible            " Use Vim settings (must be first)
@@ -131,10 +131,10 @@ endif
 " Format statusline
 set laststatus=2
 set statusline=
-set statusline+=%<[%n]\            " buffer number
+set statusline+=%<[%n]\           " buffer number
 set statusline+=%Y\ 
-"set statusline+=[%{&encoding},    " encoding
-"set statusline+=%{&fileformat}]   " file format
+set statusline+=[%{&encoding},    " encoding
+set statusline+=%{&fileformat}]   " file format
 set statusline+=\ %F%m%r%h\        " filename and path
 set statusline+=%w                 " flags
 if &ft != 'mail'
@@ -153,7 +153,7 @@ set showcmd
 "---------------------------------------------------------------------------"
 
 set cmdheight=1
-set su=.h,~,.o,.info,.swp,.obj,.pyc      " low priority filetypes 
+set su=.h,~,.o,.info,.swp,.obj,.pyc      " low priority filetypes
 
 " Section: Formatting {{{1
 "---------------------------------------------------------------------------"
@@ -208,7 +208,7 @@ if has("autocmd")
   " use templates
   autocmd BufNewFile * silent! 0r ~/.vim/skel/%:e.tpl
 
-  " strip trailing white space 
+  " strip trailing white space
   autocmd FileType c,cpp,css,java,php,python,html,html.django autocmd BufWritePre <buffer> :%s/\s\+$//e
 
   " human dicts and speling
@@ -228,7 +228,7 @@ if has("autocmd")
   augroup css
     autocmd FileType css let css_fold=1
     autocmd FileType css set fen foldmethod=indent
-    autocmd FileType css set ai si 
+    autocmd FileType css set ai si
   augroup END
 
   " only show cursorline in current window
@@ -245,7 +245,7 @@ if has("autocmd")
   augroup END
 
   augroup mutt
-    autocmd FileType mail set nonu noai nosi 
+    autocmd FileType mail set nonu noai nosi
     autocmd FileType mail set tw=79
   augroup END
 
@@ -294,7 +294,7 @@ endif " end has("autocmd")
 let mapleader = ","
 let g:mapleader = ","
 
-" disable Ex Mode 
+" disable Ex Mode
 nnoremap Q <Nop>
 
 " edit this file
@@ -586,17 +586,17 @@ func! s:FThtmldjango()
   set ft=html
 endfunc
 
-" Add the following snippet to your vimrc to escape insert mode immediately
+" escape insert mode immediately
 if ! has('gui_running')
   set ttimeoutlen=10
   augroup FastEscape
     autocmd!
-    au InsertEnter * set timeoutlen=0
-    au InsertLeave * set timeoutlen=1000
+    autocmd InsertEnter * set timeoutlen=0
+    autocmd InsertLeave * set timeoutlen=1000
   augroup END
 endif
 
-" Python-mode things
+" python-mode things
 " Disable pylint
 let g:pymode_lint = 0
 " Disable pylint checking every save
@@ -610,6 +610,8 @@ let g:pymode_rope_auto_project = 0
 " Enable python folding but default to unfolded
 let g:pymode_folding = 1
 autocmd FileType python,python.django setlocal foldlevel=99
+
+set showbreak=↪ 
 
 " }}}
 
