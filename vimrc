@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-02 11:14:05 EDT
+" Last Modified: 2013-09-04 10:56:07 EDT
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -34,22 +34,20 @@ set switchbuf=usetab
 set t_vb=                   " Disable error beeps
 set viminfo=%,'20,<50,h     " Restore cursor position between sessions
 set whichwrap=b,s,h,l,<,>,[,] " keys wrap to previous/next line
-set writebackup             " Atomic saves
 
 " Section: Swap and backup {{{1
 "---------------------------------------------------------------------------"
 
-set backup
+set nobackup                  " No backups
+set nowritebackup             " No atomic saves
 set undofile
 set undolevels=100  " maximum number of changes that can be undone
 set undoreload=100  " maximum number lines to save for undo on a buffer reload
-set backupdir=$HOME/.vim/bak//,.,/tmp//  " backup with full file path
 set directory=$HOME/.vim/tmp//,.,/tmp//  " swp files to /tmp if neccesary
 set undodir=$HOME/.vim/undo//
 set viewdir=$HOME/.vim/view//
 
 " Create directories if they don't exist
-silent execute '!mkdir -p $HOME/.vim/bak > /dev/null 2>&1'
 silent execute '!mkdir -p $HOME/.vim/tmp > /dev/null 2>&1'
 silent execute '!mkdir -p $HOME/.vim/undo > /dev/null 2>&1'
 silent execute '!mkdir -p $HOME/.vim/view > /dev/null 2>&1'

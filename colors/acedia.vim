@@ -1,7 +1,6 @@
 " vim color file: acedia.vim
 " A slothful colour scheme: gui light, console dark
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-01 09:06:56 EDT
 
 " GUIDE {{{
 " GUI colours as follows:
