@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-08 04:26:58 EDT
+" Last Modified: 2013-09-11 07:22:25 EDT
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -77,6 +77,7 @@ color acedia
 "---------------------------------------------------------------------------"
 
 if has("gui_running")
+
   if has("gui_gtk2") " GTK/Linux font
     set guifont=Screen\ 9
     set columns=79
@@ -117,6 +118,15 @@ if has("gui_running")
   endif
 else
   set nuw=3
+  set ttimeoutlen=10
+  if has("autocmd")
+" escape insert mode immediately
+    augroup FastEscape
+      autocmd!
+      autocmd InsertEnter * set timeoutlen=0
+      autocmd InsertLeave * set timeoutlen=1000
+    augroup END
+  endif
 endif
 
 " Nice window title
@@ -248,8 +258,8 @@ if has("autocmd")
   augroup END
 
   augroup mutt
-    autocmd FileType mail setl nonu noai nosi
-    autocmd FileType mail setl tw=79 fo=wantq1 smc=0
+    autocmd FileType mail setlocal nonu noai nosi
+    autocmd FileType mail setlocal tw=79 fo=wantq1 smc=0
   augroup END
 
   augroup text
@@ -278,6 +288,7 @@ if has("autocmd")
   "autocmd FileType python,python.django set ai sr ts=4 sts=4 sw=4
   "autocmd FileType python,python.django set si cinwords=if,elif,else,for,while,try,except,finally,def,class
   "autocmd FileType python,python.django set indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except
+  autocmd FileType python,python.django setlocal foldlevel=99
 
   " Perl, PHP indentation
   autocmd FileType perl,php set ai sr
@@ -453,7 +464,7 @@ map <C-n> :NERDTreeToggle<CR>
 let g:jedi#completions_command = "<C-J>"
 
 " Disable autocomplpop plugin at startup
-let g:acp_enableAtStartup = 0
+let g:acp_enableAtStartup = 1
 
 " ShowMarks
 let g:showmarks_enable = 0
@@ -464,6 +475,20 @@ let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 " EasyMotion
 let g:EasyMotion_leader_key = "<leader><leader>"
+
+" python-mode things
+" Disable pylint
+let g:pymode_lint = 0
+" Disable pylint checking every save
+let g:pymode_lint_write = 0
+" Set key 'R' for run python code
+let g:pymode_run_key = 'R'
+" Rope plugin (disable it)
+let g:pymode_rope = 0
+let g:pymode_rope_autoimport_modules = ["os","shutil","datetime","django"]
+let g:pymode_rope_auto_project = 0
+" Enable python folding but default to unfolded
+let g:pymode_folding = 1
 
 " Taglist
 nnoremap <leader>t :Tlist<CR>
@@ -591,29 +616,14 @@ func! s:FThtmldjango()
 endfunc
 
 " escape insert mode immediately
-if ! has('gui_running')
-  set ttimeoutlen=10
-  augroup FastEscape
-    autocmd!
-    autocmd InsertEnter * set timeoutlen=0
-    autocmd InsertLeave * set timeoutlen=1000
-  augroup END
-endif
-
-" python-mode things
-" Disable pylint
-let g:pymode_lint = 0
-" Disable pylint checking every save
-let g:pymode_lint_write = 0
-" Set key 'R' for run python code
-let g:pymode_run_key = 'R'
-" Rope plugin (disable it)
-let g:pymode_rope = 0
-let g:pymode_rope_autoimport_modules = ["os","shutil","datetime","django"]
-let g:pymode_rope_auto_project = 0
-" Enable python folding but default to unfolded
-let g:pymode_folding = 1
-autocmd FileType python,python.django setlocal foldlevel=99
+"if ! has('gui_running')
+  "set ttimeoutlen=10
+  "augroup FastEscape
+    "autocmd!
+    "autocmd InsertEnter * set timeoutlen=0
+    "autocmd InsertLeave * set timeoutlen=1000
+  "augroup END
+"endif
 
 set showbreak=↪ 
 
