@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-11 07:22:25 EDT
+" Last Modified: 2013-09-15 07:39:07 EDT
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -258,8 +258,8 @@ if has("autocmd")
   augroup END
 
   augroup mutt
-    autocmd FileType mail setlocal nonu noai nosi
-    autocmd FileType mail setlocal tw=79 fo=wantq1 smc=0
+    autocmd FileType mail set nonu noai nosi
+    autocmd FileType mail set tw=79 fo=wantq1 smc=0
   augroup END
 
   augroup text
@@ -464,14 +464,14 @@ map <C-n> :NERDTreeToggle<CR>
 let g:jedi#completions_command = "<C-J>"
 
 " Disable autocomplpop plugin at startup
-let g:acp_enableAtStartup = 1
+let g:acp_enableAtStartup = 0
 
 " ShowMarks
 let g:showmarks_enable = 0
 let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 " SuperTab
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+"let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 " EasyMotion
 let g:EasyMotion_leader_key = "<leader><leader>"
