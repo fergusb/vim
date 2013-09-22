@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-11 07:22:25 EDT
+" Last Modified: 2013-09-11 08:42:30 EDT
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -28,6 +28,7 @@ set scrolloff=3             " show lines on vertcal scroll
 set secure                  " Disable security risk features
 set shell=zsh               " Set shell to zsh
 set shortmess+=filmnrxoOtT  " abbr of messages (avoids 'hit enter'))"
+set showbreak=↪ 
 set showtabline=1
 set splitbelow              " New pane put below the current one
 set switchbuf=usetab
@@ -471,7 +472,7 @@ let g:showmarks_enable = 0
 let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 " SuperTab
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+"let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 " EasyMotion
 let g:EasyMotion_leader_key = "<leader><leader>"
@@ -624,8 +625,6 @@ endfunc
     "autocmd InsertLeave * set timeoutlen=1000
   "augroup END
 "endif
-
-set showbreak=↪ 
 
 " }}}
 
