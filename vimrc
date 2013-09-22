@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-11 08:42:30 EDT
+" Last Modified: 2013-09-22 04:52:16 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -259,8 +259,8 @@ if has("autocmd")
   augroup END
 
   augroup mutt
-    autocmd FileType mail setlocal nonu noai nosi
-    autocmd FileType mail setlocal tw=79 fo=wantq1 smc=0
+    autocmd FileType mail set nonu noai nosi
+    autocmd FileType mail set tw=79 fo=wantq1 smc=0
   augroup END
 
   augroup text
@@ -465,7 +465,7 @@ map <C-n> :NERDTreeToggle<CR>
 let g:jedi#completions_command = "<C-J>"
 
 " Disable autocomplpop plugin at startup
-let g:acp_enableAtStartup = 1
+let g:acp_enableAtStartup = 0
 
 " ShowMarks
 let g:showmarks_enable = 0
