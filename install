@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+CWD=$(pwd) 
+DATE=$(date +"%Y%m%d%H%M")
+files="vim"
+
+# output links
+for file in $files; do
+  echo "Renaming existing $file to $file-$DATE"
+  mv $HOME/.$file $HOME/.$file-$DATE
+  echo "Creating symlink to $file in home directory."
+  ln -s $CWD $HOME/.$file
+done
+
+# final flourish
+ln -s $HOME/.vim/vimrc $HOME/.vimrc
+mkdir -p $HOME/.vim/tmp $HOME/.vim/undo $HOME/.vim/view
+git submodule init
+wait
+git submodule update --recursive
+wait
+printf "All done!\n"
