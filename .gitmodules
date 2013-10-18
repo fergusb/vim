@@ -13,10 +13,6 @@
 	path = bundle/timestamp
 	url = https://github.com/vim-scripts/timestamp.vim.git
   ignore = dirty
-[submodule "bundle/ShowMarks"]
-	path = bundle/ShowMarks
-	url = https://github.com/vim-scripts/ShowMarks.git
-  ignore = dirty
 [submodule "bundle/SearchComplete"]
 	path = bundle/SearchComplete
 	url = https://github.com/vim-scripts/SearchComplete.git
