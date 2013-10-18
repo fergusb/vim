@@ -9,8 +9,10 @@ if [ -h $HOME/.vimrc ] ; then
   rm $HOME/.vimrc
 fi
 
-# backup old settings, if there are any
-if [ "$CWD" != "$HOME/.vim" ] ; then
+# clear old symlink or backup old settings, if there are any
+if [ -h $HOME/.vim ] ; then
+  rm $HOME/.vim
+elif [ "$CWD" != "$HOME/.vim" ] ; then
   for file in $files; do
     echo "Renaming existing $file to $file-$DATE"
     mv $HOME/.$file $HOME/.$file-$DATE
