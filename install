@@ -23,8 +23,8 @@ fi
 # final flourish
 ln -s $HOME/.vim/vimrc $HOME/.vimrc
 mkdir -p $HOME/.vim/{tmp,undo,view}
-#git submodule init
+git submodule init
 wait
-#git submodule update --recursive
+git submodule update --recursive
 wait
 printf "All done!\n"
