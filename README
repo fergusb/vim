@@ -1,11 +1,16 @@
 # Fergus' vim setup
 
 ## Installation
-cd [or] cd ~/
-git clone git://github.com/fergusb/vim.git .vim
-ln -s .vim/vimrc ~/.vimrc
+Use the project install file.
+The installer will backup old settings with a date stamp and create symliks as necessary
 
-### Init plugins
+  cd vim 
+  ./install
+or
+  cd .vim
+  ./install
+
+### Init plugins (not needed with installer)
 cd ~/.vim/
 git submodule init
 git submodule update
