@@ -12,11 +12,11 @@ done
 
 # output links
 echo "Creating symlink to $CWD in home directory."
-ln -s $CWD $HOME/.$file
+ln -s $CWD $HOME/.vim
 
 # final flourish
 ln -s $HOME/.vim/vimrc $HOME/.vimrc
-mkdir -p $HOME/.vim/tmp $HOME/.vim/undo $HOME/.vim/view
+mkdir -p $HOME/.vim/{tmp,undo,view}
 git submodule init
 wait
 git submodule update --recursive
