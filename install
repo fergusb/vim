@@ -4,11 +4,13 @@ CWD=$(pwd)
 DATE=$(date +"%Y%m%d%H%M")
 files="vim vimrc"
 
-# backup old settings
-for file in $files; do
-  echo "Renaming existing $file to $file-$DATE"
-  mv $HOME/.$file $HOME/.$file-$DATE
-done
+# backup old settings, if there are any
+if $CWD ! = $HOME/.vim ; then
+  for file in $files; do
+    echo "Renaming existing $file to $file-$DATE"
+    mv $HOME/.$file $HOME/.$file-$DATE
+  done
+fi
 
 # output links
 echo "Creating symlink to $CWD in home directory."
