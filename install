@@ -2,15 +2,17 @@
 
 CWD=$(pwd) 
 DATE=$(date +"%Y%m%d%H%M")
-files="vim"
+files="vim vimrc"
 
-# output links
+# backup old settings
 for file in $files; do
   echo "Renaming existing $file to $file-$DATE"
   mv $HOME/.$file $HOME/.$file-$DATE
-  echo "Creating symlink to $file in home directory."
-  ln -s $CWD $HOME/.$file
 done
+
+# output links
+echo "Creating symlink to $CWD in home directory."
+ln -s $CWD $HOME/.$file
 
 # final flourish
 ln -s $HOME/.vim/vimrc $HOME/.vimrc
