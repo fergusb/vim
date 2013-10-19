@@ -4,13 +4,9 @@ CWD=$(pwd)
 DATE=$(date +"%Y%m%d%H%M")
 files="vim vimrc"
 
-# clear old symlinks
-if [ -h $HOME/.vimrc ] ; then
-  rm $HOME/.vimrc
-fi
-
-# clear old symlink or backup old settings, if there are any
+# clear old symlink or backup old vim dir, if it exists
 if [ -h $HOME/.vim ] ; then
+  echo "Removing stale symlink ~/.vim"
   rm $HOME/.vim
 elif [ "$CWD" != "$HOME/.vim" ] ; then
   for file in $files; do
@@ -18,13 +14,20 @@ elif [ "$CWD" != "$HOME/.vim" ] ; then
     mv $HOME/.$file $HOME/.$file-$DATE
   done
   # output links
-  echo "Creating symlink to $CWD in home directory."
+  echo "Creating symlink ~/.vim to $CWD"
   ln -s $CWD $HOME/.vim
 fi
 
-# final flourish
+# clear old symlinks
+if [ -h $HOME/.vimrc ] ; then
+  echo "Removing stale symlink ~/.vimrc"
+  rm $HOME/.vimrc
+fi
+
+# create symlink and dirs
 ln -s $HOME/.vim/vimrc $HOME/.vimrc
 mkdir -p $HOME/.vim/{tmp,undo,view}
+# install submodues and init
 git submodule init
 wait
 git submodule update --recursive
