@@ -111,7 +111,7 @@ hi DiffText         gui=none    ctermfg=black   ctermbg=yellow   cterm=none
 "}}}
 " UI - chrome {{{
 hi CurrentLine      gui=none   guibg=#FFFFBB   ctermfg=yellow   ctermbg=none   cterm=none
-hi CursorLine       gui=none   guibg=#FFFCCF   ctermfg=none     ctermbg=234    cterm=none
+hi CursorLine       gui=none   guibg=#FFFCCF   ctermfg=none     ctermbg=235    cterm=none
 hi CursorColumn     gui=none   guibg=#FFEEDD   ctermfg=darkgray cterm=none
 hi LineNr           gui=none   guifg=#999999   guibg=#E8E8E8    ctermfg=240       ctermbg=235       cterm=none
 hi StatusLine       gui=none   guifg=white     guibg=#555555    ctermfg=white     ctermbg=240     cterm=none
