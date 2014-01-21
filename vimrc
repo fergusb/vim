@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2013-09-22 04:52:16 CEST
+" Last Modified: 2014-01-08 09:05:15 EST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -226,7 +226,7 @@ if has("autocmd")
   autocmd FileType c,cpp,css,java,php,python,html,html.django autocmd BufWritePre <buffer> :%s/\s\+$//e
 
   " human dicts and speling
-  autocmd FileType mail,human,mkd,txt,vo_base set dict+=/usr/share/dict/words
+  "autocmd FileType mail,human,mkd,txt,vo_base set dict+=/usr/share/dict/words
   autocmd FileType mail,human,mkd,txt,vo_base set spelllang=en_gb
 
   " dynamically set filetype-specific dictionary
