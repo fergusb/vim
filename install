@@ -28,7 +28,7 @@ fi
 ln -s $HOME/.vim/vimrc $HOME/.vimrc
 mkdir -p $HOME/.vim/{tmp,undo,view}
 # install submodues and init
-git submodule init
+git submodule init --recursive
 wait
 git submodule update --recursive
 wait
