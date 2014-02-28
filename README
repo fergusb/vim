@@ -15,7 +15,7 @@ cd ~/.vim/
 git submodule init
 git submodule update
 
-Note: for pyflakes to work correctly, use:
+Note: for pyflakes or jedi to work correctly, use:
   git submodule update --init --recursive
 
 ### Add plugins
