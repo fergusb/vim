@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-01-08 09:05:15 EST
+" Last Modified: 2014-03-13 12:58:09 CET
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -472,7 +472,7 @@ let g:showmarks_enable = 0
 let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 " SuperTab
-"let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
 
 " EasyMotion
 let g:EasyMotion_leader_key = "<leader><leader>"
@@ -600,6 +600,14 @@ noremap % v%
 
 " Turn last word into a tag
 "inoremap <leader>, <ESC>diwa<<ESC>pa></<ESC>pa><ESC>bba
+
+" remap to omnicompletio to control-space
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+            \ "\<lt>C-n>" :
+            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
 
 " unindent
 imap <S-Tab> <C-o><<
