@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-03-13 12:58:09 CET
+" Last Modified: 2014-03-14 01:12:05 CET
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -363,6 +363,14 @@ vnoremap <leader>q gq<CR>
 nnoremap j gj
 nnoremap k gk
 
+" remap to omnicompletion to control-space
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+            \ "\<lt>C-n>" :
+            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
+
 " Section: Brackets and auto-pairs {{{1
 "---------------------------------------------------------------------------"
 
@@ -601,16 +609,8 @@ noremap % v%
 " Turn last word into a tag
 "inoremap <leader>, <ESC>diwa<<ESC>pa></<ESC>pa><ESC>bba
 
-" remap to omnicompletio to control-space
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-            \ "\<lt>C-n>" :
-            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>
-
 " unindent
-imap <S-Tab> <C-o><<
+"imap <S-Tab> <C-o><<
 
 func! s:FThtmldjango()
   let n = 1
