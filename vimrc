@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-03-14 01:12:05 CET
+" Last Modified: 2014-03-14 05:43:13 CET
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -242,7 +242,7 @@ if has("autocmd")
   augroup css
     autocmd FileType css let css_fold=1
     autocmd FileType css set fen foldmethod=indent
-    autocmd FileType css set ai si
+    autocmd FileType css set ai et si ts=2 sw=2 sts=2
   augroup END
 
   " only show cursorline in current window
@@ -286,16 +286,17 @@ if has("autocmd")
   autocmd FileType c set fo+=ro
 
   " Python PEP8 compliant indentation - (not needed with python-mode plugin)
-  "autocmd FileType python,python.django set ai sr ts=4 sts=4 sw=4
+  autocmd FileType python,python.django set ai et ts=4 sts=4 sw=4
+  "autocmd FileType python,python.django set ai sr et ts=8 sts=4 sw=4
   "autocmd FileType python,python.django set si cinwords=if,elif,else,for,while,try,except,finally,def,class
   "autocmd FileType python,python.django set indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except
   autocmd FileType python,python.django setlocal foldlevel=99
 
   " Perl, PHP indentation
-  autocmd FileType perl,php set ai sr
+  autocmd FileType perl,php set ai et sr
 
   " JSP and JSTL indentation
-  autocmd FileType jsp set ai
+  autocmd FileType jsp set ai et
 
   " format html but leave long lines alone
   autocmd FileType html,xhtml,xml,xsl set nofen foldmethod=indent fo+=tl
@@ -611,6 +612,14 @@ noremap % v%
 
 " unindent
 "imap <S-Tab> <C-o><<
+
+" python additions
+
+" more syntax highlighting.
+let python_highlight_all = 1
+
+" smart indenting
+set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 func! s:FThtmldjango()
   let n = 1
