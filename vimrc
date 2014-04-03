@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-03-14 05:43:13 CET
+" Last Modified: 2014-04-03 06:56:35 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -16,6 +16,7 @@ set fileformat=unix         " Set fileformat to UNIX
 set fileformats=unix,mac    " Fave filetypes
 set history=1000            " VIM history
 set lazyredraw              " Do not redraw, when running macros
+set linebreak               " Don't break words on wrap
 set matchpairs+=<:>         " Bounce between matches
 set noerrorbells            " Turn off error warnings
 set nostartofline           " Keep the cursor in the current column with page commands
@@ -28,7 +29,7 @@ set scrolloff=3             " show lines on vertcal scroll
 set secure                  " Disable security risk features
 set shell=zsh               " Set shell to zsh
 set shortmess+=filmnrxoOtT  " abbr of messages (avoids 'hit enter'))"
-set showbreak=↪ 
+"set showbreak=↪ 
 set showtabline=1
 set splitbelow              " New pane put below the current one
 set switchbuf=usetab
