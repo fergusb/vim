@@ -34,19 +34,10 @@
 [submodule "bundle/NERD_tree"]
 	path = bundle/NERD_tree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/pyflakes-vim"]
-	path = bundle/pyflakes-vim
-	url = https://github.com/kevinw/pyflakes-vim.git
 [submodule "bundle/vim-virtualenv"]
 	path = bundle/vim-virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv.git
   ignore = dirty
-[submodule "bundle/pony"]
-	path = bundle/pony
-	url = https://github.com/jmcomets/vim-pony.git
-[submodule "bundle/jedi-vim"]
-	path = bundle/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim.git
 [submodule "bundle/phpcomplete"]
 	path = bundle/phpcomplete
 	url = https://github.com/shawncplus/phpcomplete.vim.git
@@ -88,7 +79,3 @@
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
-[submodule "bundle/python-mode"]
-	path = bundle/python-mode
-	url = https://github.com/klen/python-mode.git
-  ignore = dirty
