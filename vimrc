@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-04-03 06:56:35 CEST
+" Last Modified: 2014-08-05 02:36:43 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -472,7 +472,7 @@ let g:NERDMenuMode = 3
 map <C-n> :NERDTreeToggle<CR>
 
 " jedi-vim autocompletion
-let g:jedi#completions_command = "<C-J>"
+"let g:jedi#completions_command = "<C-J>"
 
 " Disable autocomplpop plugin at startup
 let g:acp_enableAtStartup = 0
@@ -489,17 +489,17 @@ let g:EasyMotion_leader_key = "<leader><leader>"
 
 " python-mode things
 " Disable pylint
-let g:pymode_lint = 0
+"let g:pymode_lint = 0
 " Disable pylint checking every save
-let g:pymode_lint_write = 0
+"let g:pymode_lint_write = 0
 " Set key 'R' for run python code
-let g:pymode_run_key = 'R'
+"let g:pymode_run_key = 'R'
 " Rope plugin (disable it)
-let g:pymode_rope = 0
-let g:pymode_rope_autoimport_modules = ["os","shutil","datetime","django"]
-let g:pymode_rope_auto_project = 0
+"let g:pymode_rope = 0
+"let g:pymode_rope_autoimport_modules = ["os","shutil","datetime","django"]
+"let g:pymode_rope_auto_project = 0
 " Enable python folding but default to unfolded
-let g:pymode_folding = 1
+"let g:pymode_folding = 1
 
 " Taglist
 nnoremap <leader>t :Tlist<CR>
