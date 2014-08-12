@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-08-05 02:36:43 CEST
+" Last Modified: 2014-08-12 03:39:21 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -486,6 +486,9 @@ let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
 
 " EasyMotion
 let g:EasyMotion_leader_key = "<leader><leader>"
+
+" VimRoom toggle
+nnoremap <leader>vr :VimroomToggle<cr>
 
 " python-mode things
 " Disable pylint
