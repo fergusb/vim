@@ -83,3 +83,6 @@
 	path = bundle/vimroom
 	url = https://github.com/mikewest/vimroom.git
   ignore = dirty
+[submodule "bundle/python-mode"]
+	path = bundle/python-mode
+	url = https://github.com/klen/python-mode.git
