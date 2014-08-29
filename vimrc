@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-08-29 12:44:22 CEST
+" Last Modified: 2014-08-29 05:51:14 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -492,18 +492,14 @@ let g:EasyMotion_leader_key = "<leader><leader>"
 nnoremap <leader>vr :VimroomToggle<cr>
 
 " python-mode things
+" Enable python folding but default to unfolded
+let g:pymode_folding = 1
 " Disable pylint
-let g:pymode_lint = 0
-" Disable pylint checking every save
-"let g:pymode_lint_write = 0
-" Set key 'R' for run python code
-let g:pymode_run_key = 'R'
-" Rope plugin (disable it)
+"let g:pymode_lint = 0
+" Disable rope 
 let g:pymode_rope = 0
 "let g:pymode_rope_autoimport_modules = ["os","shutil","datetime","django"]
 "let g:pymode_rope_auto_project = 0
-" Enable python folding but default to unfolded
-let g:pymode_folding = 1
 
 " Taglist
 nnoremap <leader>t :Tlist<CR>
