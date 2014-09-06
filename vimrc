@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-08-29 05:51:14 CEST
+" Last Modified: 2014-09-05 05:47:35 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -301,6 +301,7 @@ if has("autocmd")
   autocmd FileType jsp set ai et
 
   " format html but leave long lines alone
+  autocmd FileType html,xhtml set hi link htmlLink NONE
   autocmd FileType html,xhtml,xml,xsl set nofen foldmethod=indent fo+=tl
   autocmd FileType xml,xslt setlocal iskeyword=@,-,\:,48-57,_,128-167,224-235
 else
@@ -495,7 +496,7 @@ nnoremap <leader>vr :VimroomToggle<cr>
 " Enable python folding but default to unfolded
 let g:pymode_folding = 1
 " Disable pylint
-"let g:pymode_lint = 0
+let g:pymode_lint = 0
 " Disable rope 
 let g:pymode_rope = 0
 "let g:pymode_rope_autoimport_modules = ["os","shutil","datetime","django"]
