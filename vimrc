@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-05 05:47:35 CEST
+" Last Modified: 2014-09-06 03:52:23 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -301,7 +301,6 @@ if has("autocmd")
   autocmd FileType jsp set ai et
 
   " format html but leave long lines alone
-  autocmd FileType html,xhtml set hi link htmlLink NONE
   autocmd FileType html,xhtml,xml,xsl set nofen foldmethod=indent fo+=tl
   autocmd FileType xml,xslt setlocal iskeyword=@,-,\:,48-57,_,128-167,224-235
 else
@@ -419,9 +418,9 @@ endif
 let g:timestamp_rep = '%Y-%m-%d %I:%M:%S %Z'  " Format date thusly: YYYY-MM-DD h:m:s Z
 let g:timestamp_regexp = '\v\C%(<Last %([cC]hanged?|[Mm]odified):\s+)@<=.*$'
 
-"iab <silent> ddate <C-R>=strftime("%d %B %Y")<CR>
-"iab <silent> ttime <C-R>=strftime("%I:%M:%S %p %Z")<CR>
-"iab <silent> isoD <C-R>=strftime("%Y-%m-%d")<CR>
+iab <silent> ddate <C-R>=strftime("%d %B %Y")<CR>
+iab <silent> ttime <C-R>=strftime("%I:%M:%S %p %Z")<CR>
+iab <silent> isoD <C-R>=strftime("%Y-%m-%d")<CR>
 
 " Section: Transpose {{{1
 "---------------------------------------------------------------------------"
