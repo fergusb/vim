@@ -31,16 +31,10 @@
 	path = bundle/AutoComplPop
 	url = git://github.com/vim-scripts/AutoComplPop.git
   ignore = dirty
-[submodule "bundle/NERD_tree"]
-	path = bundle/NERD_tree
-	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/vim-virtualenv"]
 	path = bundle/vim-virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv.git
   ignore = dirty
-[submodule "bundle/phpcomplete"]
-	path = bundle/phpcomplete
-	url = https://github.com/shawncplus/phpcomplete.vim.git
 [submodule "bundle/YankRing"]
 	path = bundle/YankRing
 	url = https://github.com/vim-scripts/YankRing.vim.git
@@ -54,9 +48,6 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git
-[submodule "bundle/vimoutliner"]
-	path = bundle/vimoutliner
-	url = https://github.com/vimoutliner/vimoutliner.git
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
@@ -79,13 +70,6 @@
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
-[submodule "bundle/vimroom"]
-	path = bundle/vimroom
-	url = https://github.com/mikewest/vimroom.git
-  ignore = dirty
 [submodule "bundle/python-mode"]
 	path = bundle/python-mode
 	url = https://github.com/klen/python-mode.git
-[submodule "bundle/po"]
-	path = bundle/po
-	url = https://github.com/vim-scripts/po.vim.git
