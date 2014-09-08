@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-08 09:28:47 CEST
+" Last Modified: 2014-09-08 04:15:26 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -496,7 +496,7 @@ nnoremap <leader>vr :VimroomToggle<cr>
 " Enable python folding but default to unfolded
 let g:pymode_folding = 1
 " Disable pylint
-let g:pymode_lint = 0
+"let g:pymode_lint = 0
 " Disable rope 
 let g:pymode_rope = 0
 "let g:pymode_rope_autoimport_modules = ["os","shutil","datetime","django"]
