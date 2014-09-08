@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-06 03:52:23 CEST
+" Last Modified: 2014-09-08 09:28:47 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -320,23 +320,24 @@ nnoremap Q <Nop>
 nnoremap <leader>ev :tabe $HOME/.vimrc<cr>
 
 "-- F-keys --"
+" toogle paste mode
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
-if has("gui_running")
-  " F2 toggle toolbar
-  map <silent><F2> :if &guioptions =~# 'T' \| set guioptions-=T \| else \| set guioptions+=T \| endif<CR>
-  " CTRL+F2 to toggle the right-hand scroll bar
-  nmap <silent><C-F2> :if &guioptions=~'r' \| set guioptions-=r \| else \| set guioptions+=r \| endif<CR>
-endif
-
-" F5 list buffers and enter number to switch
-nnoremap <F5> :buffers<CR>:buffer<Space>
-
-" F8 mkd preview
-noremap <silent><F8> :w!<CR>:!MultiMarkdown.pl % \| tidy -config $HOME/.tidy.conf \| SmartyPants.pl > $HOME/Desktop/%.html && firefox $HOME/Desktop/%.html<CR><CR>
+" F3 list buffers and enter number to switch
+nnoremap <F3> :buffers<CR>:buffer<Space>
 
 " CTRL+F8 to reformat file as XML
 map <silent><C-F8> <Esc>:%!xmllint --format -<CR><CR>
 vmap <silent><C-F8> <Esc>:'<, '>!xmllint --format -<CR><CR>
+
+if has("gui_running")
+  " F12 toggle toolbar
+  map <silent><F12> :if &guioptions =~# 'T' \| set guioptions-=T \| else \| set guioptions+=T \| endif<CR>
+  " CTRL+F12 to toggle the right-hand scroll bar
+  nmap <silent><C-F12> :if &guioptions=~'r' \| set guioptions-=r \| else \| set guioptions+=r \| endif<CR>
+endif
 
 " Bash-like
 "cnoremap <C-a> <Home>
