@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-09 09:47:24 CEST
+" Last Modified: 2014-09-09 01:48:50 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -198,7 +198,7 @@ if has("autocmd")
   autocmd FileType c set omnifunc=ccomplete#Complete
   autocmd FileType css set omnifunc=csscomplete#CompleteCSS
   autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-  "autocmd FileType htmldjango set omnifunc=htmldjangocomplete#CompleteDjango
+  autocmd FileType htmldjango set omnifunc=htmldjangocomplete#CompleteDjango
   autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType php set omnifunc=phpcomplete#CompletePHP
   autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -212,7 +212,8 @@ set wildmode=list:longest
 set wildignore=*.o,*.r,*.so,*.sl,*.tar,*.tgz,*.bak,.DS_Store,*.pyc
 set complete=.,k,w,b,u,t,]
 "set complete=.,k,w,b,u,t,i,]
-set completeopt=longest,menu
+"set completeopt=longest,menu
+set completeopt=menuone,longest,preview
 set infercase
 
 " Section: Formats and filetypes {{{1
@@ -459,22 +460,9 @@ nnoremap <silent><leader>u :GundoToggle<CR>
 " html5 omnicomplete
 let g:html5_aria_attributes_complete = 0
 "let g:html5_microdata_attributes_complete = 0
-let g:html5_rdfa_attributes_complete = 0
 
 " htmldjango
-let g:htmldjangocomplete_html_flavour = "html5"
-
-" NERD_commenter menu
-let g:NERDMenuMode = 3
-"inoremap <M-/> <ESC>:call NERDComment(0, "toggle")<cr>a
-"nnoremap <M-/>/ :call NERDComment(0, "toggle")<cr>
-"vnoremap <M-/>/ :call NERDComment(1, "toggle")<cr>
-
-" Toggle NERD_tree
-map <C-n> :NERDTreeToggle<CR>
-
-" jedi-vim autocompletion
-"let g:jedi#completions_command = "<C-J>"
+let g:htmldjangocomplete_html_flavour = "html5" 
 
 " Disable autocomplpop plugin at startup
 let g:acp_enableAtStartup = 0
@@ -484,37 +472,29 @@ let g:showmarks_enable = 0
 let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 " SuperTab
-let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
+"let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
+let g:SuperTabDefaultCompletionType = "context"
 
 " EasyMotion
 let g:EasyMotion_leader_key = "<leader><leader>"
 
-" VimRoom toggle
-nnoremap <leader>vr :VimroomToggle<cr>
-
 " python-mode things
-" Enable python folding but default to unfolded
-let g:pymode_folding = 1
-" Disable pylint
-"let g:pymode_lint = 0
-" Disable rope 
-"let g:pymode_rope = 0
-"let g:pymode_rope_autoimport_modules = ["os","sys","datetime","django"]
-"let g:pymode_rope_auto_project = 0
+let g:pymode_folding = 1 " enable folding, default to unfolded 
+let g:pymode_lint_ignore="E265" " ignore comment without space warnings
 
 " Taglist
-nnoremap <leader>t :Tlist<CR>
+nnoremap <leader>tg :Tlist<CR>
 nnoremap <leader>to :TlistOpen<CR>
 nnoremap <leader>tc :TlistClose<CR>
 nnoremap <leader>tu :TlistUpdate<CR>
 nnoremap <leader>ts :TlistSessionSave tlist<CR>
 nnoremap <leader>tl :TlistSessionLoad tlist<CR>
 
+" ToggleWord
+map <leader>tw :ToggleWord<CR>
+
 " ToggleWords/vars/vals
 let g:toggle_words_dict = {'python': [['if', 'elif', 'else']]}
-
-" ToggleWord
-map <leader>x :ToggleWord<CR>
 
 " Yankring
 nnoremap <silent><leader>y :YRShow<CR>
@@ -526,46 +506,6 @@ let g:yankring_replace_n_nkey = "<Nop>"
 "---------------------------------------------------------------------------"
 "set grepprg to vimgrep function
 set grepprg=vimgrep
-
-" convert vimoutliner to mkd
-function! VO2MD()
-  let lines = []
-  let was_body = 0
-  for line in getline(1,'$')
-    if line =~ '^\t*[^:\t]'
-      let indent_level = len(matchstr(line, '^\t*'))
-      if was_body " <= remove this line to have body lines separated
-        call add(lines, '')
-      endif " <= remove this line to have body lines separated
-      call add(lines, substitute(line, '^\(\t*\)\([^:\t].*\)', '\=repeat("#", indent_level + 1)." ".submatch(2)', ''))
-      call add(lines, '')
-      let was_body = 0
-    else
-      call add(lines, substitute(line, '^\t*: ', '', ''))
-      let was_body = 1
-    endif
-  endfor
-  silent %d _
-  call setline(1, lines)
-endfunction
-
-" convert mkd to vimoutliner
-function! MD2VO()
-  let lines = []
-  for line in getline(1,'$')
-    if line =~ '^\s*$'
-      continue
-    endif
-    if line =~ '^#\+'
-      let indent_level = len(matchstr(line, '^#\+')) - 1
-      call add(lines, substitute(line, '^#\(#*\) ', repeat("\<Tab>", indent_level), ''))
-    else
-      call add(lines, substitute(line, '^', repeat("\<Tab>", indent_level) . ': ', ''))
-    endif
-  endfor
-  silent %d _
-  call setline(1, lines)
-endfunction
 
 " Section: Unsorted {{{1
 "---------------------------------------------------------------------------"
@@ -585,65 +525,7 @@ nmap <leader>f9 :set foldlevel=9<CR>
 " Remove pesky DOS/Windows ^M
 noremap <leader>m0 mmHmt:%s/<C-V><CR>//ge<cr>'tzt'm
 
-"inoremap <S-Tab> <C-D> " Standard back indentation
-" map Shift Insert to [set paste][paste][set nopaste]
-map <S-Insert> <ESC>:set paste<CR>"*p:set nopaste<CR>a
-
-"visual to brace match
-noremap % v%
-"map <S-Insert> <ESC>:set paste<CR>"*p:set nopaste<CR>a
-
-" automatically leave insert mode after 'updatetime' milliseconds of inaction
-"au CursorHoldI * stopinsert
-"" set 'updatetime' to 5 seconds when in insert mode
-"au InsertEnter * let updaterestore=&updatetime | set updatetime=5000
-"au InsertLeave * let &updatetime=updaterestore
-
-" restore folds and views
-"au BufWinLeave * mkview
-"au BufWinEnter * silent loadview
-
-" Replace the current word with the last-yanked text.
-"map <leader>s diw"2
-
-" Time out on keycodes, but never time out on mappings
-"set notimeout ttimeout ttimeoutlen=200
-
-" Turn last word into a tag
-"inoremap <leader>, <ESC>diwa<<ESC>pa></<ESC>pa><ESC>bba
-
-" unindent
-"imap <S-Tab> <C-o><<
-
-" python additions
-
-" more syntax highlighting.
-let python_highlight_all = 1
-
-" smart indenting
-set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-
-func! s:FThtmldjango()
-  let n = 1
-  while n < 30 && n < line("$")
-    if getline(n) =~ '.*{%.*'
-      set ft=htmldjango
-      return
-    endif
-    let n = n + 1
-  endwhile
-  set ft=html
-endfunc
-
-" escape insert mode immediately
-"if ! has('gui_running')
-  "set ttimeoutlen=10
-  "augroup FastEscape
-    "autocmd!
-    "autocmd InsertEnter * set timeoutlen=0
-    "autocmd InsertLeave * set timeoutlen=1000
-  "augroup END
-"endif
+noremap % v% " visual to brace match 
 
 " }}}
 
