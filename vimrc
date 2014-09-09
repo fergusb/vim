@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-09 02:04:19 CEST
+" Last Modified: 2014-09-09 02:11:14 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -177,19 +177,19 @@ set su=.h,~,.o,.info,.swp,.obj,.pyc      " low priority filetypes
 filetype plugin on
 filetype indent on
 
-"set autoindent
-"set smartindent
+" set autoindent
+" set smartindent
 set expandtab
 set smarttab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set nowrap
-"set formatoptions=tcrqn2
-"set wrapmargin=4
-"set lbr
+" set formatoptions=tcrqn2
+" set wrapmargin=4
+" set lbr
 set equalprg=par\ -w79            " use par for =
-"set formatprg=par\ -w79          " also use par for gq
+" set formatprg=par\ -w79          " also use par for gq
 
 " Section: Autocompletion {{{1
 "---------------------------------------------------------------------------"
@@ -212,8 +212,7 @@ set wildmode=list:longest
 set wildignore=*.o,*.r,*.so,*.sl,*.tar,*.tgz,*.bak,.DS_Store,*.pyc
 set complete=.,k,w,b,u,t,]
 "set complete=.,k,w,b,u,t,i,]
-"set completeopt=longest,menu
-set completeopt=menuone,longest,preview
+set completeopt=menu,longest,preview
 set infercase
 
 " Section: Formats and filetypes {{{1
