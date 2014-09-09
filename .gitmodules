@@ -24,9 +24,6 @@
 	path = bundle/ToggleWord
 	url = git://github.com/vim-scripts/toggle_words.vim.git
   ignore = dirty
-[submodule "bundle/easymotion"]
-	path = bundle/easymotion
-	url = git://github.com/Lokaltog/vim-easymotion.git
 [submodule "bundle/AutoComplPop"]
 	path = bundle/AutoComplPop
 	url = git://github.com/vim-scripts/AutoComplPop.git
