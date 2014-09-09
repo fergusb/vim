@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-09 02:11:14 CEST
+" Last Modified: 2014-09-09 09:44:38 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -29,7 +29,7 @@ set scrolloff=3             " show lines on vertcal scroll
 set secure                  " Disable security risk features
 set shell=zsh               " Set shell to zsh
 set shortmess+=filmnrxoOtT  " abbr of messages (avoids 'hit enter'))"
-"set showbreak=↪ 
+" set showbreak=↪ 
 set showtabline=1
 set splitbelow              " New pane put below the current one
 set switchbuf=usetab
@@ -64,7 +64,7 @@ set mat=2
 set nohls                   " Don't highlight search
 set showmatch
 set smartcase
-"set wrapscan                " begin search at top when EOF reached
+" set wrapscan                " begin search at top when EOF reached
 
 " Section: Syntax {{{1
 "---------------------------------------------------------------------------"
@@ -98,14 +98,14 @@ if has("gui_running")
     set lines=55
   endif
 
-  "set guicursor=a:blinkon0
+  " set guicursor=a:blinkon0
   set guicursor=n-v-c:blinkon0
 
   " Hide menus and toolbar
   set guioptions-=m
   set guioptions-=T
 
-  "Hide scrollbars
+  " Hide scrollbars
   set guioptions-=L
   set guioptions-=l
   set guioptions-=R
@@ -116,7 +116,7 @@ if has("gui_running")
 
   if has("mouse")
     set mousehide   " Hide mouse when typing
-    "set mousemodel=popup_setpos
+    " set mousemodel=popup_setpos
     set mousemodel=extend
   endif
 else
@@ -138,7 +138,7 @@ if has('title') && (has('gui_running') || &title)
   set titlestring+=%{v:progname} " program name
   set titlestring+=\ \|\ %f\ " file name
   set titlestring+=%h%m%r%w " flags
-  "set titlestring+=\ -\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')} " cwd
+  " set titlestring+=\ -\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')} " cwd
 endif
 
 " Section: Status-line {{{1
@@ -149,8 +149,8 @@ set laststatus=2
 set statusline=
 set statusline+=%<[%n]\           " buffer number
 set statusline+=%Y\ 
-"set statusline+=[%{&encoding},    " encoding
-"set statusline+=%{&fileformat}]   " file format
+" set statusline+=[%{&encoding},    " encoding
+" set statusline+=%{&fileformat}]   " file format
 set statusline+=\ %F%m%r%h\        " filename and path
 set statusline+=%w                 " flags
 if &ft != 'mail'
@@ -211,13 +211,13 @@ set wildmenu
 set wildmode=list:longest
 set wildignore=*.o,*.r,*.so,*.sl,*.tar,*.tgz,*.bak,.DS_Store,*.pyc
 set complete=.,k,w,b,u,t,]
-"set complete=.,k,w,b,u,t,i,]
+" set complete=.,k,w,b,u,t,i,]
 set completeopt=menu,longest,preview
 set infercase
 
 " Section: Formats and filetypes {{{1
 "---------------------------------------------------------------------------"
-"valid when compiled with support for autocommands.
+" autocommands
 if has("autocmd")
   autocmd BufEnter * :syntax sync fromstart
 
@@ -228,11 +228,11 @@ if has("autocmd")
   autocmd FileType c,cpp,css,java,php,python,html,html.django autocmd BufWritePre <buffer> :%s/\s\+$//e
 
   " human dicts and speling
-  "autocmd FileType mail,human,mkd,txt,vo_base set dict+=/usr/share/dict/words
+  " autocmd FileType mail,human,mkd,txt,vo_base set dict+=/usr/share/dict/words
   autocmd FileType mail,human,mkd,txt,vo_base set spelllang=en_gb
 
   " dynamically set filetype-specific dictionary
-  "autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
+  " autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
 
   augroup filetype
     autocmd BufRead,BufNewFile *.jade set filetype=jade
@@ -272,7 +272,7 @@ if has("autocmd")
 
   augroup markdown
     autocmd FileType mkd set nonu nosi nofen
-    "autocmd FileType mkd set ai tw=79 fo+=aw2tq comments=n:>
+    " autocmd FileType mkd set ai tw=79 fo+=aw2tq comments=n:>
   augroup END
 
   " in human-language files, automatically format everything at 79 chars:
@@ -288,9 +288,9 @@ if has("autocmd")
 
   " Python PEP8 compliant indentation - (not needed with python-mode plugin)
   autocmd FileType python,python.django set ai et ts=4 sts=4 sw=4
-  "autocmd FileType python,python.django set ai sr et ts=8 sts=4 sw=4
-  "autocmd FileType python,python.django set si cinwords=if,elif,else,for,while,try,except,finally,def,class
-  "autocmd FileType python,python.django set indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except
+  " autocmd FileType python,python.django set ai sr et ts=8 sts=4 sw=4
+  " autocmd FileType python,python.django set si cinwords=if,elif,else,for,while,try,except,finally,def,class
+  " autocmd FileType python,python.django set indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except
   autocmd FileType python,python.django setlocal foldlevel=99
 
   " Perl, PHP indentation
@@ -308,7 +308,7 @@ endif " end has("autocmd")
 
 " Section: Keymapping {{{1
 "---------------------------------------------------------------------------"
-"Set leader
+" set leader
 let mapleader = ","
 let g:mapleader = ","
 
@@ -339,9 +339,9 @@ if has("gui_running")
 endif
 
 " Bash-like
-"cnoremap <C-a> <Home>
-"cnoremap <C-e> <End>
-"cnoremap <C-k> <C-U>
+" cnoremap <C-a> <Home>
+" cnoremap <C-e> <End>
+" cnoremap <C-k> <C-U>
 
 " backspace in Visual mode deletes selection
 vnoremap <BS> d
@@ -414,7 +414,7 @@ endif
 " Section: Date & time {{{1
 "---------------------------------------------------------------------------"
 
-"let g:timestamp_rep = '%Y-%m-%d'  " Format date thusly: YYYY-MM-DD
+" let g:timestamp_rep = '%Y-%m-%d'  " Format date thusly: YYYY-MM-DD
 let g:timestamp_rep = '%Y-%m-%d %I:%M:%S %Z'  " Format date thusly: YYYY-MM-DD h:m:s Z
 let g:timestamp_regexp = '\v\C%(<Last %([cC]hanged?|[Mm]odified):\s+)@<=.*$'
 
@@ -446,7 +446,7 @@ vmap <C-Down> :move '>+1<CR>gv
 execute pathogen#infect()
 execute pathogen#helptags()
 
-" Ack
+" ack
 map <leader>a :Ack<space>
 
 " BufExplorer
