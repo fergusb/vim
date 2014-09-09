@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-09 01:58:21 CEST
+" Last Modified: 2014-09-09 02:04:19 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -256,7 +256,6 @@ if has("autocmd")
   augroup END
 
   augroup django
-    autocmd BufNewFile,BufRead *.html call s:FThtmldjango()
     autocmd FileType htmldjango inoremap {{ {{ }}<left><left><left>
     autocmd FileType htmldjango inoremap {% {% %}<left><left><left>
   augroup END
