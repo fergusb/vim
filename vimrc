@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-09 01:48:50 CEST
+" Last Modified: 2014-09-09 01:58:21 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -471,16 +471,15 @@ let g:acp_enableAtStartup = 0
 let g:showmarks_enable = 0
 let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+" NERD commenter
+let g:NERDSpaceDelims = 1 " Adds space after comment 
+
 " SuperTab
 "let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
 let g:SuperTabDefaultCompletionType = "context"
 
 " EasyMotion
 let g:EasyMotion_leader_key = "<leader><leader>"
-
-" python-mode things
-let g:pymode_folding = 1 " enable folding, default to unfolded 
-let g:pymode_lint_ignore="E265" " ignore comment without space warnings
 
 " Taglist
 nnoremap <leader>tg :Tlist<CR>
