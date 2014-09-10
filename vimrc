@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-09 09:44:38 CEST
+" Last Modified: 2014-09-10 08:37:13 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -475,9 +475,6 @@ let g:NERDSpaceDelims = 1 " Adds space after comment
 " SuperTab
 "let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
 let g:SuperTabDefaultCompletionType = "context"
-
-" EasyMotion
-let g:EasyMotion_leader_key = "<leader><leader>"
 
 " Taglist
 nnoremap <leader>tg :Tlist<CR>
