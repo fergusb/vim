@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-10 08:37:13 CEST
+" Last Modified: 2014-09-12 09:14:37 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -475,6 +475,9 @@ let g:NERDSpaceDelims = 1 " Adds space after comment
 " SuperTab
 "let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
 let g:SuperTabDefaultCompletionType = "context"
+
+" python mode settings
+let g:pymode_lint_ignore="E501" " ignore stuff
 
 " Taglist
 nnoremap <leader>tg :Tlist<CR>
