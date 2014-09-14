@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-14 10:43:45 CEST
+" Last Modified: 2014-09-14 11:28:09 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -445,7 +445,13 @@ execute pathogen#infect()
 execute pathogen#helptags()
 
 " ack
-map <leader>a :Ack<space>
+map <leader>aa :Ack<space>
+
+" auto-pairs
+let g:AutoPairsShortcutToggle = '<leader>pt'
+let g:AutoPairsShortcutFastWrap = '<C-F>'
+let g:AutoPairsShortcutJump = '<C-N>'
+let g:AutoPairsShortcutBackInsert = '<C-B>'
 
 " BufExplorer
 map <silent><leader>b :BufExplorer<CR>
