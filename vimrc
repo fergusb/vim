@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-12 09:14:37 CEST
+" Last Modified: 2014-09-14 10:25:43 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -197,12 +197,10 @@ set equalprg=par\ -w79            " use par for =
 if has("autocmd")
   autocmd FileType c set omnifunc=ccomplete#Complete
   autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType htmldjango set omnifunc=htmldjangocomplete#CompleteDjango
+  autocmd FileType html,markdown set omnifunc=htmlcomplete#CompleteTags
   autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType php set omnifunc=phpcomplete#CompletePHP
   autocmd FileType python set omnifunc=pythoncomplete#Complete
-  autocmd FileType sql set omnifunc=sqlcomplete#Complete
   autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 endif
 
@@ -287,7 +285,7 @@ if has("autocmd")
   autocmd FileType c set fo+=ro
 
   " Python PEP8 compliant indentation - (not needed with python-mode plugin)
-  autocmd FileType python,python.django set ai et ts=4 sts=4 sw=4
+  " autocmd FileType python,python.django set ai et ts=4 sts=4 sw=4
   " autocmd FileType python,python.django set ai sr et ts=8 sts=4 sw=4
   " autocmd FileType python,python.django set si cinwords=if,elif,else,for,while,try,except,finally,def,class
   " autocmd FileType python,python.django set indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except
@@ -367,17 +365,17 @@ nnoremap j gj
 nnoremap k gk
 
 " remap to omnicompletion to control-space
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-            \ "\<lt>C-n>" :
-            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>
+" inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+            " \ '\<lt>C-n>' :
+            " \ '\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?' .
+            " \ '\'\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\' :' .
+            " \ '\' \\<lt>bs>\\<lt>C-n>\'\<CR>'
+" imap <C-@> <C-Space>
 
 " Section: Brackets and auto-pairs {{{1
 "---------------------------------------------------------------------------"
 
-let g:loaded_matchparen = 1   " Turn off bracket flashing
+let g:loaded_matchparen = 1   " Turn off bracket matching grey
 
 " Visual mode auto pairs
 vnoremap ' <ESC>`>a'<ESC>`<i'<ESC>
@@ -387,20 +385,20 @@ vnoremap < <ESC>`>a><ESC>`<i<<ESC>
 vnoremap { <ESC>`>a}<ESC>`<i{<ESC>
 vnoremap [ <ESC>`>a]<ESC>`<i[<ESC>
 " Insert mode auto pairs
-inoremap [ []<ESC>:let leavechar="]"<CR>i
-inoremap " ""<ESC>:let leavechar='"'<CR>i
-inoremap ( ()<ESC>:let leavechar=")"<CR>i
+" inoremap [ []<ESC>:let leavechar="]"<CR>i
+" inoremap " ""<ESC>:let leavechar='"'<CR>i
+" inoremap ( ()<ESC>:let leavechar=")"<CR>i
 " complex curlies
-inoremap {     {}<ESC>:let leavechar="}"<CR>i
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {{    {
-inoremap {}    {}
+" inoremap {     {}<ESC>:let leavechar="}"<CR>i
+" inoremap {<CR> {<CR>}<ESC>O
+" inoremap {{    {
+" inoremap {}    {}
 
-imap <C-j> <ESC>:exec "normal f" . leavechar<CR>a
+" imap <C-j> <ESC>:exec "normal f" . leavechar<CR>a
 
 if has("autocmd")
   " css
-  autocmd FileType css inoremap :<space> : ;<left>
+  " autocmd FileType css inoremap :<space> : ;<left>
   autocmd FileType css inoremap (" ("")<ESC>:let leavechar=')'<CR>i<left>
 
   " Markdown
@@ -408,7 +406,7 @@ if has("autocmd")
   autocmd FileType mkd vnoremap b <ESC>`>a**<ESC>`<i**<ESC>
 
   " XML
-  autocmd FileType html,xhtml,xml inoremap <buffer><silent> <C-S-B> <ESC>bdwi<<ESC>pa></<ESC>pa><ESC>bba
+  " autocmd FileType html,xhtml,xml inoremap <buffer><silent> <C-S-B> <ESC>bdwi<<ESC>pa></<ESC>pa><ESC>bba
 endif
 
 " Section: Date & time {{{1
@@ -455,26 +453,22 @@ map <silent><leader>b :BufExplorer<CR>
 " gundo
 nnoremap <silent><leader>u :GundoToggle<CR>
 
-" html5 omnicomplete
-let g:html5_aria_attributes_complete = 0
-"let g:html5_microdata_attributes_complete = 0
-
-" htmldjango
-let g:htmldjangocomplete_html_flavour = "html5" 
-
 " Disable autocomplpop plugin at startup
 let g:acp_enableAtStartup = 0
 
 " ShowMarks
 let g:showmarks_enable = 0
-let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+let showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 " NERD commenter
 let g:NERDSpaceDelims = 1 " Adds space after comment 
 
 " SuperTab
-"let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
-let g:SuperTabDefaultCompletionType = "context"
+" let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
+" let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+let g:SuperTabRetainCompletionType=2
+let g:SuperTabClosePreviewOnPopupClose = 1
 
 " python mode settings
 let g:pymode_lint_ignore="E501" " ignore stuff
@@ -495,9 +489,9 @@ let g:toggle_words_dict = {'python': [['if', 'elif', 'else']]}
 
 " Yankring
 nnoremap <silent><leader>y :YRShow<CR>
-let g:yankring_history_dir = "$HOME/.vim/tmp"
-let g:yankring_replace_n_pkey = "<Nop>"
-let g:yankring_replace_n_nkey = "<Nop>"
+let g:yankring_history_dir = '$HOME/.vim/tmp'
+let g:yankring_replace_n_pkey = '<Nop>'
+let g:yankring_replace_n_nkey = '<Nop>'
 
 " Section: Experimental {{{1
 "---------------------------------------------------------------------------"
