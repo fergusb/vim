@@ -5,10 +5,6 @@
 	path = bundle/NERD_commenter
 	url = https://github.com/scrooloose/nerdcommenter.git
   ignore = dirty
-[submodule "bundle/taglist"]
-	path = bundle/taglist
-	url = https://github.com/vim-scripts/taglist.vim.git
-  ignore = dirty
 [submodule "bundle/timestamp"]
 	path = bundle/timestamp
 	url = https://github.com/vim-scripts/timestamp.vim.git

@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-14 11:28:09 CEST
+" Last Modified: 2014-09-14 11:44:05 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -478,14 +478,6 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 
 " python mode settings
 let g:pymode_lint_ignore="E501" " ignore stuff
-
-" Taglist
-nnoremap <leader>tg :Tlist<CR>
-nnoremap <leader>to :TlistOpen<CR>
-nnoremap <leader>tc :TlistClose<CR>
-nnoremap <leader>tu :TlistUpdate<CR>
-nnoremap <leader>ts :TlistSessionSave tlist<CR>
-nnoremap <leader>tl :TlistSessionLoad tlist<CR>
 
 " ToggleWord
 map <leader>tw :ToggleWord<CR>
