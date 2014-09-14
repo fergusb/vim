@@ -35,7 +35,7 @@ set splitbelow              " New pane put below the current one
 set switchbuf=usetab
 set t_vb=                   " Disable error beeps
 set viminfo=%,'20,<50,h     " Restore cursor position between sessions
-set viminfo+=n~/.vim/viminfo " Change location of viminfo
+set viminfo+=n~/.vim/tmp/viminfo " Change location of viminfo
 set whichwrap=b,s,h,l,<,>,[,] " keys wrap to previous/next line
 
 " Section: Swap and backup {{{1
