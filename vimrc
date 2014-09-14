@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-14 10:25:43 CEST
+" Last Modified: 2014-09-14 10:43:45 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -399,11 +399,11 @@ vnoremap [ <ESC>`>a]<ESC>`<i[<ESC>
 if has("autocmd")
   " css
   " autocmd FileType css inoremap :<space> : ;<left>
-  autocmd FileType css inoremap (" ("")<ESC>:let leavechar=')'<CR>i<left>
+  " autocmd FileType css inoremap (" ("")<ESC>:let leavechar=')'<CR>i<left>
 
   " Markdown
-  autocmd FileType mkd vnoremap i <ESC>`>a*<ESC>`<i*<ESC>
-  autocmd FileType mkd vnoremap b <ESC>`>a**<ESC>`<i**<ESC>
+  " autocmd FileType mkd vnoremap i <ESC>`>a*<ESC>`<i*<ESC>
+  " autocmd FileType mkd vnoremap b <ESC>`>a**<ESC>`<i**<ESC>
 
   " XML
   " autocmd FileType html,xhtml,xml inoremap <buffer><silent> <C-S-B> <ESC>bdwi<<ESC>pa></<ESC>pa><ESC>bba
