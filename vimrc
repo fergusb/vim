@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-14 11:44:05 CEST
+" Last Modified: 2014-09-14 08:41:23 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -478,6 +478,9 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 
 " python mode settings
 let g:pymode_lint_ignore="E501" " ignore stuff
+
+" tagbar
+nnoremap <silent> <F9> :TagbarToggle<CR>
 
 " ToggleWord
 map <leader>tw :ToggleWord<CR>
