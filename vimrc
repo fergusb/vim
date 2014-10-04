@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-14 08:41:23 CEST
+" Last Modified: 2014-09-22 12:30:52 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -365,12 +365,12 @@ nnoremap j gj
 nnoremap k gk
 
 " remap to omnicompletion to control-space
-" inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-            " \ '\<lt>C-n>' :
-            " \ '\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?' .
-            " \ '\'\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\' :' .
-            " \ '\' \\<lt>bs>\\<lt>C-n>\'\<CR>'
-" imap <C-@> <C-Space>
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+            \ '\<lt>C-n>' :
+            \ '\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?' .
+            \ '\'\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\' :' .
+            \ '\' \\<lt>bs>\\<lt>C-n>\'\<CR>'
+imap <C-@> <C-Space>
 
 " Section: Brackets and auto-pairs {{{1
 "---------------------------------------------------------------------------"
