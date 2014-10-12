@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-09-22 12:30:52 CEST
+" Last Modified: 2014-10-12 11:27:47 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -518,6 +518,8 @@ nmap <leader>f9 :set foldlevel=9<CR>
 noremap <leader>m0 mmHmt:%s/<C-V><CR>//ge<cr>'tzt'm
 
 noremap % v% " visual to brace match 
+
+:fixdel
 
 " }}}
 
