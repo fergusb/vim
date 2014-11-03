@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-10-27 12:48:11 CET
+" Last Modified: 2014-11-01 04:01:06 EDT
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -213,6 +213,11 @@ set complete=.,k,w,b,u,t,]
 set completeopt=menu,longest,preview
 set infercase
 
+" Section: Abbreviations {{{1
+"---------------------------------------------------------------------------"
+iabbr teh the
+iabbr tehn then
+
 " Section: Formats and filetypes {{{1
 "---------------------------------------------------------------------------"
 " autocommands
@@ -227,7 +232,7 @@ if has("autocmd")
 
   " human dicts and speling
   " autocmd FileType mail,human,mkd,txt,vo_base set dict+=/usr/share/dict/words
-  autocmd FileType mail,human,mkd,txt,vo_base set spelllang=en_gb
+  autocmd FileType mail,human,mkd,txt,vo_base set spelllang=en_gb,de
 
   " dynamically set filetype-specific dictionary
   " autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
