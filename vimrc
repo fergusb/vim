@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-11-01 04:01:06 EDT
+" Last Modified: 2014-12-30 10:51:49 EST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -275,6 +275,7 @@ if has("autocmd")
 
   augroup markdown
     autocmd FileType mkd set nonu nosi nofen ts=4 sts=4 sw=4
+    autocmd FileType mkd set ai tw=79 fo+=wantq1 comments=n:>
     " autocmd FileType mkd set ai tw=79 fo+=aw2tq comments=n:>
   augroup END
 
