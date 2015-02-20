@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2014-12-30 10:51:49 EST
+" Last Modified: 2015-02-20 01:12:59 CET
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -290,12 +290,17 @@ if has("autocmd")
   " insert the comment leader characters:
   autocmd FileType c set fo+=ro
 
-  " Python PEP8 compliant indentation - (not needed with python-mode plugin)
-  " autocmd FileType python,python.django set ai et ts=4 sts=4 sw=4
-  " autocmd FileType python,python.django set ai sr et ts=8 sts=4 sw=4
-  " autocmd FileType python,python.django set si cinwords=if,elif,else,for,while,try,except,finally,def,class
-  " autocmd FileType python,python.django set indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except
-  autocmd FileType python,python.django setlocal foldlevel=99
+  augroup python
+    " Python PEP8 compliant indentation - (not needed with python-mode plugin)
+    " autocmd FileType python,python.django set ai et ts=4 sts=4 sw=4
+    " autocmd FileType python,python.django set ai sr et ts=8 sts=4 sw=4
+    " autocmd FileType python,python.django set si cinwords=if,elif,else,for,while,try,except,finally,def,class
+    " autocmd FileType python,python.django set indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except
+    autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
+    autocmd FileType python match Excess /\%120v.*/
+    autocmd FileType python set nowrap
+    autocmd FileType python,python.django setlocal foldlevel=99
+  augroup END
 
   " Perl, PHP indentation
   autocmd FileType perl,php set ai et sr
@@ -483,6 +488,32 @@ let g:SuperTabRetainCompletionType=2
 let g:SuperTabClosePreviewOnPopupClose = 1
 
 " python mode settings
+" Activate rope
+" Keys:
+" K             Show python docs
+" <Tab>         Rope autocomplete
+" <Ctrl-c>g     Rope goto definition
+" <Ctrl-c>d     Rope show documentation
+" <Ctrl-c>f     Rope find occurrences
+" [[            Jump on previous class or function (normal, visual, operator modes)
+" ]]            Jump on next class or function (normal, visual, operator modes)
+" [M            Jump on previous class or method (normal, visual, operator modes)
+" ]M            Jump on next class or method (normal, visual, operator modes)
+let g:pymode_rope = 1
+
+" Documentation
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
+
+"Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+" Auto check on save
+let g:pymode_lint_write = 1
+
+" Support virtualenv
+let g:pymode_virtualenv = 1
+
 let g:pymode_lint_ignore="E501" " ignore stuff
 
 " tagbar
