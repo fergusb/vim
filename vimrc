@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-02-20 01:12:59 CET
+" Last Modified: 2015-02-22 10:24:06 CET
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -191,28 +191,6 @@ set nowrap
 set equalprg=par\ -w79            " use par for =
 " set formatprg=par\ -w79          " also use par for gq
 
-" Section: Autocompletion {{{1
-"---------------------------------------------------------------------------"
-" initialize omnicompletion
-if has("autocmd")
-  autocmd FileType c set omnifunc=ccomplete#Complete
-  autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown set omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-  autocmd FileType python set omnifunc=pythoncomplete#Complete
-  autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-endif
-
-" completion style
-set wildmenu
-set wildmode=list:longest
-set wildignore=*.o,*.r,*.so,*.sl,*.tar,*.tgz,*.bak,.DS_Store,*.pyc
-set complete=.,k,w,b,u,t,]
-" set complete=.,k,w,b,u,t,i,]
-set completeopt=menu,longest,preview
-set infercase
-
 " Section: Abbreviations {{{1
 "---------------------------------------------------------------------------"
 iabbr teh the
@@ -238,13 +216,12 @@ if has("autocmd")
   " autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
 
   augroup filetype
-    autocmd BufRead,BufNewFile *.jade set filetype=jade
     autocmd BufRead,BufNewFile *.less,*.scss set filetype=css
     autocmd BufRead,BufNewFile *.markdown,*.mdown,*.mkdn,*.md set filetype=mkd
-    autocmd BufRead,BufNewFile *.webui set filetype=jsp
   augroup END
 
   augroup css
+    au!
     autocmd FileType css let css_fold=1
     autocmd FileType css set fen foldmethod=indent
     autocmd FileType css set ai et si ts=2 sw=2 sts=2
@@ -252,28 +229,32 @@ if has("autocmd")
 
   " only show cursorline in current window
   augroup cursorline
-    autocmd!
+    au!
     autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
     autocmd WinLeave * setlocal nocursorline
   augroup END
 
   augroup django
+    au!
     autocmd FileType htmldjango inoremap {{ {{ }}<left><left><left>
     autocmd FileType htmldjango inoremap {% {% %}<left><left><left>
   augroup END
 
   augroup mutt
+    au!
     autocmd FileType mail set nonu noai nosi
     autocmd FileType mail set tw=79 fo=wantq1 smc=0
   augroup END
 
   augroup text
+    au!
     autocmd FileType txt set js
     autocmd FileType txt set nosi
     autocmd FileType txt set tw=79 fo+=aw2tq
   augroup END
 
   augroup markdown
+    au!
     autocmd FileType mkd set nonu nosi nofen ts=4 sts=4 sw=4
     autocmd FileType mkd set ai tw=79 fo+=wantq1 comments=n:>
     " autocmd FileType mkd set ai tw=79 fo+=aw2tq comments=n:>
@@ -290,16 +271,26 @@ if has("autocmd")
   " insert the comment leader characters:
   autocmd FileType c set fo+=ro
 
-  augroup python
+  augroup Python
+    au!
     " Python PEP8 compliant indentation - (not needed with python-mode plugin)
     " autocmd FileType python,python.django set ai et ts=4 sts=4 sw=4
     " autocmd FileType python,python.django set ai sr et ts=8 sts=4 sw=4
     " autocmd FileType python,python.django set si cinwords=if,elif,else,for,while,try,except,finally,def,class
     " autocmd FileType python,python.django set indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except
-    autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
-    autocmd FileType python match Excess /\%120v.*/
     autocmd FileType python set nowrap
     autocmd FileType python,python.django setlocal foldlevel=99
+  augroup END
+
+  augroup vim
+    au!
+    autocmd BufWritePost ~/.vimrc so ~/.vimrc
+    autocmd BufWritePost vimrc    so ~/.vimrc
+  augroup END
+
+  augroup xml
+    au!
+    au syntax xml setlocal equalprg=xmlindent\ -i\ 2\ -l\ 78
   augroup END
 
   " Perl, PHP indentation
@@ -314,6 +305,28 @@ if has("autocmd")
 else
   set ai ts=2 sts=2 sw=2 " defaults for everything else
 endif " end has("autocmd")
+
+" Section: Autocompletion {{{1
+"---------------------------------------------------------------------------"
+" initialize omnicompletion
+if has("autocmd")
+  autocmd FileType c set omnifunc=ccomplete#Complete
+  autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown set omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+  autocmd FileType python set omnifunc=pythoncomplete#Complete
+  autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+endif
+
+" completion style
+set wildmenu
+set wildmode=list:longest
+set wildignore=*.o,*.r,*.so,*.sl,*.tar,*.tgz,*.bak,.DS_Store,*.pyc
+set complete=.,k,w,b,u,t,]
+" set complete=.,k,w,b,u,t,i,]
+set completeopt=menu,longest,preview
+set infercase
 
 " Section: Keymapping {{{1
 "---------------------------------------------------------------------------"
