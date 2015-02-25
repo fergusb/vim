@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-02-22 10:24:06 CET
+" Last Modified: 2015-02-25 11:27:11 CET
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -216,7 +216,8 @@ if has("autocmd")
   " autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand('<amatch>').'.dict')
 
   augroup filetype
-    autocmd BufRead,BufNewFile *.less,*.scss set filetype=css
+    autocmd BufRead,BufNewFile *.less set filetype=css
+    autocmd BufRead,BufNewFile *.scss set filetype=scss.css
     autocmd BufRead,BufNewFile *.markdown,*.mdown,*.mkdn,*.md set filetype=mkd
   augroup END
 
