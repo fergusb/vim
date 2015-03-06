@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-02-25 11:27:11 CET
+" Last Modified: 2015-03-06 09:24:52 CET
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -116,8 +116,8 @@ if has("gui_running")
 
   if has("mouse")
     set mousehide   " Hide mouse when typing
-    " set mousemodel=popup_setpos
-    set mousemodel=extend
+    " set mousemodel=extend
+    set mousemodel=popup_setpos
   endif
 else
   set nuw=3
