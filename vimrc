@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-03-06 09:24:52 CET
+" Last Modified: 2015-03-10 11:37:27 CET
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -83,7 +83,7 @@ if has("gui_running")
 
   if has("gui_gtk2") " GTK/Linux font
     set guifont=Screen\ 9
-    set columns=79
+    set columns=90
     set lines=55
   elseif has('gui_macvim')
     set guifont=Monaco:h10  " Mac font
