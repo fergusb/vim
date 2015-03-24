@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-03-10 11:37:27 CET
+" Last Modified: 2015-03-24 02:08:02 CET
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -479,7 +479,7 @@ let g:AutoPairsShortcutJump = '<C-N>'
 let g:AutoPairsShortcutBackInsert = '<C-B>'
 
 " BufExplorer
-map <silent><leader>b :BufExplorer<CR>
+" map <silent><leader>b :BufExplorer<CR>
 
 " gundo
 nnoremap <silent><leader>u :GundoToggle<CR>
@@ -528,6 +528,7 @@ let g:pymode_lint_write = 1
 " Support virtualenv
 let g:pymode_virtualenv = 1
 
+" let g:pymode_breakpoint_bind = '<leader>bp'
 let g:pymode_lint_ignore="E501" " ignore stuff
 
 " tagbar
