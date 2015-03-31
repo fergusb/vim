@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-03-24 02:08:02 CET
+" Last Modified: 2015-03-24 02:49:22 CET
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -337,6 +337,9 @@ let g:mapleader = ","
 
 " disable Ex Mode
 nnoremap Q <Nop>
+
+" new tab quick
+nnoremap <leader>t :tabnew<cr>
 
 " edit this file
 nnoremap <leader>ev :tabe $HOME/.vimrc<cr>
