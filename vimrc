@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-03-06 09:24:52 CET
+" Last Modified: 2015-04-06 10:03:38 EDT
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -317,6 +317,7 @@ if has("autocmd")
   autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType php set omnifunc=phpcomplete#CompletePHP
   autocmd FileType python set omnifunc=pythoncomplete#Complete
+  autocmd FileType sql set omnifunc=sqlcomplete#Complete
   autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 endif
 
@@ -484,14 +485,15 @@ map <silent><leader>b :BufExplorer<CR>
 " gundo
 nnoremap <silent><leader>u :GundoToggle<CR>
 
-" Disable autocomplpop plugin at startup
-let g:acp_enableAtStartup = 0
+" Enable autocomplpop plugin at startup
+let g:acp_enableAtStartup = 1
 
 " ShowMarks
 let g:showmarks_enable = 0
 let showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 " NERD commenter
+let g:NERDMenuMode = 3
 let g:NERDSpaceDelims = 1 " Adds space after comment 
 
 " SuperTab
