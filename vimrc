@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-04-06 10:03:38 EDT
+" Last Modified: 2015-04-06 10:05:48 EDT
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -390,7 +390,7 @@ vnoremap <leader>q gq<CR>
 nnoremap j gj
 nnoremap k gk
 
-" remap to omnicompletion to control-space
+" remap omnicompletion to control-space
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
             \ '\<lt>C-n>' :
             \ '\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?' .
