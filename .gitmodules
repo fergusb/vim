@@ -69,3 +69,6 @@
 [submodule "bundle/scss"]
 	path = bundle/scss
 	url = https://github.com/cakebaker/scss-syntax.vim.git
+[submodule "bundle/DidYouMean"]
+	path = bundle/DidYouMean
+	url = https://github.com/EinfachToll/DidYouMean.git
