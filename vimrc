@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-03-24 02:49:22 CET
+" Last Modified: 2015-05-22 01:26:43 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -75,6 +75,9 @@ set t_Co=256                 " force 256color
 set modeline
 set modelines=5
 color acedia
+if exists('$TMUX')
+  set term=screen-256color
+endif
 
 " Section: GUI {{{1
 "---------------------------------------------------------------------------"
