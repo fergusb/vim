@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-05-22 01:26:43 CEST
+" Last Modified: 2015-06-25 12:26:02 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -491,7 +491,7 @@ let g:AutoPairsShortcutBackInsert = '<C-B>'
 nnoremap <silent><leader>u :GundoToggle<CR>
 
 " Disable autocomplpop plugin at startup
-let g:acp_enableAtStartup = 0
+let g:acp_enableAtStartup = 1
 
 " ShowMarks
 let g:showmarks_enable = 0
@@ -538,7 +538,7 @@ let g:pymode_virtualenv = 1
 let g:pymode_lint_ignore="E501" " ignore stuff
 
 " tagbar
-nnoremap <silent> <F9> :TagbarToggle<CR>
+nnoremap <silent><F9> :TagbarToggle<CR>
 
 " ToggleWord
 map <leader>tw :ToggleWord<CR>
@@ -548,7 +548,7 @@ let g:toggle_words_dict = {'python': [['if', 'elif', 'else']]}
 
 " Yankring
 nnoremap <silent><leader>y :YRShow<CR>
-let g:yankring_history_dir = '$HOME/.vim/tmp'
+let g:yankring_history_dir = '$HOME/.vim'
 let g:yankring_replace_n_pkey = '<Nop>'
 let g:yankring_replace_n_nkey = '<Nop>'
 
