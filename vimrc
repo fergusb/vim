@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-08-31 11:29:52 CEST
+" Last Modified: 2015-08-31 11:32:37 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -492,16 +492,8 @@ let g:AutoPairsShortcutBackInsert = '<C-B>'
 " gundo
 nnoremap <silent><leader>u :GundoToggle<CR>
 
-<<<<<<< HEAD
-" Disable autocomplpop plugin at startup
-let g:acp_enableAtStartup = 1
-||||||| merged common ancestors
-" Disable autocomplpop plugin at startup
-let g:acp_enableAtStartup = 0
-=======
 " Enable autocomplpop plugin at startup
 let g:acp_enableAtStartup = 1
->>>>>>> 32e13f775e6a3ee76a2f98a04b4f8f5c75cb2dd2
 
 " ShowMarks
 let g:showmarks_enable = 0
