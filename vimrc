@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-08-31 11:32:37 CEST
+" Last Modified: 2015-08-31 03:19:23 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -84,21 +84,19 @@ endif
 
 if has("gui_running")
 
+  set guifont=Hack\ 8
+  set lines=55
+  set columns=90
+
   if has("gui_gtk2") " GTK/Linux font
-    set guifont=Screen\ 9
-    set columns=90
-    set lines=55
+    " set guifont=Screen\ 9
   elseif has('gui_macvim')
-    set guifont=Monaco:h10  " Mac font
-    set noantialias
-    set columns=90
-    set lines=55
+    " set guifont=Monaco:h10  " Mac font
+    " set noantialias
     set transp=0 " transparency
     set fuopt+=maxhorz " full width full screen
   else
-    set guifont=monospace:h9
-    set columns=79
-    set lines=55
+    " set guifont=monospace:h9
   endif
 
   " set guicursor=a:blinkon0
