@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-05-22 01:26:43 CEST
+" Last Modified: 2015-07-17 09:20:54 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -247,6 +247,7 @@ if has("autocmd")
   augroup mutt
     au!
     autocmd FileType mail set nonu noai nosi
+    autocmd FileType mail set nobk noswapfile nowb
     autocmd FileType mail set tw=79 fo=wantq1 smc=0
   augroup END
 
