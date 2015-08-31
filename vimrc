@@ -1,7 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-08-31 11:28:10 CEST
-" Last Modified: 2015-08-31 11:28:10 CEST
+" Last Modified: 2015-08-31 11:29:52 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -322,6 +321,7 @@ if has("autocmd")
   autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType php set omnifunc=phpcomplete#CompletePHP
   autocmd FileType python set omnifunc=pythoncomplete#Complete
+  autocmd FileType sql set omnifunc=sqlcomplete#Complete
   autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 endif
 
@@ -397,7 +397,7 @@ vnoremap <leader>q gq<CR>
 nnoremap j gj
 nnoremap k gk
 
-" remap to omnicompletion to control-space
+" remap omnicompletion to control-space
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
             \ '\<lt>C-n>' :
             \ '\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?' .
@@ -492,14 +492,23 @@ let g:AutoPairsShortcutBackInsert = '<C-B>'
 " gundo
 nnoremap <silent><leader>u :GundoToggle<CR>
 
+<<<<<<< HEAD
 " Disable autocomplpop plugin at startup
 let g:acp_enableAtStartup = 1
+||||||| merged common ancestors
+" Disable autocomplpop plugin at startup
+let g:acp_enableAtStartup = 0
+=======
+" Enable autocomplpop plugin at startup
+let g:acp_enableAtStartup = 1
+>>>>>>> 32e13f775e6a3ee76a2f98a04b4f8f5c75cb2dd2
 
 " ShowMarks
 let g:showmarks_enable = 0
 let showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 " NERD commenter
+let g:NERDMenuMode = 3
 let g:NERDSpaceDelims = 1 " Adds space after comment 
 
 " SuperTab
