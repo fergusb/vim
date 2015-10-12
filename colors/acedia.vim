@@ -36,9 +36,9 @@ let colors_name="acedia"
 
 "}}}
 " SYNTAX - global {{{
-hi Cursor           gui=none   guifg=white     guibg=#555555   ctermbg=244 
+hi Cursor           gui=none   guifg=white     guibg=#555555
 
-hi Normal           gui=none   guifg=black     guibg=white     ctermfg=white     ctermbg=black cterm=none
+hi Normal           gui=none   guifg=black     guibg=white     ctermfg=white     ctermbg=233 cterm=none
 hi NonText          gui=none   guifg=#555555   guibg=white     ctermfg=darkgray
 
 hi Comment          gui=none   guifg=#555555                   ctermfg=242       cterm=none
@@ -106,24 +106,24 @@ hi DoubleWord       gui=bold   guifg=#000099   guibg=#FFEECC
 "}}}
 " UI - diff {{{
 hi DiffAdd          gui=none  guifg=#F83010 guibg=#D0FFD0   ctermfg=black   ctermbg=blue     cterm=none
-hi DiffChange       gui=none  guibg=#DFEEFE   ctermfg=black   ctermbg=magenta  cterm=none
+hi DiffChange       gui=none  guibg=#DFEEFE ctermfg=black   ctermbg=magenta  cterm=none
 hi DiffDelete       gui=none  guifg=#2020FF guibg=#C8F2EA   ctermfg=black   ctermbg=none     cterm=none
-hi DiffText         gui=none  guifg=#202020 guibg=#D3E2F3  ctermfg=black   ctermbg=yellow   cterm=none
+hi DiffText         gui=none  guifg=#202020 guibg=#D3E2F3   ctermfg=black   ctermbg=yellow   cterm=none
 "}}}
 " UI - chrome {{{
-hi CurrentLine      gui=none   guibg=#FFFFBB   ctermfg=yellow   ctermbg=none   cterm=none
-hi CursorLine       gui=none   guibg=#FFFCCF   ctermfg=none     ctermbg=235    cterm=none
+" hi CurrentLine      gui=none   guibg=#FFFFBB   ctermfg=228   ctermbg=234   cterm=none
+hi CursorLine       gui=none   guibg=#FFFCCF   ctermfg=none     ctermbg=234    cterm=none
 hi CursorColumn     gui=none   guibg=#FFEEDD   ctermfg=darkgray cterm=none
-hi LineNr           gui=none   guifg=#999999   guibg=#E8E8E8    ctermfg=240       ctermbg=235       cterm=none
-hi StatusLine       gui=none   guifg=white     guibg=#555555    ctermfg=white     ctermbg=240     cterm=none
-hi StatusLineNC     gui=none   guifg=white     guibg=#555555    ctermfg=black     ctermbg=240  cterm=none
+hi LineNr           gui=none   guifg=#999999   guibg=#E8E8E8    ctermfg=238       ctermbg=234       cterm=none
+hi StatusLine       gui=none   guifg=white     guibg=#555555    ctermfg=white     ctermbg=238     cterm=none
+hi StatusLineNC     gui=none   guifg=white     guibg=#555555    ctermfg=black     ctermbg=238  cterm=none
 hi VertSplit        gui=none   guifg=white     guibg=#333333    ctermfg=black     ctermbg=darkgray  cterm=reverse
 "}}}
 " UI - vim 7+ {{{
 if v:version >= 700
   hi Pmenu          gui=none       guifg=#4D4D4D   guibg=#E8E8E8   ctermbg=235  ctermfg=grey
-  hi PMenuSel       gui=none       guifg=#FFFFFF   guibg=#7499BF   ctermbg=240  ctermfg=white
-  hi PmenuSbar      gui=none       guifg=fg        guibg=#41609E   ctermbg=240   
+  hi PMenuSel       gui=none       guifg=#FFFFFF   guibg=#7499BF   ctermbg=238  ctermfg=white
+  hi PmenuSbar      gui=none       guifg=fg        guibg=#41609E   ctermbg=238   
   hi PmenuThumb     gui=none       guifg=bg        guibg=#BDCAE3   ctermbg=blue
   hi SpellBad       gui=undercurl  guisp=red                           
   hi SpellRare      gui=undercurl  guisp=orange                        

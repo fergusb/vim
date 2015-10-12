@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-09-04 03:26:02 CEST
+" Last Modified: 2015-10-12 06:48:16 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -74,7 +74,7 @@ set synmaxcol=1024           " switch off for wide documents
 set t_Co=256                 " force 256color
 set modeline
 set modelines=5
-color acedia
+colorscheme acedia
 if exists('$TMUX')
   set term=screen-256color
 endif
