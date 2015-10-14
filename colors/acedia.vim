@@ -113,11 +113,11 @@ hi DiffText         gui=none  guifg=#202020 guibg=#D3E2F3   ctermfg=black   cter
 " UI - chrome {{{
 " hi CurrentLine      gui=none   guibg=#FFFFBB   ctermfg=228   ctermbg=234   cterm=none
 hi LineNr           gui=none   guifg=#999999   guibg=#E8E8E8    ctermfg=238       ctermbg=234       cterm=none
-hi CursorLine       gui=none   guibg=#FFFCCF   ctermfg=none     ctermbg=234    cterm=none
-hi CursorLineNR     gui=none   guibg=#FFFCCF   ctermfg=247     ctermbg=234    cterm=none
+hi CursorLine       gui=none   guibg=#FFFCCF   ctermfg=none     ctermbg=234       cterm=none
+hi CursorLineNR     gui=none   guibg=#FFFCCF   ctermfg=247      ctermbg=234       cterm=none
 hi CursorColumn     gui=none   guibg=#FFEEDD   ctermfg=darkgray cterm=none
-hi StatusLine       gui=none   guifg=white     guibg=#555555    ctermfg=white     ctermbg=238     cterm=none
-hi StatusLineNC     gui=none   guifg=white     guibg=#555555    ctermfg=black     ctermbg=238  cterm=none
+hi StatusLine       gui=none   guifg=white     guibg=#555555    ctermfg=white     ctermbg=238       cterm=none
+hi StatusLineNC     gui=none   guifg=white     guibg=#555555    ctermfg=242       ctermbg=238       cterm=none
 hi VertSplit        gui=none   guifg=white     guibg=#333333    ctermfg=black     ctermbg=darkgray  cterm=reverse
 "}}}
 " UI - vim 7+ {{{
