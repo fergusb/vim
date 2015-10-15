@@ -34,6 +34,18 @@ endif
 
 let colors_name="acedia"
 
+let s:black  = '#202020'
+let s:blue   = '#000099'
+let s:gray   = '#555555'
+let s:green  = '#007777'
+let s:purple = '#990066'
+let s:maroon = '#AA0000'
+let s:rust   = '#993300'
+let s:pink   = '#FF3399'
+let s:yellow = '#FFFFCC'
+let s:white  = '#FFFFFF'
+
+
 "}}}
 " SYNTAX - global {{{
 hi Cursor           gui=none   guifg=white     guibg=#555555
@@ -159,6 +171,13 @@ hi htmlH3            gui=none       guifg=#336699     guibg=bg
 hi htmlH4            gui=none       guifg=#336699     guibg=bg
 hi htmlH5            gui=none       guifg=#336699     guibg=bg
 hi htmlH6            gui=none       guifg=#336699     guibg=bg
+"}}}
+" SYNTAX - html {{{
+hi pythonImport          gui=none    guifg=#009000    ctermfg=255
+hi pythonException       gui=none    guifg=#f00000    ctermfg=200
+hi pythonOperator        gui=none    guifg=#7E8AA2    ctermfg=103
+hi pythonBuiltinFunction gui=none    guifg=#009000    ctermfg=200
+hi pythonExClass         gui=none    guifg=#009000    ctermfg=200
 "}}}
 
 " vim:ft=vim:fdm=marker
