@@ -1,6 +1,6 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-10-12 06:48:16 CEST
+" Last Modified: 2015-10-20 01:18:46 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -32,6 +32,7 @@ set shortmess+=filmnrxoOtT  " abbr of messages (avoids 'hit enter'))"
 " set showbreak=↪ 
 set showtabline=1
 set splitbelow              " New pane put below the current one
+set splitright              " New pane put to the right of the current one
 set switchbuf=usetab
 set t_vb=                   " Disable error beeps
 set viminfo=%,'20,<50,h     " Restore cursor position between sessions
@@ -402,6 +403,12 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
             \ '\'\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\' :' .
             \ '\' \\<lt>bs>\\<lt>C-n>\'\<CR>'
 imap <C-@> <C-Space>
+
+" easier split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Section: Brackets and auto-pairs {{{1
 "---------------------------------------------------------------------------"
