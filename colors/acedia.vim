@@ -124,7 +124,7 @@ hi DiffText         gui=none  guifg=#202020    guibg=#D3E2F3   ctermfg=black   c
 "}}}
 " UI - chrome {{{
 " hi CurrentLine      gui=none   guibg=#FFFFBB   ctermfg=228   ctermbg=234   cterm=none
-hi LineNr           gui=none   guifg=#999999   guibg=#E8E8E8    ctermfg=238       ctermbg=234    cterm=none
+hi LineNr           gui=none   guifg=#999999   guibg=#E8E8E8    ctermfg=238       ctermbg=233    cterm=none
 hi CursorLine       gui=none                   guibg=#FFFCCF    ctermfg=none      ctermbg=234    cterm=none
 hi CursorLineNR     gui=none                   guibg=#FFFCCF    ctermfg=247       ctermbg=234    cterm=none
 hi CursorColumn     gui=none                   guibg=#FFEEDD    ctermfg=238                      cterm=none
