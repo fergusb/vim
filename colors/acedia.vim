@@ -50,7 +50,7 @@ let s:white  = '#FFFFFF'
 " SYNTAX - global {{{
 hi Cursor           gui=none   guifg=white     guibg=#555555
 
-hi Normal           gui=none   guifg=black     guibg=white     ctermfg=white     ctermbg=233   cterm=none
+hi Normal           gui=none   guifg=black     guibg=white     ctermfg=white     ctermbg=232   cterm=none
 hi NonText          gui=none   guifg=#555555   guibg=white     ctermfg=darkgray
 
 hi Comment          gui=none   guifg=#555555                   ctermfg=242                     cterm=none
@@ -66,7 +66,7 @@ hi Identifier       gui=none   guifg=#000099                   ctermfg=blue
 hi Function         gui=none   guifg=#000099                   ctermfg=darkblue                cterm=none
 
 hi Statement        gui=none   guifg=#000099                   ctermfg=blue
-hi Conditional      gui=none   guifg=#000099                   ctermfg=darkblue                cterm=none
+hi Conditional      gui=none   guifg=#000099                   ctermfg=darkyellow              cterm=none
 hi Repeat           gui=none   guifg=#990066                   ctermfg=darkblue                cterm=none
 hi Label            gui=none   guifg=#990066                   ctermfg=darkblue                cterm=none
 hi Operator         gui=none   guifg=black                     ctermfg=white                   cterm=none
@@ -74,8 +74,8 @@ hi Keyword          gui=none   guifg=#000099   guibg=bg        ctermfg=darkblue 
 hi Exception        gui=none   guifg=#555555                   ctermfg=242                     cterm=none
 
 hi PreProc          gui=none   guifg=#990066                   ctermfg=darkblue
-hi Include          gui=none   guifg=#000099   guibg=bg        ctermfg=darkblue                cterm=none
-hi Define           gui=none   guifg=#990066                   ctermfg=red                     cterm=none
+hi Include          gui=none   guifg=#000099   guibg=bg        ctermfg=blue                    cterm=none
+hi Define           gui=none   guifg=#990066                   ctermfg=blue                    cterm=none
 hi Macro            gui=none   guifg=#FF3399   guibg=bg        ctermfg=magenta                 cterm=none
 hi PreCondit        gui=none   guifg=#990066                   ctermfg=darkmagenta
 
@@ -172,9 +172,9 @@ hi htmlH4            gui=none       guifg=#336699     guibg=bg
 hi htmlH5            gui=none       guifg=#336699     guibg=bg
 hi htmlH6            gui=none       guifg=#336699     guibg=bg
 "}}}
-" SYNTAX - html {{{
+" SYNTAX - python {{{
 hi pythonImport          gui=none    guifg=#009000    ctermfg=255
-hi pythonException       gui=none    guifg=#f00000    ctermfg=200
+hi pythonException       gui=none    guifg=#f00000    ctermfg=blue
 hi pythonOperator        gui=none    guifg=#7E8AA2    ctermfg=103
 hi pythonBuiltinFunction gui=none    guifg=#009000    ctermfg=200
 hi pythonExClass         gui=none    guifg=#009000    ctermfg=200
