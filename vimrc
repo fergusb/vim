@@ -484,8 +484,11 @@ let g:AutoPairsShortcutBackInsert = '<C-B>'
 " gundo
 nnoremap <silent><leader>u :GundoToggle<CR>
 
-" Enable autocomplpop plugin at startup
-let g:acp_enableAtStartup = 1
+" Disable AutoComplPop at startup
+let g:acp_enableAtStartup = 0
+autocmd WinEnter css,javascript,python :AcpEnable
+autocmd WinLeave css,javascript,python :AcpDisable
+autocmd FileType mail,txt set :AcpDisable
 
 " ShowMarks
 let g:showmarks_enable = 0
