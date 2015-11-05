@@ -1,6 +1,5 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
-" Last Modified: 2015-10-20 01:18:46 CEST
 
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
@@ -237,12 +236,6 @@ if has("autocmd")
     autocmd WinLeave * setlocal nocursorline
   augroup END
 
-  augroup django
-    au!
-    autocmd FileType htmldjango inoremap {{ {{ }}<left><left><left>
-    autocmd FileType htmldjango inoremap {% {% %}<left><left><left>
-  augroup END
-
   augroup mutt
     au!
     autocmd FileType mail set nonu noai nosi
@@ -284,12 +277,6 @@ if has("autocmd")
     " autocmd FileType python,python.django set indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except
     autocmd FileType python set nowrap
     autocmd FileType python,python.django setlocal foldlevel=99
-  augroup END
-
-  augroup vim
-    au!
-    autocmd BufWritePost ~/.vimrc so ~/.vimrc
-    autocmd BufWritePost vimrc    so ~/.vimrc
   augroup END
 
   augroup xml
