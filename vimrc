@@ -524,7 +524,8 @@ let g:pymode_doc_key = 'K'
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
 " Auto check on save
-let g:pymode_lint_write = 1
+let g:pymode_lint_write = 0
+autocmd FileType python map <leader>l :PymodeLint<CR>
 
 " Support virtualenv
 let g:pymode_virtualenv = 1
@@ -532,7 +533,13 @@ let g:pymode_virtualenv = 1
 " Enable breakpoints plugin
 let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_bind = '<leader>b'"
-let g:pymode_lint_ignore="E501" " ignore stuff
+let g:pymode_lint_ignore="E501,W002" " ignore stuff
+
+" Syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
 let g:pymode_folding = 0
@@ -542,7 +549,6 @@ let g:pymode_rope = 0
 
 " Jedi goodness
 let g:jedi#completions_enabled = 1
-" let g:jedi#popup_on_dot = 0
 
 " tagbar
 nnoremap <silent><F9> :TagbarToggle<CR>
