@@ -300,16 +300,6 @@ endif " end has("autocmd")
 " Section: Autocompletion {{{1
 "---------------------------------------------------------------------------"
 " initialize omnicompletion
-if has("autocmd")
-  autocmd FileType c set omnifunc=ccomplete#Complete
-  autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown set omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-  autocmd FileType python set omnifunc=pythoncomplete#Complete
-  autocmd FileType sql set omnifunc=sqlcomplete#Complete
-  autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-endif
 
 " completion style
 set wildmenu
@@ -319,6 +309,15 @@ set complete=.,k,w,b,u,t,]
 " set complete=.,k,w,b,u,t,i,]
 set completeopt=menu,longest,preview
 set infercase
+
+autocmd FileType c setlocal omnifunc=ccomplete#Complete
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType sql setlocal omnifunc=sqlcomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Section: Keymapping {{{1
 "---------------------------------------------------------------------------"
@@ -384,12 +383,12 @@ nnoremap j gj
 nnoremap k gk
 
 " remap omnicompletion to control-space
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+inoremap <expr> <M-Space> pumvisible() \|\| &omnifunc == '' ?
             \ '\<lt>C-n>' :
             \ '\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?' .
             \ '\'\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\' :' .
             \ '\' \\<lt>bs>\\<lt>C-n>\'\<CR>'
-imap <C-@> <C-Space>
+imap <C-@> <M-Space>
 
 " easier split navigation
 nnoremap <C-J> <C-W><C-J>
@@ -486,8 +485,8 @@ nnoremap <silent><leader>u :GundoToggle<CR>
 
 " Disable AutoComplPop at startup
 let g:acp_enableAtStartup = 0
-autocmd WinEnter css,javascript,python :AcpEnable
-autocmd WinLeave css,javascript,python :AcpDisable
+autocmd WinEnter css :AcpEnable
+autocmd WinLeave css :AcpDisable
 autocmd FileType mail,txt set :AcpDisable
 
 " ShowMarks
@@ -506,7 +505,6 @@ let g:SuperTabRetainCompletionType=2
 let g:SuperTabClosePreviewOnPopupClose = 1
 
 " python mode settings
-" Activate rope
 " Keys:
 " K             Show python docs
 " <Tab>         Rope autocomplete
@@ -517,13 +515,12 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 " ]]            Jump on next class or function (normal, visual, operator modes)
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
-let g:pymode_rope = 1
 
 " Documentation
 let g:pymode_doc = 1
 let g:pymode_doc_key = 'K'
 
-"Linting
+" Linting
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
 " Auto check on save
@@ -532,8 +529,20 @@ let g:pymode_lint_write = 1
 " Support virtualenv
 let g:pymode_virtualenv = 1
 
-" let g:pymode_breakpoint_bind = '<leader>bp'
+" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_bind = '<leader>b'"
 let g:pymode_lint_ignore="E501" " ignore stuff
+
+" Don't autofold code
+let g:pymode_folding = 0
+
+" Disable python-mode rope use Jedi (below) instead
+let g:pymode_rope = 0
+
+" Jedi goodness
+let g:jedi#completions_enabled = 1
+" let g:jedi#popup_on_dot = 0
 
 " tagbar
 nnoremap <silent><F9> :TagbarToggle<CR>
