@@ -189,8 +189,8 @@ set nowrap
 " set formatoptions=tcrqn2
 " set wrapmargin=4
 " set lbr
-set equalprg=par\ -w79            " use par for =
-" set formatprg=par\ -w79          " also use par for gq
+set equalprg=par\ -w80            " use par for =
+" set formatprg=par\ -w80          " also use par for gq
 
 " Section: Abbreviations {{{1
 "---------------------------------------------------------------------------"
@@ -240,25 +240,25 @@ if has("autocmd")
     au!
     autocmd FileType mail set nonu noai nosi
     autocmd FileType mail set nobk noswapfile nowb
-    autocmd FileType mail set tw=79 fo=wantq1 smc=0
+    autocmd FileType mail set tw=80 fo=wantq1 smc=0
   augroup END
 
   augroup text
     au!
     autocmd FileType txt set js
     autocmd FileType txt set nosi
-    autocmd FileType txt set tw=79 fo+=aw2tq
+    autocmd FileType txt set tw=80 fo+=aw2tq
   augroup END
 
   augroup markdown
     au!
     autocmd FileType mkd set nonu nosi nofen ts=4 sts=4 sw=4
-    autocmd FileType mkd set ai tw=79 fo+=wantq1 comments=n:>
-    " autocmd FileType mkd set ai tw=79 fo+=aw2tq comments=n:>
+    autocmd FileType mkd set ai tw=80 fo+=wantq1 comments=n:>
+    " autocmd FileType mkd set ai tw=80 fo+=aw2tq comments=n:>
   augroup END
 
-  " in human-language files, automatically format everything at 79 chars:
-  autocmd FileType vo_base,human set nonu ts=4 sts=4 sw=4 tw=79 fo+=aw2tq
+  " in human-language files, automatically format everything at 80 chars:
+  autocmd FileType vo_base,human set nonu ts=4 sts=4 sw=4 tw=80 fo+=aw2tq
 
   " for C-like programming, have automatic indentation:
   autocmd FileType c,cpp,slang set cindent
