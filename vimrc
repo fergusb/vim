@@ -383,12 +383,12 @@ nnoremap j gj
 nnoremap k gk
 
 " remap omnicompletion to control-space
-inoremap <expr> <M-Space> pumvisible() \|\| &omnifunc == '' ?
-            \ '\<lt>C-n>' :
-            \ '\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?' .
-            \ '\'\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\' :' .
-            \ '\' \\<lt>bs>\\<lt>C-n>\'\<CR>'
-imap <C-@> <M-Space>
+" inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+            " \ '\<lt>C-n>' :
+            " \ '\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?' .
+            " \ '\'\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\' :' .
+            " \ '\' \\<lt>bs>\\<lt>C-n>\'\<CR>'
+" imap <C-@> <C-Space>
 
 " easier split navigation
 nnoremap <C-J> <C-W><C-J>
