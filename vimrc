@@ -275,7 +275,7 @@ if has("autocmd")
     " autocmd FileType python,python.django set ai sr et ts=8 sts=4 sw=4
     " autocmd FileType python,python.django set si cinwords=if,elif,else,for,while,try,except,finally,def,class
     " autocmd FileType python,python.django set indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except
-    autocmd FileType python set nowrap
+    autocmd FileType python setlocal nowrap
     autocmd FileType python,python.django setlocal foldlevel=99
   augroup END
 
