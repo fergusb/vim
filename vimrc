@@ -1,9 +1,13 @@
 " vim config file ~/.vimrc
 " Fergus Bremner <fergus.bremner@gmail.com>
 
+" Pathogen - make sure this comes first
+execute pathogen#infect()
+execute pathogen#helptags()
+
 " Section: Settings {{{1
 "---------------------------------------------------------------------------"
-set nocompatible            " Use Vim settings (must be first)
+set nocompatible            " be iMproved
 
 set autochdir               " Auto-change cwd to current file
 set autoread                " Auto read a file when it's changed from without
@@ -175,6 +179,7 @@ set su=.h,~,.o,.info,.swp,.obj,.pyc      " low priority filetypes
 " Section: Formatting {{{1
 "---------------------------------------------------------------------------"
 
+filetype off
 filetype plugin on
 filetype indent on
 
@@ -186,10 +191,12 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set nowrap
+set textwidth=79
+set formatoptions=qrn1
 " set formatoptions=tcrqn2
 " set wrapmargin=4
 " set lbr
-set equalprg=par\ -w80            " use par for =
+set equalprg=par\ -w79            " use par for =
 " set formatprg=par\ -w80          " also use par for gq
 
 " Section: Abbreviations {{{1
@@ -305,9 +312,11 @@ endif " end has("autocmd")
 set wildmenu
 set wildmode=list:longest
 set wildignore=*.o,*.r,*.so,*.sl,*.tar,*.tgz,*.bak,.DS_Store,*.pyc
-set complete=.,k,w,b,u,t,]
+set complete=.,w,b,u,t
+set completeopt=longest,menuone
+" set complete=.,k,w,b,u,t,]
 " set complete=.,k,w,b,u,t,i,]
-set completeopt=menu,longest,preview
+" set completeopt=menu,longest,preview
 set infercase
 
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
@@ -464,10 +473,6 @@ vmap <C-Down> :move '>+1<CR>gv
 " Section: Plugin-dependent settings {{{1
 "---------------------------------------------------------------------------"
 
-" Pathogen - make sure this comes first
-execute pathogen#infect()
-execute pathogen#helptags()
-
 " ack
 map <leader>aa :Ack<space>
 
@@ -487,7 +492,7 @@ nnoremap <silent><leader>u :GundoToggle<CR>
 let g:acp_enableAtStartup = 0
 autocmd WinEnter css :AcpEnable
 autocmd WinLeave css :AcpDisable
-autocmd FileType mail,txt set :AcpDisable
+" autocmd FileType mail,txt set :AcpDisable
 
 " ShowMarks
 let g:showmarks_enable = 0
