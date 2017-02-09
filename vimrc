@@ -41,6 +41,7 @@ set t_vb=                   " Disable error beeps
 set viminfo=%,'20,<50,h     " Restore cursor position between sessions
 set viminfo+=n~/.vim/tmp/viminfo " Change location of viminfo
 set whichwrap=b,s,h,l,<,>,[,] " keys wrap to previous/next line
+set clipboard+=unnamedplus  " Always copy to system clipboard
 
 " Section: Swap and backup {{{1
 "---------------------------------------------------------------------------"
@@ -225,7 +226,8 @@ if has("autocmd")
 
   augroup filetype
     autocmd BufRead,BufNewFile *.less set filetype=css
-    autocmd BufRead,BufNewFile *.scss set filetype=scss.css
+    " autocmd BufRead,BufNewFile *.scss set filetype=scss.css
+    autocmd BufRead,BufNewFile *.scss,*.less set fen foldmethod=indent
     autocmd BufRead,BufNewFile *.markdown,*.mdown,*.mkdn,*.md set filetype=mkd
   augroup END
 
