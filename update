@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# update submodues and init for jedi 
+git submodule init
+wait
+git submodule foreach git pull origin master
+wait
+git submodule update --init --recursive
+wait
+printf "All done!\n"
