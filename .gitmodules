@@ -21,10 +21,6 @@
 	path = bundle/AutoComplPop
 	url = git://github.com/vim-scripts/AutoComplPop.git
   ignore = dirty
-[submodule "bundle/vim-virtualenv"]
-	path = bundle/vim-virtualenv
-	url = https://github.com/jmcantrell/vim-virtualenv.git
-  ignore = dirty
 [submodule "bundle/YankRing"]
 	path = bundle/YankRing
 	url = https://github.com/vim-scripts/YankRing.vim.git
@@ -53,10 +49,6 @@
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = https://github.com/aokon/vim-bufexplorer.git
-  ignore = dirty
-[submodule "bundle/gundo"]
-	path = bundle/gundo
-	url = https://github.com/sjl/gundo.vim.git
   ignore = dirty
 [submodule "bundle/auto-pairs"]
 	path = bundle/auto-pairs
