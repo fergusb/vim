@@ -41,7 +41,7 @@ set t_vb=                   " Disable error beeps
 set viminfo=%,'20,<50,h     " Restore cursor position between sessions
 set viminfo+=n~/.vim/tmp/viminfo " Change location of viminfo
 set whichwrap=b,s,h,l,<,>,[,] " keys wrap to previous/next line
-set clipboard+=unnamedplus  " Always copy to system clipboard
+" set clipboard+=unnamedplus  " Always copy to system clipboard
 
 " Section: Swap and backup {{{1
 "---------------------------------------------------------------------------"
@@ -118,7 +118,7 @@ if has("gui_running")
   set guioptions-=r
   set guioptions-=b
 
-  set guioptions+=a " copy selection to register
+  " set guioptions+=a " copy selection to register
 
   if has("mouse")
     set mousehide   " Hide mouse when typing
